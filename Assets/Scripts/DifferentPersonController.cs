@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class DifferentPersonController : MonoBehaviour
 {
-
-	private Material material;
 	private PersonController personController;
 
 	private SkinnedMeshRenderer skmr;
@@ -13,12 +11,14 @@ public class DifferentPersonController : MonoBehaviour
 
 	void Awake()
 	{
-		//material = GetComponent<Renderer>().material;
 		skmr = GetComponentInChildren<SkinnedMeshRenderer>();
 	}
 
 	void Start()
 	{
+
+
+
 		personController = GetComponent<PersonController>();
 
 		StartCoroutine("ConvertPerson");
@@ -56,10 +56,10 @@ public class DifferentPersonController : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		//material.SetColor("_Color", Constants.standardPersonColor);
-		
 		StopCoroutine("ConvertPerson");
 		personController.enabled = true;
+
+
 		this.enabled = false;
 	}
 

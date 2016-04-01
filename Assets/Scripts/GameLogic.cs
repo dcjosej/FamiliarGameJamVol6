@@ -8,10 +8,9 @@ public class GameLogic : MonoBehaviour
 
 	public static GameLogic instance;
 
-	public PersonController[] standardPeopleInScene;
+	public GameObject[] standardPeopleInScene;
 
-
-	void OnEnable()
+	void Awake()
 	{
 		if(instance == null)
 		{
@@ -21,14 +20,15 @@ public class GameLogic : MonoBehaviour
 
 	void Start()
 	{
-		standardPeopleInScene = FindObjectsOfType<PersonController>();
+		standardPeopleInScene = GameObject.FindGameObjectsWithTag("StandardPerson");
+		Debug.Log("dawdwdaw");
 	}
 
 	public PersonController GetRandomPerson()
 	{
 		PersonController res = null;
 
-		res = standardPeopleInScene[Random.Range(0, standardPeopleInScene.Length)];
+		res = standardPeopleInScene[Random.Range(0, standardPeopleInScene.Length)].GetComponent<PersonController>();
 
 		return res;
 	}
@@ -37,6 +37,11 @@ public class GameLogic : MonoBehaviour
 	{
 		if(charactersInScene >= charactersToLoose)
 		{
+			PlayerPrefs.SetInt("Winner", 0);
+			SceneManager.LoadScene(2);
+		}else if(charactersInScene <= 0)
+		{
+			PlayerPrefs.SetInt("Winner", 1);
 			SceneManager.LoadScene(2);
 		}
 	}

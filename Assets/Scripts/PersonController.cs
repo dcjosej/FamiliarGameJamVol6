@@ -3,14 +3,13 @@ using System.Collections;
 
 public class PersonController : MonoBehaviour
 {
-	private Material material;
-
 	private DifferentPersonController differentPersonController;
 
 	private SkinnedMeshRenderer skmr;
 
 	[Header("Textures")]
-	public Texture texDifferent1;
+	public Material matHuman_3_1;
+	public Material matHuman_0;
 
 	void Update()
 	{
@@ -19,22 +18,18 @@ public class PersonController : MonoBehaviour
 
 	void OnEnable()
 	{
-		//material.SetColor("_Color", Constants.standardPersonColor);
+		skmr.material = matHuman_0;
 	}
 
 	void Awake()
 	{
-		//material = GetComponent<Renderer>().material;
 		differentPersonController = GetComponent<DifferentPersonController>();
 		skmr = GetComponentInChildren<SkinnedMeshRenderer>();
 	}
 
 	public void Convert()
 	{
-		//material.SetColor("_Color", Constants.diferentPersonColor);
-
-		//material.mainTexture = texDifferent1;
-		//skmr.material.mainTexture = texDifferent1;
+		skmr.material = matHuman_3_1;
 
 		differentPersonController.enabled = true;
 		this.enabled = false;
