@@ -61,12 +61,16 @@ public class DifferentPersonController : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		StopCoroutine("ConvertPerson");
-		personController.enabled = true;
+		if (enabled)
+		{
+			StopCoroutine("ConvertPerson");
+			personController.enabled = true;
 
-		HUDController.instance.TypeCleaningCompleted();
+			HUDController.instance.TypeCleaningCompleted();
+			AudioManager.instance.PlayConversionAccepted();
 
-		this.enabled = false;
+			this.enabled = false;
+		}
 	}
 
 	private IEnumerator ConvertPerson()

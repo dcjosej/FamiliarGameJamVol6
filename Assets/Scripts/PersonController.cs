@@ -50,12 +50,12 @@ public class PersonController : MonoBehaviour
 
 	void Awake()
 	{
-		if (GameLogic.instance != null && !GameLogic.instance.isGameOver)
-		{
+		//if (GameLogic.instance != null && !GameLogic.instance.isGameOver)
+		//{
 			differentPersonController = GetComponent<DifferentPersonController>();
 			skmr = GetComponentInChildren<SkinnedMeshRenderer>();
 			levelsTransform = new Transform[][] { level1Transforms, level2Transforms, level3Transforms };
-		}
+		//}
 	}
 
 	public void Convert(int levelFrom)
@@ -157,6 +157,11 @@ public class PersonController : MonoBehaviour
 		res = arraySelected[Random.Range(0, arraySelected.Length)];
 
 		return res;
+	}
+
+	void OnMouseDown()
+	{
+		AudioManager.instance.PlayConversionFail();
 	}
 
 	void OnTriggerEnter(Collider other)
