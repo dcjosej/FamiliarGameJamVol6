@@ -51,7 +51,7 @@ public class GameLogic : MonoBehaviour
 	{
 		SpawnZoneController res = null;
 
-		while(res == null || spawnZone == res)
+		while(res == null || spawnZone.name == res.name)
 		{
 			res = spawnZones[Random.Range(0, spawnZones.Length)];
 		}

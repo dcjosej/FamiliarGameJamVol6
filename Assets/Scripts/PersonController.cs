@@ -16,6 +16,8 @@ public class PersonController : MonoBehaviour
 	public Transform[] level1Transforms;
 	public Transform[] level2Transforms;
 	public Transform[] level3Transforms;
+
+	private Transform[][] levelsTransform;
 	public Material matHuman_0;
 
 	public bool converted = false;
@@ -34,13 +36,20 @@ public class PersonController : MonoBehaviour
 
 	private void DisableLevelsProps()
 	{
-		
+		foreach(Transform [] transformArray in levelsTransform)
+		{
+			foreach (Transform prop in transformArray)
+			{
+				prop.gameObject.SetActive(false);
+			}
+		}
 	}
 
 	void Awake()
 	{
 		differentPersonController = GetComponent<DifferentPersonController>();
 		skmr = GetComponentInChildren<SkinnedMeshRenderer>();
+		levelsTransform = new Transform[][] { level1Transforms, level2Transforms, level3Transforms };
 	}
 
 	public void Convert(int levelFrom)

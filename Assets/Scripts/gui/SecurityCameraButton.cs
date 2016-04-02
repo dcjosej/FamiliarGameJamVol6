@@ -8,8 +8,8 @@ public class SecurityCameraButton : MonoBehaviour {
 	void OnMouseDown()
 	{
 		Debug.Log("CAMBIAR DE CAMARA!!");
-		
-		cameraDest.gameObject.SetActive(false);
+
+		Camera.main.gameObject.SetActive(false);
 		cameraDest.gameObject.SetActive(true);
 	}
 }
