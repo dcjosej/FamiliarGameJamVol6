@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class SectorSliderController : MonoBehaviour
@@ -11,6 +10,11 @@ public class SectorSliderController : MonoBehaviour
 	void Awake()
 	{
 		slider = GetComponent<Slider>();
+	}
+
+	public float GetValueThreatness()
+	{
+		return slider.value;
 	}
 
 	void Update()

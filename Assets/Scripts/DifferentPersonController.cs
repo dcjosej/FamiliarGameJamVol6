@@ -64,6 +64,7 @@ public class DifferentPersonController : MonoBehaviour
 		StopCoroutine("ConvertPerson");
 		personController.enabled = true;
 
+		HUDController.instance.TypeCleaningCompleted();
 
 		this.enabled = false;
 	}
