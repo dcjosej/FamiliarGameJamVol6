@@ -90,7 +90,7 @@ ModelImporter:
     13700010: Gorro_Geo_2
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 1
     materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
