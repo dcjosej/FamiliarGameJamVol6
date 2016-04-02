@@ -7,6 +7,8 @@ public class GameLogic : MonoBehaviour
 	public int charactersToLoose = 5;
 
 	public static GameLogic instance;
+	
+
 
 	public GameObject[] standardPeopleInScene;
 
@@ -38,11 +40,11 @@ public class GameLogic : MonoBehaviour
 		if(charactersInScene >= charactersToLoose)
 		{
 			PlayerPrefs.SetInt("Winner", 0);
-			SceneManager.LoadScene(2);
+			//SceneManager.LoadScene(2);
 		}else if(charactersInScene <= 0)
 		{
 			PlayerPrefs.SetInt("Winner", 1);
-			SceneManager.LoadScene(2);
+			//SceneManager.LoadScene(2);
 		}
 	}
 }

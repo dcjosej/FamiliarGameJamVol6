@@ -7,7 +7,10 @@ public class DifferentPersonController : MonoBehaviour
 
 	private SkinnedMeshRenderer skmr;
 
-	public float timeToConvert = 2f;
+	public float timeToConvert= 2f;
+	public int infectedLevel = 1;
+
+	
 
 	void Awake()
 	{
@@ -16,19 +19,21 @@ public class DifferentPersonController : MonoBehaviour
 
 	void Start()
 	{
-
-
-
 		personController = GetComponent<PersonController>();
 
-		StartCoroutine("ConvertPerson");
+
+		Debug.Log("Empezando corrutina!!! " + gameObject.name);
+
+		if(infectedLevel < 3)
+		{
+			StartCoroutine("ConvertPerson");
+		}
 
 
 		if (GameLogic.instance == null)
 		{
 			Debug.Log("Esto es una puta mierda");
 		}
-
 
 		GameLogic.instance.charactersInScene++;
 	}
@@ -65,10 +70,14 @@ public class DifferentPersonController : MonoBehaviour
 
 	private IEnumerator ConvertPerson()
 	{
-		while (true)
+		while (true && infectedLevel < 3)
 		{
 			yield return new WaitForSeconds(timeToConvert);
-			GameLogic.instance.GetRandomPerson().Convert();
+			PersonController selectedPerson = GameLogic.instance.GetRandomPerson();
+			if (!selectedPerson.converted)
+			{
+				selectedPerson.Convert(infectedLevel);
+			}
 		}
 	}
 }
