@@ -57,6 +57,22 @@ public class GameLogic : MonoBehaviour
 			ActiveGameOver();
 		}
 
+		if (isGameOver)
+		{
+			CheckKeyBoardGameOver();
+		}
+
+	}
+
+	private void CheckKeyBoardGameOver()
+	{
+		if (Input.GetKeyDown(KeyCode.Y))
+		{
+			SceneManager.LoadScene(1);
+		}else if (Input.GetKeyDown(KeyCode.N))
+		{
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	private void ActiveGameOver()

@@ -9,6 +9,8 @@ public class RotationCamera : MonoBehaviour {
 	private float rotationVelocity = 40;
 	private Vector3 rotationVector = Vector3.zero;
 
+	public Camera cameraRT;
+
 	void Update()
 	{
 		CheckKeyBoard();
@@ -25,6 +27,7 @@ public class RotationCamera : MonoBehaviour {
 			//newEulerAngles.Set(0f, newEulerAngles.y - rotationVelocity * Time.deltaTime, 0f);
 			rotationVector.Set(0, -rotationVelocity * Time.deltaTime, 0f);
 			transform.Rotate(rotationVector, Space.World);
+			cameraRT.transform.Rotate(rotationVector, Space.World);
 			//transform.rotation = newRotation;
 		}
 		else if (Input.GetKey(KeyCode.D) && angleToCheck <= maxAngle)
@@ -33,6 +36,7 @@ public class RotationCamera : MonoBehaviour {
 			//1newEulerAngles.Set(0f, newEulerAngles.y + rotationVelocity * Time.deltaTime, 0f);
 			rotationVector.Set(0, rotationVelocity * Time.deltaTime, 0f);
 			transform.Rotate(rotationVector, Space.World);
+			cameraRT.transform.Rotate(rotationVector, Space.World);
 			//transform.eulerAngles = newEulerAngles;
 			//transform.rotation = newRotation;
 		}
