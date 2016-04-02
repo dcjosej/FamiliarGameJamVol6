@@ -134,4 +134,22 @@ public class PersonController : MonoBehaviour
 
 		return res;
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "RespawnZone")
+		{
+
+			Transform selectedSpawnPoint = GameLogic.instance.GetRandomRespawnZone(other.transform);
+
+			Quaternion rotation = Quaternion.LookRotation(selectedSpawnPoint.right);
+
+			transform.rotation = rotation;
+
+
+			Vector3 newPosition = selectedSpawnPoint.position + selectedSpawnPoint.right.normalized * 5;
+			newPosition.y = transform.position.y;
+			transform.position = newPosition;
+		}
+	}
 }
