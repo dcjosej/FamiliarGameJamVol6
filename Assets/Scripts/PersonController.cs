@@ -29,6 +29,12 @@ public class PersonController : MonoBehaviour
 	void OnEnable()
 	{
 		skmr.material = matHuman_0;
+		DisableLevelsProps();
+	}
+
+	private void DisableLevelsProps()
+	{
+		
 	}
 
 	void Awake()
@@ -79,6 +85,7 @@ public class PersonController : MonoBehaviour
 	{
 		GetTransformFromLevel(levelTo).gameObject.SetActive(true);
 	}
+
 
 	private Material GetMaterialFromLevel(int levelTo)
 	{
