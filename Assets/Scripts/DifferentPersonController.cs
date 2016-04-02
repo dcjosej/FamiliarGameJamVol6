@@ -73,6 +73,9 @@ public class DifferentPersonController : MonoBehaviour
 		while (true && infectedLevel < 3)
 		{
 			yield return new WaitForSeconds(timeToConvert);
+
+			yield return new WaitForSeconds(Random.Range(2, 7));
+
 			PersonController selectedPerson = GameLogic.instance.GetRandomPerson();
 			if (!selectedPerson.converted)
 			{
