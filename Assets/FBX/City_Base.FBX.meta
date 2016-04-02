@@ -13,6 +13,12 @@ ModelImporter:
     100010: Box005
     100012: Box006
     100014: City_Ground
+    100016: Building_002
+    100018: Building_003
+    100020: Building_004
+    100022: Building_005
+    100024: Building_006
+    100026: Building_01
     400000: //RootNode
     400002: Box001
     400004: Box002
@@ -21,6 +27,12 @@ ModelImporter:
     400010: Box005
     400012: Box006
     400014: City_Ground
+    400016: Building_002
+    400018: Building_003
+    400020: Building_004
+    400022: Building_005
+    400024: Building_006
+    400026: Building_01
     2300000: //RootNode
     2300002: Box001
     2300004: Box002
@@ -29,6 +41,12 @@ ModelImporter:
     2300010: Box005
     2300012: Box006
     2300014: City_Ground
+    2300016: Building_002
+    2300018: Building_003
+    2300020: Building_004
+    2300022: Building_005
+    2300024: Building_006
+    2300026: Building_01
     3300000: //RootNode
     3300002: Box001
     3300004: Box002
@@ -37,6 +55,12 @@ ModelImporter:
     3300010: Box005
     3300012: Box006
     3300014: City_Ground
+    3300016: Building_002
+    3300018: Building_003
+    3300020: Building_004
+    3300022: Building_005
+    3300024: Building_006
+    3300026: Building_01
     4300000: Plane001
     4300002: City_Ground
     4300004: Box001
@@ -45,11 +69,17 @@ ModelImporter:
     4300010: Box004
     4300012: Box005
     4300014: Box006
+    4300016: Building_01
+    4300018: Building_002
+    4300020: Building_003
+    4300022: Building_004
+    4300024: Building_005
+    4300026: Building_006
     9500000: //RootNode
   materials:
     importMaterials: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
