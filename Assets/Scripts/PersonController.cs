@@ -30,8 +30,11 @@ public class PersonController : MonoBehaviour
 
 	void OnEnable()
 	{
-		skmr.material = matHuman_0;
-		DisableLevelsProps();
+		if (GameLogic.instance != null && !GameLogic.instance.isGameOver)
+		{
+			skmr.material = matHuman_0;
+			DisableLevelsProps();
+		}
 	}
 
 	private void DisableLevelsProps()
@@ -47,31 +50,40 @@ public class PersonController : MonoBehaviour
 
 	void Awake()
 	{
-		differentPersonController = GetComponent<DifferentPersonController>();
-		skmr = GetComponentInChildren<SkinnedMeshRenderer>();
-		levelsTransform = new Transform[][] { level1Transforms, level2Transforms, level3Transforms };
+		if (GameLogic.instance != null && !GameLogic.instance.isGameOver)
+		{
+			differentPersonController = GetComponent<DifferentPersonController>();
+			skmr = GetComponentInChildren<SkinnedMeshRenderer>();
+			levelsTransform = new Transform[][] { level1Transforms, level2Transforms, level3Transforms };
+		}
 	}
 
 	public void Convert(int levelFrom)
 	{
 
-		Debug.Log("Vengo del nivel " + levelFrom);
-
-		converted = true;
-
-		switch (MaterialOrProp())
+		if (!GameLogic.instance.isGameOver)
 		{
-			case 0:
-				ChangeMaterial(levelFrom + 1);
-				break;
-			case 1:
-				ChangeLevel(levelFrom + 1);
-				break;
-		}
 
-		differentPersonController.enabled = true;
-		differentPersonController.infectedLevel++;
-		this.enabled = false;
+			HUDController.instance.TypeThreatDetected();
+
+			Debug.Log("Vengo del nivel " + levelFrom);
+
+			converted = true;
+
+			switch (MaterialOrProp())
+			{
+				case 0:
+					ChangeMaterial(levelFrom + 1);
+					break;
+				case 1:
+					ChangeLevel(levelFrom + 1);
+					break;
+			}
+
+			differentPersonController.enabled = true;
+			differentPersonController.infectedLevel++;
+			this.enabled = false;
+		}
 	}
 
 	/// <summary>
@@ -87,7 +99,10 @@ public class PersonController : MonoBehaviour
 
 	private void ChangeMaterial(int levelTo)
 	{
-		skmr.material = GetMaterialFromLevel(levelTo);
+		if (!GameLogic.instance.isGameOver)
+		{
+			skmr.material = GetMaterialFromLevel(levelTo);
+		}
 	}
 
 	private void ChangeLevel(int levelTo)

@@ -11,6 +11,8 @@ public class GameLogic : MonoBehaviour
 	public SpawnZoneController[] spawnZones;
 	public GameObject[] standardPeopleInScene;
 
+	public bool isGameOver = false;
+
 	void Awake()
 	{
 		if(instance == null)
@@ -36,6 +38,9 @@ public class GameLogic : MonoBehaviour
 
 	void Update()
 	{
+		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
+
+		/*
 		if(charactersInScene >= charactersToLoose)
 		{
 			PlayerPrefs.SetInt("Winner", 0);
@@ -44,6 +49,23 @@ public class GameLogic : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("Winner", 1);
 			//SceneManager.LoadScene(2);
+		}
+		*/
+
+		if(threatnessLevel <= 0f)
+		{
+			ActiveGameOver();
+		}
+
+	}
+
+	private void ActiveGameOver()
+	{
+		if (!isGameOver)
+		{
+			StopAllCoroutines();
+			HUDController.instance.ActiveGameOver();
+			isGameOver = true;
 		}
 	}
 
