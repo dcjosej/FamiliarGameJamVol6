@@ -140,14 +140,16 @@ public class PersonController : MonoBehaviour
 		if(other.tag == "RespawnZone")
 		{
 
-			Transform selectedSpawnPoint = GameLogic.instance.GetRandomRespawnZone(other.transform);
+			SpawnZoneController selectedRespawnZone = GameLogic.instance.GetRandomRespawnZone(other.GetComponent<SpawnZoneController>());
+
+			Transform selectedSpawnPoint = selectedRespawnZone.GetRandomSpawnPoint();
 
 			Quaternion rotation = Quaternion.LookRotation(selectedSpawnPoint.right);
 
 			transform.rotation = rotation;
 
 
-			Vector3 newPosition = selectedSpawnPoint.position + selectedSpawnPoint.right.normalized * 5;
+			Vector3 newPosition = selectedSpawnPoint.position;
 			newPosition.y = transform.position.y;
 			transform.position = newPosition;
 		}

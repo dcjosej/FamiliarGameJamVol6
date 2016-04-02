@@ -8,7 +8,7 @@ public class GameLogic : MonoBehaviour
 
 	public static GameLogic instance;
 
-	public Transform[] spawnPoints;
+	public SpawnZoneController[] spawnZones;
 	public GameObject[] standardPeopleInScene;
 
 	void Awake()
@@ -47,13 +47,13 @@ public class GameLogic : MonoBehaviour
 		}
 	}
 
-	public Transform GetRandomRespawnZone(Transform originRespawnZone)
+	public SpawnZoneController GetRandomRespawnZone(SpawnZoneController spawnZone)
 	{
-		Transform res = null;
+		SpawnZoneController res = null;
 
-		while(res == null || originRespawnZone == res)
+		while(res == null || spawnZone == res)
 		{
-			res = spawnPoints[Random.Range(0, spawnPoints.Length)];
+			res = spawnZones[Random.Range(0, spawnZones.Length)];
 		}
 
 		return res;

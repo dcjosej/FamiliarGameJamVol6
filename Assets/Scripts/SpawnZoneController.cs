@@ -3,13 +3,14 @@ using System.Collections;
 
 public class SpawnZoneController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public Transform[] spawnPoints;
+
+	public Transform GetRandomSpawnPoint()
+	{
+		Transform res = null;
+
+		res = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+		return res;
 	}
 }
