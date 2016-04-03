@@ -1,5 +1,4 @@
-
-Mecronum 3048
++Mecronum 3048+
 
 Welcome to Sector 88G.
 
@@ -11,21 +10,17 @@ Your mission consist in localize and prevent dangerous individual behaviours.
 
 You are provided with a hi-tech CCTV terminal 'MindHealer 3.5'.
 
-
 ================================
 == MindHealer 3.5 User Manual ==
 ================================
-
 W,A,S,D - Pan the camera
 Q,E - Zoom
 Click on monitors to change the view.
 Click on weird people to restore his mind.
-
 --------------------------------
 
 Good Luck!
 The Direction
-
 
 ====================
 PRESS ENTER TO START
