@@ -1,26 +1,32 @@
-Meconium 4086
 
--------------------------------
+Mecronum 3048
+
+Welcome to Sector 88G.
+
+You have been assigned  by The Direction to contribute into the security program 'The Cleaner Eye'.
+
+You are at front line protecting the Groupthinking.
+
+Your mission consist in localize and prevent dangerous individual behaviours.
+
+You are provided with a hi-tech CCTV terminal 'MindHealer 3.5'.
 
 
-Eres un chufla que trabaja en el ministerio antipamplinas.
+================================
+== MindHealer 3.5 User Manual ==
+================================
 
-Se te ha ajenciado en sector 8==D in your ass.
-
-Tu misión consinste en localizar los posibles focos de pamplineo y corregir estas incongruencias rectales.
-
-Si no lo haces el pensamiento libre se extenderá y te meteremos un extintor en el culo.
-
-Debes utilizar el sistema de monitarización de circuito cerrado Nabotron 8000.
+W,A,S,D - Pan the camera
+Q,E - Zoom
+Click on monitors to change the view.
+Click on weird people to restore his mind.
 
 --------------------------------
 
-Instrucciones de uso:
+Good Luck!
+The Direction
 
-WASD - Controlar cámara
-QE - Zoom (illo Javi, arlo)
-Cliquea en las pantallas para cambiar de cámara.
 
---------------------------------
-
-PULSA ENTER PARA CONTINUAR
+====================
+PRESS ENTER TO START
+====================
