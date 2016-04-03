@@ -3,13 +3,36 @@ using System.Collections;
 
 public class SecurityCameraButton : MonoBehaviour {
 
-	public Camera cameraDest;
+	public MainCameraRTInputReceiver mainCameraInputReceiver;
+
+	public Camera cameraToAsign;
+
+	public Transform mainQuad;
+	public Material materialToAsign;
+
+	public RotationCamera[] rotationCameras;
+
+
+	void Awake()
+	{
+		//rotationCameras = FindObjectsOfType<RotationCamera>();
+	}
+	
+	private void DisableAllRotationCamera()
+	{
+		foreach(RotationCamera rotationCamera in rotationCameras)
+		{
+			rotationCamera.isActive = false;
+		}
+	}
 
 	void OnMouseDown()
 	{
-		Debug.Log("CAMBIAR DE CAMARA!!");
+		mainQuad.GetComponent<Renderer>().material = materialToAsign;
 
-		Camera.main.gameObject.SetActive(false);
-		cameraDest.gameObject.SetActive(true);
+		DisableAllRotationCamera();
+		cameraToAsign.GetComponent<RotationCamera>().isActive = true;
+		//MainCameraRTInputReceiver rtInputReceiver = mainCameraTexture.GetComponent<MainCameraRTInputReceiver>();
+		mainCameraInputReceiver.SetCamera(cameraToAsign);
 	}
 }

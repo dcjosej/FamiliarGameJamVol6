@@ -6,10 +6,16 @@ public class RotationCamera : MonoBehaviour {
 	public float minAngle = 0f;
 	public float maxAngle = 0f;
 
+	public float minAngleUp = 0f;
+	public float maxAngleUp = 0f;
+
 	private float rotationVelocity = 40;
 	private Vector3 rotationVector = Vector3.zero;
 
-	public Camera cameraRT;
+	//public Camera cameraRT;
+
+	public bool isActive;
+	public bool normalCameraRotation = false;
 
 	void Update()
 	{
@@ -19,26 +25,47 @@ public class RotationCamera : MonoBehaviour {
 	public void CheckKeyBoard()
 	{
 
-		float angleToCheck = transform.localEulerAngles.y < 180 ? transform.localEulerAngles.y : transform.localEulerAngles.y - 360;
+		float angleToCheck = 0f;
 
-		if (Input.GetKey(KeyCode.A) && angleToCheck >= minAngle)
+		float angleUpToCheck = transform.localEulerAngles.x < 180 ? transform.eulerAngles.x : transform.eulerAngles.x - 360; ;
+		Debug.Log("EEEEEEE!!!! ======= " + angleUpToCheck);
+
+		if (!normalCameraRotation)
 		{
-			//Quaternion newRotation = Quaternion.Euler(0f, newEulerAngles.y - rotationVelocity * Time.deltaTime, 0f);
-			//newEulerAngles.Set(0f, newEulerAngles.y - rotationVelocity * Time.deltaTime, 0f);
-			rotationVector.Set(0, -rotationVelocity * Time.deltaTime, 0f);
-			transform.Rotate(rotationVector, Space.World);
-			cameraRT.transform.Rotate(rotationVector, Space.World);
-			//transform.rotation = newRotation;
+			angleToCheck = transform.localEulerAngles.y < 180 ? transform.eulerAngles.y : transform.eulerAngles.y - 360;
 		}
-		else if (Input.GetKey(KeyCode.D) && angleToCheck <= maxAngle)
+		else
 		{
-			//Quaternion newRotation = Quaternion.Euler(0f, newEulerAngles.y + rotationVelocity * Time.deltaTime, 0f);
-			//1newEulerAngles.Set(0f, newEulerAngles.y + rotationVelocity * Time.deltaTime, 0f);
-			rotationVector.Set(0, rotationVelocity * Time.deltaTime, 0f);
-			transform.Rotate(rotationVector, Space.World);
-			cameraRT.transform.Rotate(rotationVector, Space.World);
-			//transform.eulerAngles = newEulerAngles;
-			//transform.rotation = newRotation;
+			angleToCheck = transform.localEulerAngles.y;
+		}
+
+
+		//float angleToCheck = transform.localEulerAngles.y;
+
+		if (isActive)
+		{
+			if (Input.GetKey(KeyCode.A) && angleToCheck >= minAngle)
+			{
+				rotationVector.Set(0, -rotationVelocity * Time.deltaTime, 0f);
+				transform.Rotate(rotationVector, Space.World);
+			}
+			else if (Input.GetKey(KeyCode.D) && angleToCheck <= maxAngle)
+			{
+				rotationVector.Set(0, rotationVelocity * Time.deltaTime, 0f);
+				transform.Rotate(rotationVector, Space.World);
+			}
+
+			if (Input.GetKey(KeyCode.W) && angleUpToCheck >= minAngleUp)
+			{
+				rotationVector.Set(-rotationVelocity * Time.deltaTime, 0f, 0f);
+				transform.Rotate(rotationVector, Space.Self);
+			}
+			else if (Input.GetKey(KeyCode.S) && angleUpToCheck <= maxAngleUp)
+			{
+				rotationVector.Set(rotationVelocity * Time.deltaTime, 0f, 0f);
+				transform.Rotate(rotationVector, Space.Self);
+			}
+
 		}
 	}
 }

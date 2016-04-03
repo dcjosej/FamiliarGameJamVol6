@@ -59,6 +59,14 @@ public class DifferentPersonController : MonoBehaviour
 		GameLogic.instance.charactersInScene--;
 	}
 
+
+
+
+	public void Click()
+	{
+		OnMouseDown();
+	}
+
 	void OnMouseDown()
 	{
 		if (enabled)

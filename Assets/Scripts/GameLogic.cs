@@ -13,6 +13,8 @@ public class GameLogic : MonoBehaviour
 
 	public bool isGameOver = false;
 
+	public Camera mainCameraRT;
+
 	void Awake()
 	{
 		if(instance == null)
@@ -38,6 +40,9 @@ public class GameLogic : MonoBehaviour
 
 	void Update()
 	{
+
+		//RayRenderTexture();
+
 		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
 
 		/*
@@ -54,7 +59,7 @@ public class GameLogic : MonoBehaviour
 
 		if(threatnessLevel <= 0f)
 		{
-			ActiveGameOver();
+			//ActiveGameOver();
 		}
 
 		if (isGameOver)
@@ -63,6 +68,7 @@ public class GameLogic : MonoBehaviour
 		}
 
 	}
+
 
 	private void CheckKeyBoardGameOver()
 	{

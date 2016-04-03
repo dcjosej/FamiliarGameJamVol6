@@ -58,6 +58,11 @@ public class PersonController : MonoBehaviour
 		//}
 	}
 
+	public void Click()
+	{
+		AudioManager.instance.PlayConversionFail();
+	}
+
 	public void Convert(int levelFrom)
 	{
 
