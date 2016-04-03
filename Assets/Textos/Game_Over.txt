@@ -1,6 +1,6 @@
------------
-SECTOR LOST
------------
+//---------------//
+//--SECTOR LOST--//
+//---------------//
 
 Your services are unsatisfactory.
 You will be delegated to sewer maintrance.
@@ -9,8 +9,10 @@ Have a nice day.
 
 The Direction.
 
-------------
++++++++++++++++++
 
-//GAME OVER//
+//-------------//
+//--GAME OVER--//
+//-------------//
 
-Try Again?(y,n):
+>Try Again?(y,n):

@@ -1,15 +1,17 @@
-------------------
-MECRONUM 3048
-------------------
+*********************
+*** MECRONUM 3048 ***
+*********************
+*********************
 
-//TEAM COVEN//
-theteamcoven@gmail.com
++++++++++++++++++++++
++++++TEAM COVEN++++++
++++++++++++++++++++++
 
-+Programming
-Jose Javier Delgado
+>theteamcoven@gmail.com
 
-+Art
-Carlos Gil de Montes
+/Programming/Jose Javier Delgado>
+
+/Art/Carlos Gil de Montes>
 
 //Familiar GameJam//
 //April 2016//
