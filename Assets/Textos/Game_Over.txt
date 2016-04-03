@@ -1,0 +1,16 @@
+-----------
+SECTOR LOST
+-----------
+
+Your services are unsatisfactory.
+You will be delegated to sewer maintrance.
+
+Have a nice day.
+
+The Direction.
+
+------------
+
+//GAME OVER//
+
+Try Again?(y,n):
