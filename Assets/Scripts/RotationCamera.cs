@@ -9,6 +9,9 @@ public class RotationCamera : MonoBehaviour {
 	public float minAngleUp = 0f;
 	public float maxAngleUp = 0f;
 
+	public float minFov = 0f;
+	public float maxFov = 0f;
+
 	private float rotationVelocity = 40;
 	private Vector3 rotationVector = Vector3.zero;
 
@@ -16,6 +19,14 @@ public class RotationCamera : MonoBehaviour {
 
 	public bool isActive;
 	public bool normalCameraRotation = false;
+
+
+	private Camera thisCamera;
+
+	void Awake()
+	{
+		thisCamera = GetComponent<Camera>();
+	}
 
 	void Update()
 	{
@@ -27,7 +38,8 @@ public class RotationCamera : MonoBehaviour {
 
 		float angleToCheck = 0f;
 
-		float angleUpToCheck = transform.localEulerAngles.x < 180 ? transform.eulerAngles.x : transform.eulerAngles.x - 360; ;
+		float angleUpToCheck = transform.localEulerAngles.x < 180 ? transform.eulerAngles.x : transform.eulerAngles.x - 360;
+		float cameraFOV = thisCamera.fieldOfView;
 		Debug.Log("EEEEEEE!!!! ======= " + angleUpToCheck);
 
 		if (!normalCameraRotation)
@@ -64,6 +76,17 @@ public class RotationCamera : MonoBehaviour {
 			{
 				rotationVector.Set(rotationVelocity * Time.deltaTime, 0f, 0f);
 				transform.Rotate(rotationVector, Space.Self);
+			}
+
+			if (Input.GetKey(KeyCode.Q) && cameraFOV <= maxFov)
+			{
+				float newFov = thisCamera.fieldOfView + rotationVelocity * Time.deltaTime;
+				thisCamera.fieldOfView = newFov;
+			}
+			else if (Input.GetKey(KeyCode.E) && cameraFOV >= minFov)
+			{
+				float newFov = thisCamera.fieldOfView - rotationVelocity * Time.deltaTime;
+				thisCamera.fieldOfView = newFov;
 			}
 
 		}

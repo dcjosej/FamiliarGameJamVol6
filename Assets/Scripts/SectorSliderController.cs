@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class SectorSliderController : MonoBehaviour
 {
-	private float velocityLooseSector = 0.01f;
+	public float velocityLooseSector = 0.001f;
+	public float incrementThreatRestored = 0.01f;
 
 	private Slider slider;
 	
@@ -21,5 +22,10 @@ public class SectorSliderController : MonoBehaviour
 	{
 		
 		slider.value -= velocityLooseSector * GameLogic.instance.charactersInScene * Time.deltaTime;
+	}
+
+	public void IncreaseValue()
+	{
+		slider.value += incrementThreatRestored;
 	}
 }

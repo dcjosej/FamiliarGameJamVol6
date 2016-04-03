@@ -9,6 +9,7 @@ public class DifferentPersonController : MonoBehaviour
 
 	public float timeToConvert= 2f;
 	public int infectedLevel = 1;
+	public float timeBetweenInfections = 10f;
 
 	
 
@@ -20,6 +21,8 @@ public class DifferentPersonController : MonoBehaviour
 	void Start()
 	{
 		personController = GetComponent<PersonController>();
+
+		HUDController.instance.TypeThreatDetected();
 
 
 		Debug.Log("Empezando corrutina!!! " + gameObject.name);
@@ -52,6 +55,9 @@ public class DifferentPersonController : MonoBehaviour
 
 		GameLogic.instance.charactersInScene++;
 		*/
+
+		
+
 	}
 
 	void OnDisable()
@@ -77,6 +83,8 @@ public class DifferentPersonController : MonoBehaviour
 			HUDController.instance.TypeCleaningCompleted();
 			AudioManager.instance.PlayConversionAccepted();
 
+			HUDController.instance.IncreaseBar();
+
 			this.enabled = false;
 		}
 	}
@@ -87,7 +95,7 @@ public class DifferentPersonController : MonoBehaviour
 		{
 			yield return new WaitForSeconds(timeToConvert);
 
-			yield return new WaitForSeconds(Random.Range(2, 7));
+			yield return new WaitForSeconds(Random.Range(2, timeBetweenInfections));
 
 			PersonController selectedPerson = GameLogic.instance.GetRandomPerson();
 			if (!selectedPerson.converted)

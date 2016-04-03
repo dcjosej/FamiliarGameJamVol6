@@ -13,14 +13,25 @@ public class AutoText : MonoBehaviour
 
 	private Text textComp;
 
+	public TextAsset textAsset;
+	public bool longText = true;
+
 	void Awake()
 	{
 		textComp = GetComponent<Text>();
 	}
 
+	public void Clean()
+	{
+		textComp.text = "";
+	}
+
 	void Start()
 	{
-		//StartCoroutine("Write");
+		if (longText)
+		{
+			StartCoroutine(IETypeText2(textAsset.text));
+		}
 	}
 
 	public void TypeText(string textToType)
@@ -33,6 +44,17 @@ public class AutoText : MonoBehaviour
 
 	public void TypeTextGameOver()
 	{
+
+	}
+
+	private IEnumerator IETypeText2(string text)
+	{
+		
+		foreach (char letter in text.ToCharArray())
+		{
+			textComp.text += letter;
+			yield return new WaitForSeconds(letterPause);
+		}
 
 	}
 

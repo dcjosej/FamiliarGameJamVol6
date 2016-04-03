@@ -27,9 +27,11 @@ public class HUDController : MonoBehaviour
 
 	public void ActiveGameOver()
 	{
-
 		gameOverNoise.SetActive(true);
 		gameOverEmergencia.SetActive(true);
+
+		consoleAutoText.Clean();
+
 		//TypeMessageGameOver();
 	}
 
@@ -47,4 +49,10 @@ public class HUDController : MonoBehaviour
 	{
 		consoleAutoText.TypeText(cleaningCompleted);
 	}
+
+	public void IncreaseBar()
+	{
+		sectorSliderController.IncreaseValue();
+	}
+
 }

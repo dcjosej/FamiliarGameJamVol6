@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-	public int charactersInScene = 0;
+	public int charactersInScene = 1;
 	public int charactersToLoose = 5;
 
 	public static GameLogic instance;
@@ -59,7 +59,7 @@ public class GameLogic : MonoBehaviour
 
 		if(threatnessLevel <= 0f)
 		{
-			//ActiveGameOver();
+			ActiveGameOver();
 		}
 
 		if (isGameOver)
@@ -87,6 +87,7 @@ public class GameLogic : MonoBehaviour
 		{
 			StopAllCoroutines();
 			HUDController.instance.ActiveGameOver();
+			AudioManager.instance.PlayNoise();
 			isGameOver = true;
 		}
 	}
