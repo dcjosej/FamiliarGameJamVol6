@@ -16,6 +16,18 @@ public class AutoText : MonoBehaviour
 	public TextAsset textAsset;
 	public bool longText = true;
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+
+			StopAllCoroutines();
+
+			textComp.text = textAsset.text;
+			letterPause = 0;
+		}
+	}
+
 	void Awake()
 	{
 		textComp = GetComponent<Text>();
