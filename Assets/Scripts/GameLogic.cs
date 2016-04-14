@@ -26,7 +26,6 @@ public class GameLogic : MonoBehaviour
 	void Start()
 	{
 		standardPeopleInScene = GameObject.FindGameObjectsWithTag("StandardPerson");
-		Debug.Log("dawdwdaw");
 	}
 
 	public PersonController GetRandomPerson()
@@ -41,21 +40,8 @@ public class GameLogic : MonoBehaviour
 	void Update()
 	{
 
-		//RayRenderTexture();
-
+		
 		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
-
-		/*
-		if(charactersInScene >= charactersToLoose)
-		{
-			PlayerPrefs.SetInt("Winner", 0);
-			//SceneManager.LoadScene(2);
-		}else if(charactersInScene <= 0)
-		{
-			PlayerPrefs.SetInt("Winner", 1);
-			//SceneManager.LoadScene(2);
-		}
-		*/
 
 		if(threatnessLevel <= 0f)
 		{
