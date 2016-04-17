@@ -10,9 +10,9 @@ Your mission consists in localize and prevent dangerous individual behaviours.
 
 You are provided with a hi-tech CCTV terminal 'MindHealer 3.5'.
 
-================================
+============================
 == MindHealer 3.5 User Manual ==
-================================
+============================
 W,A,S,D - Pan the camera
 Q,E - Zoom
 Click on monitors to change the view.
