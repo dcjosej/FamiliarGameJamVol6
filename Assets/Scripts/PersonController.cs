@@ -22,12 +22,6 @@ public class PersonController : MonoBehaviour
 
 	public bool converted = false;
 
-
-	void Update()
-	{
-		
-	}
-
 	void OnEnable()
 	{
 		if (GameLogic.instance != null && !GameLogic.instance.isGameOver)
@@ -63,7 +57,7 @@ public class PersonController : MonoBehaviour
 		AudioManager.instance.PlayConversionFail();
 	}
 
-	public void Convert(int levelFrom)
+	public void Convert(int level)
 	{
 
 		if (!GameLogic.instance.isGameOver)
@@ -71,22 +65,20 @@ public class PersonController : MonoBehaviour
 
 			HUDController.instance.TypeThreatDetected();
 
-			Debug.Log("Vengo del nivel " + levelFrom);
-
 			converted = true;
 
 			switch (MaterialOrProp())
 			{
 				case 0:
-					ChangeMaterial(levelFrom + 1);
+					ChangeMaterial(level);
 					break;
 				case 1:
-					ChangeLevel(levelFrom + 1);
+					ChangeLevel(level);
 					break;
 			}
 
 			differentPersonController.enabled = true;
-			differentPersonController.infectedLevel++;
+			differentPersonController.infectedLevel = level;
 			this.enabled = false;
 		}
 	}
@@ -99,6 +91,7 @@ public class PersonController : MonoBehaviour
 	private int MaterialOrProp()
 	{
 		int res = Random.Range(0, 2);
+
 		return res;
 	}
 
@@ -112,7 +105,10 @@ public class PersonController : MonoBehaviour
 
 	private void ChangeLevel(int levelTo)
 	{
-		GetTransformFromLevel(levelTo).gameObject.SetActive(true);
+		if(levelTo > 0)
+		{
+			GetTransformFromLevel(levelTo).gameObject.SetActive(true);
+		}
 	}
 
 
@@ -135,7 +131,14 @@ public class PersonController : MonoBehaviour
 				break;
 		}
 
-		res = arraySelected[Random.Range(0, arraySelected.Length)];
+		if(levelTo > 0)
+		{
+			res = arraySelected[Random.Range(0, arraySelected.Length)];
+		}
+		else
+		{
+			res = matHuman_0;
+		}
 
 		return res;
 	}
@@ -174,16 +177,18 @@ public class PersonController : MonoBehaviour
 		if(other.tag == "RespawnZone")
 		{
 
-			SpawnZoneController selectedRespawnZone = GameLogic.instance.GetRandomRespawnZone(other.GetComponent<SpawnZoneController>());
+			//SpawnZoneController selectedRespawnZone = GameLogic.instance.GetRandomRespawnZone(other.GetComponent<SpawnZoneController>());
 
-			Transform selectedSpawnPoint = selectedRespawnZone.GetRandomSpawnPoint();
+			//Transform selectedSpawnPoint = selectedRespawnZone.GetRandomSpawnPoint();
 
-			Quaternion rotation = Quaternion.LookRotation(selectedSpawnPoint.right);
+			SpawnPointController spawnPointController = other.GetComponent<SpawnPointController>().nextSpawnPoint;
+
+
+			Quaternion rotation = Quaternion.LookRotation(spawnPointController.transform.right);
 
 			transform.rotation = rotation;
 
-
-			Vector3 newPosition = selectedSpawnPoint.position;
+			Vector3 newPosition = spawnPointController.transform.position;
 			newPosition.y = transform.position.y;
 			transform.position = newPosition;
 		}
