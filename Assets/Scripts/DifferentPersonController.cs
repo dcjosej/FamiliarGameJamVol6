@@ -22,21 +22,25 @@ public class DifferentPersonController : MonoBehaviour
 	{
 		personController = GetComponent<PersonController>();
 
-		HUDController.instance.TypeThreatDetected();
+		//HUDController.instance.TypeThreatDetected();
 
 
 		Debug.Log("Empezando corrutina!!! " + gameObject.name);
 
+		/*
 		if(infectedLevel < 3)
 		{
-			StartCoroutine("ConvertPerson");
+			//StartCoroutine("ConvertPerson");
 		}
+		*/
 
 
+		/*
 		if (GameLogic.instance == null)
 		{
 			Debug.Log("Esto es una puta mierda");
 		}
+		*/
 
 		GameLogic.instance.charactersInScene++;
 	}
@@ -89,6 +93,7 @@ public class DifferentPersonController : MonoBehaviour
 		}
 	}
 
+	/*
 	private IEnumerator ConvertPerson()
 	{
 		while (true && infectedLevel < 3)
@@ -104,23 +109,27 @@ public class DifferentPersonController : MonoBehaviour
 			}
 		}
 	}
+	*/
 
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "RespawnZone")
 		{
 
-			SpawnZoneController selectedRespawnZone = GameLogic.instance.GetRandomRespawnZone(other.GetComponent<SpawnZoneController>());
+			//SpawnZoneController selectedRespawnZone = GameLogic.instance.GetRandomRespawnZone(other.GetComponent<SpawnZoneController>());
 
-			Transform selectedSpawnPoint = selectedRespawnZone.GetRandomSpawnPoint();
+			//Transform selectedSpawnPoint = selectedRespawnZone.GetRandomSpawnPoint();
+
+			Transform selectedSpawnPoint = other.GetComponent<SpawnPointController>().nextSpawnPoint.transform;
 
 			Quaternion rotation = Quaternion.LookRotation(selectedSpawnPoint.right);
 
 			transform.rotation = rotation;
 
 
-			Vector3 newPosition = selectedSpawnPoint.position;
+			Vector3 newPosition = selectedSpawnPoint.position + selectedSpawnPoint.right * 2f;
 			newPosition.y = transform.position.y;
+
 			transform.position = newPosition;
 		}
 	}
