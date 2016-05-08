@@ -121,8 +121,7 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'Base HumanRFoot' has translation animation
-      that will be discarded.\n\t'Base HumanSpine1' is inbetween humanoid transforms
+      improve retargeting quality.\n\t'Base HumanSpine1' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n\t'Base HumanRCollarbone'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Base
       HumanNeck1' is inbetween humanoid transforms and has rotation animation that
@@ -130,19 +129,19 @@ ModelImporter:
       has rotation animation that will be discarded.\n\t'Base HumanLArmCollarbone'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerLeg
-      average position error 0.2 mm and maximum position error 2.8 mm at time 3: 8
-      (85.1%) Frame 80\n\tRightLowerLeg average position error 0.6 mm and maximum
+      average position error 0.3 mm and maximum position error 8.2 mm at time 3: 7
+      (84.0%) Frame 79\n\tRightLowerLeg average position error 0.6 mm and maximum
       position error 12.1 mm at time 2:15 (67.0%) Frame 63\n\tLeftUpperArm average
-      position error 9.3 mm and maximum position error 21.3 mm at time 3:10 (87.2%)
-      Frame 82\n\tLeftLowerArm average position error 8.2 mm and maximum position
-      error 14.6 mm at time 3:10 (87.2%) Frame 82\n\tLeftHand average position error
-      7.8 mm and maximum position error 11.3 mm at time 3:17 (94.7%) Frame 89\n\tRightUpperArm
-      average position error 8.2 mm and maximum position error 21.1 mm at time 3:10
-      (87.2%) Frame 82\n\tRightLowerArm average position error 6.7 mm and maximum
-      position error 10.8 mm at time 3:10 (87.2%) Frame 82\n\tRightHand average position
-      error 6.2 mm and maximum position error 7.1 mm at time 2:17 (69.1%) Frame 65\n\tHead
-      average position error 3.6 mm and maximum position error 19.6 mm at time 3:10
-      (87.2%) Frame 82\n"
+      position error 8.4 mm and maximum position error 12.9 mm at time 3:10 (87.2%)
+      Frame 82\n\tLeftLowerArm average position error 7.8 mm and maximum position
+      error 10.7 mm at time 3:10 (87.2%) Frame 82\n\tLeftHand average position error
+      7.7 mm and maximum position error 9.5 mm at time 3: 9 (86.2%) Frame 81\n\tRightUpperArm
+      average position error 7.4 mm and maximum position error 12.3 mm at time 3:10
+      (87.2%) Frame 82\n\tRightLowerArm average position error 6.4 mm and maximum
+      position error 8.5 mm at time 2:19 (71.3%) Frame 67\n\tRightHand average position
+      error 6.2 mm and maximum position error 7.2 mm at time 2:21 (73.4%) Frame 69\n\tHead
+      average position error 3.3 mm and maximum position error 11.5 mm at time 3:
+      3 (79.8%) Frame 75\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 3
     animationRotationError: 0.5
@@ -246,13 +245,13 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      hasAdditiveReferencePose: 0
+      hasAdditiveReferencePose: 1
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -320,7 +319,7 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 61
     isReadable: 1
   meshes:
     lODScreenPercentages: []
