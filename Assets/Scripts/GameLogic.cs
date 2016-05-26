@@ -76,6 +76,11 @@ public class GameLogic : MonoBehaviour
 			CheckKeyBoardGameOver();
 		}
 
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+
 	}
 
 	private IEnumerator ConvertPeople()

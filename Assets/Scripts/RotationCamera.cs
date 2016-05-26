@@ -93,8 +93,7 @@ public class RotationCamera : MonoBehaviour {
 
 			if ((Input.GetAxis("Mouse ScrollWheel") < 0f) && cameraFOV <= maxFov)
 			{
-				Debug.Log("RUEDA: " + Input.GetAxis("Mouse ScrollWheel"));
-
+				
 				float newFov = thisCamera.fieldOfView + rotationVelocity * 3 * Time.deltaTime;
 				thisCamera.fieldOfView = newFov;
 			}
