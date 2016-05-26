@@ -31,6 +31,11 @@ public class SecurityCameraButton : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		UpdateMainScreen();
+	}
+
+	public void UpdateMainScreen()
+	{
 		mainQuad.GetComponent<Renderer>().material = materialToAsign;
 
 		DisableAllRotationCamera();

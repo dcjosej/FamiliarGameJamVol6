@@ -32,6 +32,12 @@ public class GameLogic : MonoBehaviour
 
 
 
+	public SecurityCameraButton camera1;
+	public SecurityCameraButton camera2;
+	public SecurityCameraButton camera3;
+	public SecurityCameraButton camera4;
+
+
 	void Awake()
 	{
 		if(instance == null)
@@ -76,9 +82,28 @@ public class GameLogic : MonoBehaviour
 			CheckKeyBoardGameOver();
 		}
 
-		if (Input.GetKey(KeyCode.Escape))
+		CheckKeyBoard();
+	}
+
+	private void CheckKeyBoard()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			Application.Quit();
+		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			camera1.UpdateMainScreen();
+		}else if (Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			camera2.UpdateMainScreen();
+		}else if (Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			camera3.UpdateMainScreen();
+		}else if (Input.GetKeyDown(KeyCode.Alpha4))
+		{
+			camera4.UpdateMainScreen();
 		}
 
 	}
