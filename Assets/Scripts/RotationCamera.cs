@@ -40,7 +40,7 @@ public class RotationCamera : MonoBehaviour {
 
 		float angleUpToCheck = transform.localEulerAngles.x < 180 ? transform.eulerAngles.x : transform.eulerAngles.x - 360;
 		float cameraFOV = thisCamera.fieldOfView;
-		Debug.Log("EEEEEEE!!!! ======= " + angleUpToCheck);
+
 
 		if (!normalCameraRotation)
 		{
@@ -78,6 +78,7 @@ public class RotationCamera : MonoBehaviour {
 				transform.Rotate(rotationVector, Space.Self);
 			}
 
+			/*
 			if (Input.GetKey(KeyCode.Q) && cameraFOV <= maxFov)
 			{
 				float newFov = thisCamera.fieldOfView + rotationVelocity * Time.deltaTime;
@@ -86,6 +87,20 @@ public class RotationCamera : MonoBehaviour {
 			else if (Input.GetKey(KeyCode.E) && cameraFOV >= minFov)
 			{
 				float newFov = thisCamera.fieldOfView - rotationVelocity * Time.deltaTime;
+				thisCamera.fieldOfView = newFov;
+			}
+			*/
+
+			if ((Input.GetAxis("Mouse ScrollWheel") < 0f) && cameraFOV <= maxFov)
+			{
+				Debug.Log("RUEDA: " + Input.GetAxis("Mouse ScrollWheel"));
+
+				float newFov = thisCamera.fieldOfView + rotationVelocity * 3 * Time.deltaTime;
+				thisCamera.fieldOfView = newFov;
+			}
+			else if ((Input.GetAxis("Mouse ScrollWheel") > 0f) && cameraFOV >= minFov)
+			{
+				float newFov = thisCamera.fieldOfView - rotationVelocity * 3 * Time.deltaTime;
 				thisCamera.fieldOfView = newFov;
 			}
 

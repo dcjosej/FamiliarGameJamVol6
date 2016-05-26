@@ -12,6 +12,9 @@ public class SecurityCameraButton : MonoBehaviour {
 
 	public RotationCamera[] rotationCameras;
 
+	public MonitorNumber myMonitorNumber;
+	public MonitorNumber currentMonitorNumber;
+
 
 	void Awake()
 	{
@@ -34,5 +37,8 @@ public class SecurityCameraButton : MonoBehaviour {
 		cameraToAsign.GetComponent<RotationCamera>().isActive = true;
 		//MainCameraRTInputReceiver rtInputReceiver = mainCameraTexture.GetComponent<MainCameraRTInputReceiver>();
 		mainCameraInputReceiver.SetCamera(cameraToAsign);
+
+		currentMonitorNumber.monitorNumber = myMonitorNumber.monitorNumber;
+		currentMonitorNumber.UpdateNumber();
 	}
 }

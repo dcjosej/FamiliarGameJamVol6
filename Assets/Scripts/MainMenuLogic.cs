@@ -4,6 +4,11 @@ using System.Collections;
 
 public class MainMenuLogic : MonoBehaviour {
 
+	void Start()
+	{
+		ScreenFadeInOut.instance.FadeToClear();
+	}
+
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Return))
@@ -14,6 +19,6 @@ public class MainMenuLogic : MonoBehaviour {
 
 	public void StartGame()
 	{
-		SceneManager.LoadScene(3);
+		SceneManager.LoadScene(2);
 	}
 }

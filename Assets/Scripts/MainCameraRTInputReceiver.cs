@@ -6,6 +6,7 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 
 	public Camera cameraRT;
 
+	public MonitorNumber currentMonitorNumber;
 
 	void OnMouseDown()
 	{
@@ -49,15 +50,6 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 					}
 				}
 			}
-
-			//Debug.Log("AAAAAGGH!!! colisionando con cosas!!!");
-			/*
-			ray = secondCamera.ViewportPointToRay(new Vector3(hit.textureCoord));
-			if (Physics.Raycast(ray, hit)		
-			{
-				// hit should now contain information about what was hit through secondCamera
-			}
-			*/
 		}
 	}
 }

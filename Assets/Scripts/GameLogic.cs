@@ -27,16 +27,26 @@ public class GameLogic : MonoBehaviour
 
 	public Camera mainCameraRT;
 
+
+	public ScreenFadeInOut fader;
+
+
+
 	void Awake()
 	{
 		if(instance == null)
 		{
 			instance = this;
 		}
+
+		
 	}
 
 	void Start()
 	{
+		fader.FadeToClear();
+
+
 		charactersInScene = 0;
 		nextTimeToConvert = GetTimeCurveValue();
 		standardPeopleInScene = GameObject.FindGameObjectsWithTag("StandardPerson");

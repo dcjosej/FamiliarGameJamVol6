@@ -4,6 +4,9 @@ using System.Collections;
 
 public class TutosLogic : MonoBehaviour
 {
+
+	public ScreenFadeInOut fader;
+
 	void Update()
 	{
 
@@ -14,7 +17,8 @@ public class TutosLogic : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Return))
 		{
-			SceneManager.LoadScene(1);
+			//SceneManager.LoadScene(1);
+			fader.FadeToBlack();
 		}
 	}
 }
