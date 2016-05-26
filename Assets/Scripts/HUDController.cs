@@ -42,12 +42,12 @@ public class HUDController : MonoBehaviour
 
 	public void TypeThreatDetected()
 	{
-		consoleAutoText.TypeText(threatDetected + ": " + GameLogic.instance.charactersInScene);
+		consoleAutoText.TypeText(threatDetected + ": " + GameLogic.instance.charactersInScene, ColorUtility.ToHtmlStringRGB(Color.red));
 	}
 	
 	public void TypeCleaningCompleted()
 	{
-		consoleAutoText.TypeText(cleaningCompleted);
+		consoleAutoText.TypeText(cleaningCompleted, ColorUtility.ToHtmlStringRGB(Color.green));
 	}
 
 	public void IncreaseBar()

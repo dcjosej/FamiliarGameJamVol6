@@ -16,6 +16,8 @@ public class AutoText : MonoBehaviour
 	public TextAsset textAsset;
 	public bool longText = true;
 
+	private int initIndex = -1;
+
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
@@ -31,6 +33,7 @@ public class AutoText : MonoBehaviour
 	void Awake()
 	{
 		textComp = GetComponent<Text>();
+		initIndex = textComp.text.Length - 1;
 	}
 
 	public void Clean()
@@ -46,11 +49,11 @@ public class AutoText : MonoBehaviour
 		}
 	}
 
-	public void TypeText(string textToType)
+	public void TypeText(string textToType, string htmlColor)
 	{
 		if (!writing)
 		{
-			StartCoroutine(IETypeText(textToType));
+			StartCoroutine(IETypeText(textToType, htmlColor));
 		}
 	}
 
@@ -70,10 +73,14 @@ public class AutoText : MonoBehaviour
 
 	}
 
-	private IEnumerator IETypeText(string text)
+	private IEnumerator IETypeText(string text, string htmlColor)
 	{
 		writing = true;
 		lines++;
+
+		textComp.text += "<color='#" + htmlColor.ToString() + "'> </Color>";
+		initIndex += 9 + htmlColor.Length + 3;
+		//initIndex += 17;
 
 		if (lines > 16 && !GameLogic.instance.isGameOver)
 		{
@@ -82,14 +89,18 @@ public class AutoText : MonoBehaviour
 
 		foreach (char letter in text.ToCharArray())
 		{
-			textComp.text += letter;
+			textComp.text = textComp.text.Insert(initIndex, ""+letter);
+			//textComp.text.Insert(initIndex++, message);
+			//textComp.text += letter;
+			initIndex++;
 			yield return new WaitForSeconds(letterPause);
 		}
 
 		if (!GameLogic.instance.isGameOver)
 		{
 			textComp.text += "\n";
-		}
+			initIndex += 9;
+        }
 		writing = false;
 
 
