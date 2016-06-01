@@ -3,15 +3,28 @@ using System.Collections;
 
 public class MainCameraRTInputReceiver : MonoBehaviour
 {
-
 	public Camera cameraRT;
-
 	public MonitorNumber currentMonitorNumber;
+
+
+	public Texture2D cursorTexture;
+	private CursorMode cursorMode = CursorMode.Auto;
+	private Vector2 hotSpot = Vector2.one * 0.5f;
 
 	void OnMouseDown()
 	{
 		Debug.Log("Pinchando en la pantalla!");
 		RayRenderTexture();
+	}
+
+	void OnMouseEnter()
+	{
+		Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+	}
+
+	void OnMouseExit()
+	{
+		Cursor.SetCursor(null, Vector2.zero, cursorMode);
 	}
 
 	public void SetCamera(Camera camera)

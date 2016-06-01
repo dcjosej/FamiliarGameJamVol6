@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,11 +79,11 @@ public class AutoText : MonoBehaviour
 		writing = true;
 		lines++;
 
-		textComp.text += "<color='#" + htmlColor.ToString() + "'> </Color>";
+		textComp.text += "<color='#" + htmlColor.ToString() + "'> </color>";
 		initIndex += 9 + htmlColor.Length + 3;
 		//initIndex += 17;
 
-		if (lines > 16 && !GameLogic.instance.isGameOver)
+		if (lines > 2 && !GameLogic.instance.isGameOver)
 		{
 			DeleteFirstLine();
 		}
@@ -108,8 +109,28 @@ public class AutoText : MonoBehaviour
 
 	private void DeleteFirstLine()
 	{
+
+		string pattern = @"(<color='[#\w+]+'>)([\w\s\\.\\:]*)<\/color>";
+		Regex regex = new Regex(pattern);
+		MatchCollection matches = regex.Matches(textComp.text);
+        string substringColor = matches[0].Groups[1].ToString();
+		string substringText = matches[0].Groups[2].ToString();
+		//int indexColor = textComp.text.
+
 		int index = textComp.text.IndexOf('\n');
 		textComp.text = textComp.text.Substring(index + 1);
+		if (substringText.Contains("\n"))
+		{
+			textComp.text = textComp.text.Insert(0, substringColor);
+			initIndex -= (substringText.IndexOf('\n') + 1);
+		}
+		else
+		{
+			initIndex -= (matches[0].ToString().Length + 1);
+        }
+
+		
+		
 	}
 
 	private IEnumerator Write()

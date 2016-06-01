@@ -78,7 +78,7 @@ public class RotationCamera : MonoBehaviour {
 				transform.Rotate(rotationVector, Space.Self);
 			}
 
-			/*
+			
 			if (Input.GetKey(KeyCode.Q) && cameraFOV <= maxFov)
 			{
 				float newFov = thisCamera.fieldOfView + rotationVelocity * Time.deltaTime;
@@ -89,7 +89,6 @@ public class RotationCamera : MonoBehaviour {
 				float newFov = thisCamera.fieldOfView - rotationVelocity * Time.deltaTime;
 				thisCamera.fieldOfView = newFov;
 			}
-			*/
 
 			if ((Input.GetAxis("Mouse ScrollWheel") < 0f) && cameraFOV <= maxFov)
 			{
