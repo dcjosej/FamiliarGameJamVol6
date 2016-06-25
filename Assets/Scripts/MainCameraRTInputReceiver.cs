@@ -7,24 +7,40 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 	public MonitorNumber currentMonitorNumber;
 
 
-	public Texture2D cursorTexture;
-	private CursorMode cursorMode = CursorMode.Auto;
-	private Vector2 hotSpot = Vector2.one * 0.5f;
+	//public Texture2D cursorTexture;
+	//private CursorMode cursorMode = CursorMode.Auto;
+	//private Vector2 hotSpot = Vector2.one * 0.5f;
 
 	void OnMouseDown()
 	{
 		Debug.Log("Pinchando en la pantalla!");
 		RayRenderTexture();
 	}
+	/*
+	void OnMouseOver()
+	{
+		Debug.Log("ON MOUSE OVER!!!!!!");
+		//GameLogic.instance.UpdateCursor(CursorType.NORMAL);
+		StartCoroutine(WaitEndFrameToChangeCursor());
+	}
+	*/
+
+	private IEnumerator WaitEndFrameToChangeCursor()
+	{
+		yield return new WaitForEndOfFrame();
+		//GameLogic.instance.UpdateCursor(CursorType.NORMAL);
+	}
 
 	void OnMouseEnter()
 	{
-		Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+		Debug.Log("DEBERIA CAMBIAR MI CURSOR!!");
+		GameLogic.instance.UpdateCursor(CursorType.NORMAL);
 	}
+
 
 	void OnMouseExit()
 	{
-		Cursor.SetCursor(null, Vector2.zero, cursorMode);
+		GameLogic.instance.UpdateCursor(CursorType.OUTSIDE_SCREEN);
 	}
 
 	public void SetCamera(Camera camera)

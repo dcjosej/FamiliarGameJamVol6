@@ -1,6 +1,20 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+
+public enum CursorType
+{
+	OUTSIDE_SCREEN,
+	NORMAL,
+	HOVER,
+	CORRECT,
+	FAIL
+}
+
 
 public class GameLogic : MonoBehaviour
 {
@@ -38,6 +52,34 @@ public class GameLogic : MonoBehaviour
 	public SecurityCameraButton camera4;
 
 
+	[Header("Cursores")]
+	public Texture2D outsideScreenCursor;
+	public Texture2D normalCursor;
+	public Texture2D overCursor;
+	public Texture2D wrongCursor;
+	public Texture2D correctCursor;
+
+	private CursorMode cursorMode = CursorMode.Auto;
+	private Vector2 hotSpot = Vector2.one * 32f;
+	public CursorType cursorSelected;
+
+
+
+	public void UpdateCursor(CursorType cursorSelected)
+	{
+		switch (cursorSelected)
+		{
+			case CursorType.OUTSIDE_SCREEN:
+				Cursor.SetCursor(outsideScreenCursor, hotSpot, cursorMode);
+				break;
+			case CursorType.NORMAL:
+				Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
+				break;
+		}
+		this.cursorSelected = cursorSelected; 
+	}
+
+
 	void Awake()
 	{
 		if(instance == null)
@@ -45,7 +87,8 @@ public class GameLogic : MonoBehaviour
 			instance = this;
 		}
 
-		
+		Cursor.SetCursor(outsideScreenCursor, hotSpot, cursorMode);
+
 	}
 
 	void Start()
@@ -83,6 +126,37 @@ public class GameLogic : MonoBehaviour
 		}
 
 		CheckKeyBoard();
+
+		CheckRaycast();
+	}
+
+	private void CheckRaycast()
+	{
+		//if (cursorSelected != CursorType.OUTSIDE_SCREEN)
+		//{
+			/*
+			PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+			pointerEventData.position = Input.mousePosition;
+
+			List<RaycastResult> raycastResults = new List<RaycastResult>();
+			EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+
+			Debug.Log("HIT: " + raycastResults.Count); 
+
+			if (raycastResults.Count > 0)
+			{
+				if (raycastResults[0].gameObject.CompareTag("Terminal"))
+				{
+					UpdateCursor(CursorType.OUTSIDE_SCREEN);
+				}
+
+				if (raycastResults[0].gameObject.CompareTag("MainScreenImage"))
+				{
+					UpdateCursor(CursorType.NORMAL);
+				}
+			}
+			*/
+		//}
 	}
 
 	private void CheckKeyBoard()
