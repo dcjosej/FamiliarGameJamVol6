@@ -37,6 +37,11 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 		GameLogic.instance.UpdateCursor(CursorType.NORMAL);
 	}
 
+	void OnMouseOver()
+	{
+
+	}
+
 
 	void OnMouseExit()
 	{
@@ -47,6 +52,8 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 	{
 		cameraRT = camera;
 	}
+
+	
 
 	private void RayRenderTexture()
 	{
@@ -72,10 +79,12 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 					if (pc.enabled)
 					{
 						pc.Click();
+						GameLogic.instance.ChangeCursorInGame(CursorType.FAIL);
 					}
 					else
 					{
 						dpc.Click();
+						GameLogic.instance.ChangeCursorInGame(CursorType.CORRECT);
 					}
 				}
 			}

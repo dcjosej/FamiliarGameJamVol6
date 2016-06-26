@@ -1,9 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 
 public enum CursorType
@@ -74,6 +71,12 @@ public class GameLogic : MonoBehaviour
 				break;
 			case CursorType.NORMAL:
 				Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
+				break;
+			case CursorType.CORRECT:
+				Cursor.SetCursor(correctCursor, hotSpot, cursorMode);
+				break;
+			case CursorType.FAIL:
+				Cursor.SetCursor(wrongCursor, hotSpot, cursorMode);
 				break;
 		}
 		this.cursorSelected = cursorSelected; 
@@ -200,7 +203,6 @@ public class GameLogic : MonoBehaviour
 
 	private void Convert()
 	{
-
 		if(charactersInScene >= THREASHOLD_LEVEL0 && charactersInScene < THREASHOLD_LEVEL1)
 		{
 			currentLevel = 1;
@@ -254,5 +256,22 @@ public class GameLogic : MonoBehaviour
 		}
 
 		return res;
+	}
+
+	/// <summary>
+	/// Cambiamos el cursor cuando hacemos click sobre un personaje.
+	/// </summary>
+	/// <param name="cursorType"></param>
+	public void ChangeCursorInGame(CursorType cursorType)
+	{
+		StopAllCoroutines();
+		StartCoroutine(ChangeCursor(cursorType));
+	}
+
+	private IEnumerator ChangeCursor(CursorType cursorType)
+	{
+		UpdateCursor(cursorType);
+		yield return new WaitForSeconds(0.2f);
+		UpdateCursor(CursorType.NORMAL);
 	}
 }

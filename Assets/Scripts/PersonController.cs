@@ -170,6 +170,20 @@ public class PersonController : MonoBehaviour
 	void OnMouseDown()
 	{
 		AudioManager.instance.PlayConversionFail();
+		/*
+		if (infected)
+		{
+			StopCoroutine("ConvertPerson");
+			personController.enabled = true;
+
+			HUDController.instance.TypeCleaningCompleted();
+			AudioManager.instance.PlayConversionAccepted();
+
+			HUDController.instance.IncreaseBar();
+
+			this.enabled = false;
+		}
+		*/
 	}
 
 	void OnTriggerEnter(Collider other)
