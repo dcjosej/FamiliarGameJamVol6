@@ -1,0 +1,1796 @@
+fileFormatVersion: 2
+guid: d8ad75d71b68a65499fba70dace7bb42
+timeCreated: 1467657310
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base HumanHead
+    100002: Base HumanLArmCollarbone
+    100004: Base HumanLArmForearm
+    100006: Base HumanLArmPalm
+    100008: Base HumanLArmUpperarm
+    100010: Base HumanLLegCalf
+    100012: Base HumanLLegFoot
+    100014: Base HumanLLegThigh
+    100016: Base HumanNeck1
+    100018: Base HumanNeck2
+    100020: Base HumanPelvis
+    100022: Base HumanRCalf
+    100024: Base HumanRCollarbone
+    100026: Base HumanRFoot
+    100028: Base HumanRForearm
+    100030: Base HumanRibcage
+    100032: Base HumanRPalm
+    100034: Base HumanRThigh
+    100036: Base HumanRUpperarm
+    100038: Base HumanSpine1
+    100040: Base HumanSpine2
+    100042: //RootNode
+    100044: Human_Blazer_001
+    100046: Human_Blazer_002
+    100048: Human_Blazer_003
+    100050: Human_Blazer_004
+    100052: Human_Blazer_005
+    100054: Human_Blazer_006
+    100056: Human_Blazer_007
+    100058: Human_Blazer_008
+    100060: Human_Blazer_009
+    100062: Human_Blazer_010
+    100064: Human_Blazer_011
+    100066: Human_Blazer_012
+    100068: Human_Blazer_013
+    100070: Human_Head_001
+    100072: Human_Head_002
+    100074: Human_Head_003
+    100076: Human_Head_004
+    100078: Human_Head_005
+    100080: Human_Head_006
+    100082: Human_Head_007
+    100084: Human_Head_008
+    100086: Human_Head_009
+    100088: Human_Head_010
+    100090: Human_Head_011
+    100092: Human_Head_012
+    100094: Human_Head_013
+    100096: Human_Pants_001
+    100098: Human_Pants_002
+    100100: Human_Pants_003
+    100102: Human_Pants_004
+    100104: Human_Pants_005
+    100106: Human_Pants_006
+    100108: Human_Pants_007
+    100110: Human_Pants_008
+    100112: Human_Pants_009
+    100114: Human_Pants_010
+    100116: Human_Pants_011
+    100118: Human_Pants_012
+    100120: Human_Pants_013
+    100122: Human_Shirt_001
+    100124: Human_Shirt_002
+    100126: Human_Shirt_003
+    100128: Human_Shirt_004
+    100130: Human_Shirt_005
+    100132: Human_Shirt_006
+    100134: Human_Shirt_007
+    100136: Human_Shirt_008
+    100138: Human_Shirt_009
+    100140: Human_Shirt_010
+    100142: Human_Shirt_011
+    100144: Human_Shirt_012
+    100146: Human_Shirt_013
+    100148: Human_Shoes_001
+    100150: Human_Shoes_002
+    100152: Human_Shoes_003
+    100154: Human_Shoes_004
+    100156: Human_Shoes_005
+    100158: Human_Shoes_006
+    100160: Human_Shoes_007
+    100162: Human_Shoes_008
+    100164: Human_Shoes_009
+    100166: Human_Shoes_010
+    100168: Human_Shoes_011
+    100170: Human_Shoes_012
+    100172: Human_Shoes_013
+    100174: Human_Suitcase_001
+    100176: Human_Suitcase_002
+    100178: Human_Suitcase_003
+    100180: Human_Suitcase_004
+    100182: Human_Suitcase_005
+    100184: Human_Suitcase_006
+    100186: Human_Suitcase_007
+    100188: Human_Suitcase_008
+    100190: Human_Suitcase_009
+    100192: Human_Suitcase_010
+    100194: Human_Suitcase_011
+    100196: Human_Suitcase_012
+    100198: Human_Suitcase_013
+    400000: Base HumanHead
+    400002: Base HumanLArmCollarbone
+    400004: Base HumanLArmForearm
+    400006: Base HumanLArmPalm
+    400008: Base HumanLArmUpperarm
+    400010: Base HumanLLegCalf
+    400012: Base HumanLLegFoot
+    400014: Base HumanLLegThigh
+    400016: Base HumanNeck1
+    400018: Base HumanNeck2
+    400020: Base HumanPelvis
+    400022: Base HumanRCalf
+    400024: Base HumanRCollarbone
+    400026: Base HumanRFoot
+    400028: Base HumanRForearm
+    400030: Base HumanRibcage
+    400032: Base HumanRPalm
+    400034: Base HumanRThigh
+    400036: Base HumanRUpperarm
+    400038: Base HumanSpine1
+    400040: Base HumanSpine2
+    400042: //RootNode
+    400044: Human_Blazer_001
+    400046: Human_Blazer_002
+    400048: Human_Blazer_003
+    400050: Human_Blazer_004
+    400052: Human_Blazer_005
+    400054: Human_Blazer_006
+    400056: Human_Blazer_007
+    400058: Human_Blazer_008
+    400060: Human_Blazer_009
+    400062: Human_Blazer_010
+    400064: Human_Blazer_011
+    400066: Human_Blazer_012
+    400068: Human_Blazer_013
+    400070: Human_Head_001
+    400072: Human_Head_002
+    400074: Human_Head_003
+    400076: Human_Head_004
+    400078: Human_Head_005
+    400080: Human_Head_006
+    400082: Human_Head_007
+    400084: Human_Head_008
+    400086: Human_Head_009
+    400088: Human_Head_010
+    400090: Human_Head_011
+    400092: Human_Head_012
+    400094: Human_Head_013
+    400096: Human_Pants_001
+    400098: Human_Pants_002
+    400100: Human_Pants_003
+    400102: Human_Pants_004
+    400104: Human_Pants_005
+    400106: Human_Pants_006
+    400108: Human_Pants_007
+    400110: Human_Pants_008
+    400112: Human_Pants_009
+    400114: Human_Pants_010
+    400116: Human_Pants_011
+    400118: Human_Pants_012
+    400120: Human_Pants_013
+    400122: Human_Shirt_001
+    400124: Human_Shirt_002
+    400126: Human_Shirt_003
+    400128: Human_Shirt_004
+    400130: Human_Shirt_005
+    400132: Human_Shirt_006
+    400134: Human_Shirt_007
+    400136: Human_Shirt_008
+    400138: Human_Shirt_009
+    400140: Human_Shirt_010
+    400142: Human_Shirt_011
+    400144: Human_Shirt_012
+    400146: Human_Shirt_013
+    400148: Human_Shoes_001
+    400150: Human_Shoes_002
+    400152: Human_Shoes_003
+    400154: Human_Shoes_004
+    400156: Human_Shoes_005
+    400158: Human_Shoes_006
+    400160: Human_Shoes_007
+    400162: Human_Shoes_008
+    400164: Human_Shoes_009
+    400166: Human_Shoes_010
+    400168: Human_Shoes_011
+    400170: Human_Shoes_012
+    400172: Human_Shoes_013
+    400174: Human_Suitcase_001
+    400176: Human_Suitcase_002
+    400178: Human_Suitcase_003
+    400180: Human_Suitcase_004
+    400182: Human_Suitcase_005
+    400184: Human_Suitcase_006
+    400186: Human_Suitcase_007
+    400188: Human_Suitcase_008
+    400190: Human_Suitcase_009
+    400192: Human_Suitcase_010
+    400194: Human_Suitcase_011
+    400196: Human_Suitcase_012
+    400198: Human_Suitcase_013
+    2300000: Base HumanHead
+    2300002: Base HumanLArmCollarbone
+    2300004: Base HumanLArmForearm
+    2300006: Base HumanLArmPalm
+    2300008: Base HumanLArmUpperarm
+    2300010: Base HumanLLegCalf
+    2300012: Base HumanLLegFoot
+    2300014: Base HumanLLegThigh
+    2300016: Base HumanNeck1
+    2300018: Base HumanNeck2
+    2300020: Base HumanPelvis
+    2300022: Base HumanRCalf
+    2300024: Base HumanRCollarbone
+    2300026: Base HumanRFoot
+    2300028: Base HumanRForearm
+    2300030: Base HumanRibcage
+    2300032: Base HumanRPalm
+    2300034: Base HumanRThigh
+    2300036: Base HumanRUpperarm
+    2300038: Base HumanSpine1
+    2300040: Base HumanSpine2
+    2300042: Human_Blazer_001
+    2300044: Human_Blazer_002
+    2300046: Human_Blazer_003
+    2300048: Human_Blazer_004
+    2300050: Human_Blazer_005
+    2300052: Human_Blazer_006
+    2300054: Human_Blazer_007
+    2300056: Human_Blazer_008
+    2300058: Human_Blazer_009
+    2300060: Human_Blazer_010
+    2300062: Human_Blazer_011
+    2300064: Human_Blazer_012
+    2300066: Human_Blazer_013
+    2300068: Human_Head_001
+    2300070: Human_Head_002
+    2300072: Human_Head_003
+    2300074: Human_Head_004
+    2300076: Human_Head_005
+    2300078: Human_Head_006
+    2300080: Human_Head_007
+    2300082: Human_Head_008
+    2300084: Human_Head_009
+    2300086: Human_Head_010
+    2300088: Human_Head_011
+    2300090: Human_Head_012
+    2300092: Human_Head_013
+    2300094: Human_Pants_001
+    2300096: Human_Pants_002
+    2300098: Human_Pants_003
+    2300100: Human_Pants_004
+    2300102: Human_Pants_005
+    2300104: Human_Pants_006
+    2300106: Human_Pants_007
+    2300108: Human_Pants_008
+    2300110: Human_Pants_009
+    2300112: Human_Pants_010
+    2300114: Human_Pants_011
+    2300116: Human_Pants_012
+    2300118: Human_Pants_013
+    2300120: Human_Shirt_001
+    2300122: Human_Shirt_002
+    2300124: Human_Shirt_003
+    2300126: Human_Shirt_004
+    2300128: Human_Shirt_005
+    2300130: Human_Shirt_006
+    2300132: Human_Shirt_007
+    2300134: Human_Shirt_008
+    2300136: Human_Shirt_009
+    2300138: Human_Shirt_010
+    2300140: Human_Shirt_011
+    2300142: Human_Shirt_012
+    2300144: Human_Shirt_013
+    2300146: Human_Shoes_001
+    2300148: Human_Shoes_002
+    2300150: Human_Shoes_003
+    2300152: Human_Shoes_004
+    2300154: Human_Shoes_005
+    2300156: Human_Shoes_006
+    2300158: Human_Shoes_007
+    2300160: Human_Shoes_008
+    2300162: Human_Shoes_009
+    2300164: Human_Shoes_010
+    2300166: Human_Shoes_011
+    2300168: Human_Shoes_012
+    2300170: Human_Shoes_013
+    2300172: Human_Suitcase_001
+    2300174: Human_Suitcase_002
+    2300176: Human_Suitcase_003
+    2300178: Human_Suitcase_004
+    2300180: Human_Suitcase_005
+    2300182: Human_Suitcase_006
+    2300184: Human_Suitcase_007
+    2300186: Human_Suitcase_008
+    2300188: Human_Suitcase_009
+    2300190: Human_Suitcase_010
+    2300192: Human_Suitcase_011
+    2300194: Human_Suitcase_012
+    2300196: Human_Suitcase_013
+    3300000: Base HumanHead
+    3300002: Base HumanLArmCollarbone
+    3300004: Base HumanLArmForearm
+    3300006: Base HumanLArmPalm
+    3300008: Base HumanLArmUpperarm
+    3300010: Base HumanLLegCalf
+    3300012: Base HumanLLegFoot
+    3300014: Base HumanLLegThigh
+    3300016: Base HumanNeck1
+    3300018: Base HumanNeck2
+    3300020: Base HumanPelvis
+    3300022: Base HumanRCalf
+    3300024: Base HumanRCollarbone
+    3300026: Base HumanRFoot
+    3300028: Base HumanRForearm
+    3300030: Base HumanRibcage
+    3300032: Base HumanRPalm
+    3300034: Base HumanRThigh
+    3300036: Base HumanRUpperarm
+    3300038: Base HumanSpine1
+    3300040: Base HumanSpine2
+    3300042: Human_Blazer_001
+    3300044: Human_Blazer_002
+    3300046: Human_Blazer_003
+    3300048: Human_Blazer_004
+    3300050: Human_Blazer_005
+    3300052: Human_Blazer_006
+    3300054: Human_Blazer_007
+    3300056: Human_Blazer_008
+    3300058: Human_Blazer_009
+    3300060: Human_Blazer_010
+    3300062: Human_Blazer_011
+    3300064: Human_Blazer_012
+    3300066: Human_Blazer_013
+    3300068: Human_Head_001
+    3300070: Human_Head_002
+    3300072: Human_Head_003
+    3300074: Human_Head_004
+    3300076: Human_Head_005
+    3300078: Human_Head_006
+    3300080: Human_Head_007
+    3300082: Human_Head_008
+    3300084: Human_Head_009
+    3300086: Human_Head_010
+    3300088: Human_Head_011
+    3300090: Human_Head_012
+    3300092: Human_Head_013
+    3300094: Human_Pants_001
+    3300096: Human_Pants_002
+    3300098: Human_Pants_003
+    3300100: Human_Pants_004
+    3300102: Human_Pants_005
+    3300104: Human_Pants_006
+    3300106: Human_Pants_007
+    3300108: Human_Pants_008
+    3300110: Human_Pants_009
+    3300112: Human_Pants_010
+    3300114: Human_Pants_011
+    3300116: Human_Pants_012
+    3300118: Human_Pants_013
+    3300120: Human_Shirt_001
+    3300122: Human_Shirt_002
+    3300124: Human_Shirt_003
+    3300126: Human_Shirt_004
+    3300128: Human_Shirt_005
+    3300130: Human_Shirt_006
+    3300132: Human_Shirt_007
+    3300134: Human_Shirt_008
+    3300136: Human_Shirt_009
+    3300138: Human_Shirt_010
+    3300140: Human_Shirt_011
+    3300142: Human_Shirt_012
+    3300144: Human_Shirt_013
+    3300146: Human_Shoes_001
+    3300148: Human_Shoes_002
+    3300150: Human_Shoes_003
+    3300152: Human_Shoes_004
+    3300154: Human_Shoes_005
+    3300156: Human_Shoes_006
+    3300158: Human_Shoes_007
+    3300160: Human_Shoes_008
+    3300162: Human_Shoes_009
+    3300164: Human_Shoes_010
+    3300166: Human_Shoes_011
+    3300168: Human_Shoes_012
+    3300170: Human_Shoes_013
+    3300172: Human_Suitcase_001
+    3300174: Human_Suitcase_002
+    3300176: Human_Suitcase_003
+    3300178: Human_Suitcase_004
+    3300180: Human_Suitcase_005
+    3300182: Human_Suitcase_006
+    3300184: Human_Suitcase_007
+    3300186: Human_Suitcase_008
+    3300188: Human_Suitcase_009
+    3300190: Human_Suitcase_010
+    3300192: Human_Suitcase_011
+    3300194: Human_Suitcase_012
+    3300196: Human_Suitcase_013
+    4300000: Base HumanPelvis
+    4300002: Base HumanRThigh
+    4300004: Base HumanRCalf
+    4300006: Base HumanRFoot
+    4300008: Base HumanSpine1
+    4300010: Base HumanSpine2
+    4300012: Base HumanRibcage
+    4300014: Base HumanRCollarbone
+    4300016: Base HumanRUpperarm
+    4300018: Base HumanRForearm
+    4300020: Base HumanRPalm
+    4300022: Base HumanNeck1
+    4300024: Base HumanNeck2
+    4300026: Base HumanHead
+    4300028: Base HumanLArmCollarbone
+    4300030: Base HumanLArmUpperarm
+    4300032: Base HumanLArmForearm
+    4300034: Base HumanLArmPalm
+    4300036: Base HumanLLegThigh
+    4300038: Base HumanLLegCalf
+    4300040: Base HumanLLegFoot
+    4300042: Human_Suitcase_001
+    4300044: Human_Pants_001
+    4300046: Human_Shirt_001
+    4300048: Human_Head_001
+    4300050: Human_Blazer_001
+    4300052: Human_Shoes_001
+    4300054: Human_Head_002
+    4300056: Human_Shirt_002
+    4300058: Human_Pants_002
+    4300060: Human_Suitcase_002
+    4300062: Human_Shoes_002
+    4300064: Human_Blazer_002
+    4300066: Human_Suitcase_003
+    4300068: Human_Shoes_003
+    4300070: Human_Blazer_003
+    4300072: Human_Shirt_003
+    4300074: Human_Pants_003
+    4300076: Human_Head_003
+    4300078: Human_Shirt_004
+    4300080: Human_Blazer_004
+    4300082: Human_Head_004
+    4300084: Human_Pants_004
+    4300086: Human_Shoes_004
+    4300088: Human_Suitcase_004
+    4300090: Human_Head_005
+    4300092: Human_Blazer_005
+    4300094: Human_Shirt_005
+    4300096: Human_Suitcase_005
+    4300098: Human_Shoes_005
+    4300100: Human_Pants_005
+    4300102: Human_Blazer_006
+    4300104: Human_Head_006
+    4300106: Human_Shirt_006
+    4300108: Human_Pants_006
+    4300110: Human_Shoes_006
+    4300112: Human_Suitcase_006
+    4300114: Human_Blazer_007
+    4300116: Human_Head_007
+    4300118: Human_Shoes_007
+    4300120: Human_Suitcase_007
+    4300122: Human_Shirt_007
+    4300124: Human_Pants_007
+    4300126: Human_Blazer_008
+    4300128: Human_Shirt_008
+    4300130: Human_Pants_008
+    4300132: Human_Suitcase_008
+    4300134: Human_Head_008
+    4300136: Human_Shoes_008
+    4300138: Human_Suitcase_009
+    4300140: Human_Head_009
+    4300142: Human_Shoes_009
+    4300144: Human_Blazer_009
+    4300146: Human_Shirt_009
+    4300148: Human_Pants_009
+    4300150: Human_Shoes_010
+    4300152: Human_Head_010
+    4300154: Human_Suitcase_010
+    4300156: Human_Pants_010
+    4300158: Human_Shirt_010
+    4300160: Human_Blazer_010
+    4300162: Human_Pants_011
+    4300164: Human_Shirt_011
+    4300166: Human_Blazer_011
+    4300168: Human_Suitcase_011
+    4300170: Human_Head_011
+    4300172: Human_Shoes_011
+    4300174: Human_Suitcase_012
+    4300176: Human_Blazer_012
+    4300178: Human_Shoes_012
+    4300180: Human_Head_012
+    4300182: Human_Shirt_012
+    4300184: Human_Pants_012
+    4300186: Human_Head_013
+    4300188: Human_Shoes_013
+    4300190: Human_Pants_013
+    4300192: Human_Shirt_013
+    4300194: Human_Blazer_013
+    4300196: Human_Suitcase_013
+    7400000: Idle
+    7400002: Walk
+    9500000: //RootNode
+    13700000: Human_Suitcase_001
+    13700002: Human_Suitcase_002
+    13700004: Human_Suitcase_003
+    13700006: Human_Suitcase_004
+    13700008: Human_Suitcase_005
+    13700010: Human_Suitcase_006
+    13700012: Human_Suitcase_007
+    13700014: Human_Suitcase_008
+    13700016: Human_Suitcase_009
+    13700018: Human_Suitcase_010
+    13700020: Human_Suitcase_011
+    13700022: Human_Suitcase_012
+    13700024: Human_Suitcase_013
+    13700026: Human_Blazer_013
+    13700028: Human_Blazer_001
+    13700030: Human_Blazer_002
+    13700032: Human_Blazer_003
+    13700034: Human_Blazer_004
+    13700036: Human_Blazer_005
+    13700038: Human_Blazer_006
+    13700040: Human_Blazer_007
+    13700042: Human_Blazer_008
+    13700044: Human_Blazer_009
+    13700046: Human_Blazer_010
+    13700048: Human_Blazer_011
+    13700050: Human_Blazer_012
+    13700052: Human_Head_001
+    13700054: Human_Head_002
+    13700056: Human_Head_003
+    13700058: Human_Head_004
+    13700060: Human_Head_005
+    13700062: Human_Head_006
+    13700064: Human_Head_007
+    13700066: Human_Head_008
+    13700068: Human_Head_009
+    13700070: Human_Head_010
+    13700072: Human_Head_011
+    13700074: Human_Head_012
+    13700076: Human_Head_013
+    13700078: Human_Pants_001
+    13700080: Human_Pants_002
+    13700082: Human_Pants_003
+    13700084: Human_Pants_004
+    13700086: Human_Pants_005
+    13700088: Human_Pants_006
+    13700090: Human_Pants_007
+    13700092: Human_Pants_008
+    13700094: Human_Pants_009
+    13700096: Human_Pants_010
+    13700098: Human_Pants_011
+    13700100: Human_Pants_012
+    13700102: Human_Pants_013
+    13700104: Human_Shirt_001
+    13700106: Human_Shirt_002
+    13700108: Human_Shirt_003
+    13700110: Human_Shirt_004
+    13700112: Human_Shirt_005
+    13700114: Human_Shirt_006
+    13700116: Human_Shirt_007
+    13700118: Human_Shirt_008
+    13700120: Human_Shirt_009
+    13700122: Human_Shirt_010
+    13700124: Human_Shirt_011
+    13700126: Human_Shirt_012
+    13700128: Human_Shirt_013
+    13700130: Human_Shoes_001
+    13700132: Human_Shoes_002
+    13700134: Human_Shoes_003
+    13700136: Human_Shoes_004
+    13700138: Human_Shoes_005
+    13700140: Human_Shoes_006
+    13700142: Human_Shoes_007
+    13700144: Human_Shoes_008
+    13700146: Human_Shoes_009
+    13700148: Human_Shoes_010
+    13700150: Human_Shoes_011
+    13700152: Human_Shoes_012
+    13700154: Human_Shoes_013
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Base HumanRibcage' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Base HumanNeck2' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerLeg
+      average position error 0.3 mm and maximum position error 8.5 mm at time 3: 7
+      (84.0%) Frame 79\n\tRightLowerLeg average position error 0.6 mm and maximum
+      position error 12.6 mm at time 2:15 (67.0%) Frame 63\n\tLeftUpperArm average
+      position error 1.6 mm and maximum position error 5.5 mm at time 3:10 (87.2%)
+      Frame 82\n\tLeftLowerArm average position error 1.5 mm and maximum position
+      error 2.7 mm at time 3: 9 (86.2%) Frame 81\n\tLeftHand average position error
+      0.9 mm and maximum position error 2.3 mm at time 3: 5 (81.9%) Frame 77\n\tRightUpperArm
+      average position error 1.5 mm and maximum position error 5.2 mm at time 3:10
+      (87.2%) Frame 82\n\tRightLowerArm average position error 1.7 mm and maximum
+      position error 3.9 mm at time 3:10 (87.2%) Frame 82\n\tRightHand average position
+      error 0.7 mm and maximum position error 1.5 mm at time 3: 2 (78.7%) Frame 74\n\tHead
+      average position error 0.6 mm and maximum position error 2.0 mm at time 0:20
+      (21.3%) Frame 20\n"
+    animationDoRetargetingWarnings: 1
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base HumanPelvis
+        weight: 1
+      - path: Base HumanPelvis/Base HumanLLegThigh
+        weight: 1
+      - path: Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf
+        weight: 1
+      - path: Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/Base HumanLLegFoot
+        weight: 1
+      - path: Base HumanPelvis/Base HumanRThigh
+        weight: 1
+      - path: Base HumanPelvis/Base HumanRThigh/Base HumanRCalf
+        weight: 1
+      - path: Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base HumanRFoot
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone/Base HumanLArmUpperarm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm/Base HumanLArmPalm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanNeck1
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanNeck1/Base HumanNeck2
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanNeck1/Base HumanNeck2/Base HumanHead
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone/Base HumanRUpperarm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm/Base HumanRPalm
+        weight: 1
+      - path: Human_Blazer_001
+        weight: 0
+      - path: Human_Blazer_002
+        weight: 0
+      - path: Human_Blazer_003
+        weight: 0
+      - path: Human_Blazer_004
+        weight: 0
+      - path: Human_Blazer_005
+        weight: 0
+      - path: Human_Blazer_006
+        weight: 0
+      - path: Human_Blazer_007
+        weight: 0
+      - path: Human_Blazer_008
+        weight: 0
+      - path: Human_Blazer_009
+        weight: 0
+      - path: Human_Blazer_010
+        weight: 0
+      - path: Human_Blazer_011
+        weight: 0
+      - path: Human_Blazer_012
+        weight: 0
+      - path: Human_Blazer_013
+        weight: 0
+      - path: Human_Head_001
+        weight: 0
+      - path: Human_Head_002
+        weight: 0
+      - path: Human_Head_003
+        weight: 0
+      - path: Human_Head_004
+        weight: 0
+      - path: Human_Head_005
+        weight: 0
+      - path: Human_Head_006
+        weight: 0
+      - path: Human_Head_007
+        weight: 0
+      - path: Human_Head_008
+        weight: 0
+      - path: Human_Head_009
+        weight: 0
+      - path: Human_Head_010
+        weight: 0
+      - path: Human_Head_011
+        weight: 0
+      - path: Human_Head_012
+        weight: 0
+      - path: Human_Head_013
+        weight: 0
+      - path: Human_Pants_001
+        weight: 0
+      - path: Human_Pants_002
+        weight: 0
+      - path: Human_Pants_003
+        weight: 0
+      - path: Human_Pants_004
+        weight: 0
+      - path: Human_Pants_005
+        weight: 0
+      - path: Human_Pants_006
+        weight: 0
+      - path: Human_Pants_007
+        weight: 0
+      - path: Human_Pants_008
+        weight: 0
+      - path: Human_Pants_009
+        weight: 0
+      - path: Human_Pants_010
+        weight: 0
+      - path: Human_Pants_011
+        weight: 0
+      - path: Human_Pants_012
+        weight: 0
+      - path: Human_Pants_013
+        weight: 0
+      - path: Human_Shirt_001
+        weight: 0
+      - path: Human_Shirt_002
+        weight: 0
+      - path: Human_Shirt_003
+        weight: 0
+      - path: Human_Shirt_004
+        weight: 0
+      - path: Human_Shirt_005
+        weight: 0
+      - path: Human_Shirt_006
+        weight: 0
+      - path: Human_Shirt_007
+        weight: 0
+      - path: Human_Shirt_008
+        weight: 0
+      - path: Human_Shirt_009
+        weight: 0
+      - path: Human_Shirt_010
+        weight: 0
+      - path: Human_Shirt_011
+        weight: 0
+      - path: Human_Shirt_012
+        weight: 0
+      - path: Human_Shirt_013
+        weight: 0
+      - path: Human_Shoes_001
+        weight: 0
+      - path: Human_Shoes_002
+        weight: 0
+      - path: Human_Shoes_003
+        weight: 0
+      - path: Human_Shoes_004
+        weight: 0
+      - path: Human_Shoes_005
+        weight: 0
+      - path: Human_Shoes_006
+        weight: 0
+      - path: Human_Shoes_007
+        weight: 0
+      - path: Human_Shoes_008
+        weight: 0
+      - path: Human_Shoes_009
+        weight: 0
+      - path: Human_Shoes_010
+        weight: 0
+      - path: Human_Shoes_011
+        weight: 0
+      - path: Human_Shoes_012
+        weight: 0
+      - path: Human_Shoes_013
+        weight: 0
+      - path: Human_Suitcase_001
+        weight: 0
+      - path: Human_Suitcase_002
+        weight: 0
+      - path: Human_Suitcase_003
+        weight: 0
+      - path: Human_Suitcase_004
+        weight: 0
+      - path: Human_Suitcase_005
+        weight: 0
+      - path: Human_Suitcase_006
+        weight: 0
+      - path: Human_Suitcase_007
+        weight: 0
+      - path: Human_Suitcase_008
+        weight: 0
+      - path: Human_Suitcase_009
+        weight: 0
+      - path: Human_Suitcase_010
+        weight: 0
+      - path: Human_Suitcase_011
+        weight: 0
+      - path: Human_Suitcase_012
+        weight: 0
+      - path: Human_Suitcase_013
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 94
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 1
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Base HumanPelvis
+        weight: 1
+      - path: Base HumanPelvis/Base HumanLLegThigh
+        weight: 1
+      - path: Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf
+        weight: 1
+      - path: Base HumanPelvis/Base HumanLLegThigh/Base HumanLLegCalf/Base HumanLLegFoot
+        weight: 1
+      - path: Base HumanPelvis/Base HumanRThigh
+        weight: 1
+      - path: Base HumanPelvis/Base HumanRThigh/Base HumanRCalf
+        weight: 1
+      - path: Base HumanPelvis/Base HumanRThigh/Base HumanRCalf/Base HumanRFoot
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone/Base HumanLArmUpperarm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanLArmCollarbone/Base HumanLArmUpperarm/Base HumanLArmForearm/Base HumanLArmPalm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanNeck1
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanNeck1/Base HumanNeck2
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanNeck1/Base HumanNeck2/Base HumanHead
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone/Base HumanRUpperarm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm
+        weight: 1
+      - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
+          HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm/Base HumanRPalm
+        weight: 1
+      - path: Human_Blazer_001
+        weight: 0
+      - path: Human_Blazer_002
+        weight: 0
+      - path: Human_Blazer_003
+        weight: 0
+      - path: Human_Blazer_004
+        weight: 0
+      - path: Human_Blazer_005
+        weight: 0
+      - path: Human_Blazer_006
+        weight: 0
+      - path: Human_Blazer_007
+        weight: 0
+      - path: Human_Blazer_008
+        weight: 0
+      - path: Human_Blazer_009
+        weight: 0
+      - path: Human_Blazer_010
+        weight: 0
+      - path: Human_Blazer_011
+        weight: 0
+      - path: Human_Blazer_012
+        weight: 0
+      - path: Human_Blazer_013
+        weight: 0
+      - path: Human_Head_001
+        weight: 0
+      - path: Human_Head_002
+        weight: 0
+      - path: Human_Head_003
+        weight: 0
+      - path: Human_Head_004
+        weight: 0
+      - path: Human_Head_005
+        weight: 0
+      - path: Human_Head_006
+        weight: 0
+      - path: Human_Head_007
+        weight: 0
+      - path: Human_Head_008
+        weight: 0
+      - path: Human_Head_009
+        weight: 0
+      - path: Human_Head_010
+        weight: 0
+      - path: Human_Head_011
+        weight: 0
+      - path: Human_Head_012
+        weight: 0
+      - path: Human_Head_013
+        weight: 0
+      - path: Human_Pants_001
+        weight: 0
+      - path: Human_Pants_002
+        weight: 0
+      - path: Human_Pants_003
+        weight: 0
+      - path: Human_Pants_004
+        weight: 0
+      - path: Human_Pants_005
+        weight: 0
+      - path: Human_Pants_006
+        weight: 0
+      - path: Human_Pants_007
+        weight: 0
+      - path: Human_Pants_008
+        weight: 0
+      - path: Human_Pants_009
+        weight: 0
+      - path: Human_Pants_010
+        weight: 0
+      - path: Human_Pants_011
+        weight: 0
+      - path: Human_Pants_012
+        weight: 0
+      - path: Human_Pants_013
+        weight: 0
+      - path: Human_Shirt_001
+        weight: 0
+      - path: Human_Shirt_002
+        weight: 0
+      - path: Human_Shirt_003
+        weight: 0
+      - path: Human_Shirt_004
+        weight: 0
+      - path: Human_Shirt_005
+        weight: 0
+      - path: Human_Shirt_006
+        weight: 0
+      - path: Human_Shirt_007
+        weight: 0
+      - path: Human_Shirt_008
+        weight: 0
+      - path: Human_Shirt_009
+        weight: 0
+      - path: Human_Shirt_010
+        weight: 0
+      - path: Human_Shirt_011
+        weight: 0
+      - path: Human_Shirt_012
+        weight: 0
+      - path: Human_Shirt_013
+        weight: 0
+      - path: Human_Shoes_001
+        weight: 0
+      - path: Human_Shoes_002
+        weight: 0
+      - path: Human_Shoes_003
+        weight: 0
+      - path: Human_Shoes_004
+        weight: 0
+      - path: Human_Shoes_005
+        weight: 0
+      - path: Human_Shoes_006
+        weight: 0
+      - path: Human_Shoes_007
+        weight: 0
+      - path: Human_Shoes_008
+        weight: 0
+      - path: Human_Shoes_009
+        weight: 0
+      - path: Human_Shoes_010
+        weight: 0
+      - path: Human_Shoes_011
+        weight: 0
+      - path: Human_Shoes_012
+        weight: 0
+      - path: Human_Shoes_013
+        weight: 0
+      - path: Human_Suitcase_001
+        weight: 0
+      - path: Human_Suitcase_002
+        weight: 0
+      - path: Human_Suitcase_003
+        weight: 0
+      - path: Human_Suitcase_004
+        weight: 0
+      - path: Human_Suitcase_005
+        weight: 0
+      - path: Human_Suitcase_006
+        weight: 0
+      - path: Human_Suitcase_007
+        weight: 0
+      - path: Human_Suitcase_008
+        weight: 0
+      - path: Human_Suitcase_009
+        weight: 0
+      - path: Human_Suitcase_010
+        weight: 0
+      - path: Human_Suitcase_011
+        weight: 0
+      - path: Human_Suitcase_012
+        weight: 0
+      - path: Human_Suitcase_013
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 61
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Base HumanPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLLegFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanSpine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanSpine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanNeck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanLArmPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Base HumanRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Human_Base_NEW(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Base HumanPelvis
+      position: {x: 0.00000004881517, y: 0.94029826, z: -0.07344111}
+      rotation: {x: 0.49912265, y: -0.50086725, z: -0.4991312, w: 0.5008759}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Base HumanLLegThigh
+      position: {x: -0.017555846, y: 0.047867797, z: 0.08969293}
+      rotation: {x: -0.06474543, y: 0.99760866, z: -0.007398497, w: 0.02302834}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+      transformModified: 1
+    - name: Base HumanLLegCalf
+      position: {x: -0.46310896, y: 0.000000047683713, z: 0}
+      rotation: {x: 0.00010144037, y: 0.0019857439, z: 0.1717885, w: 0.98513186}
+      scale: {x: 1.0000002, y: 1.0000006, z: 0.99999946}
+      transformModified: 1
+    - name: Base HumanLLegFoot
+      position: {x: -0.47671637, y: 0.0000000047683715, z: 0.000000009536743}
+      rotation: {x: -0.016473357, y: 0.01498816, z: -0.7026743, w: 0.711163}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1}
+      transformModified: 1
+    - name: Base HumanRThigh
+      position: {x: -0.017555771, y: 0.047867797, z: -0.08969294}
+      rotation: {x: -0.06474955, y: 0.997609, z: 0.007395566, w: -0.023000436}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Base HumanRCalf
+      position: {x: -0.46310896, y: 0.000000047683713, z: 0}
+      rotation: {x: -0.00009962749, y: -0.0020056546, z: 0.17182493, w: 0.9851255}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000004}
+      transformModified: 1
+    - name: Base HumanRFoot
+      position: {x: -0.4767163, y: 0, z: 0.000000009536743}
+      rotation: {x: 0.016518472, y: -0.014869809, z: -0.7027046, w: 0.7111345}
+      scale: {x: 1.0000005, y: 0.9999995, z: 0.9999997}
+      transformModified: 1
+    - name: Base HumanSpine1
+      position: {x: -0.04660324, y: -0.0035656595, z: -0.000000008849602}
+      rotation: {x: 0.000000027787078, y: -0.00000012485096, z: -0.041128617, w: 0.99915385}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000001}
+      transformModified: 1
+    - name: Base HumanSpine2
+      position: {x: -0.16995117, y: -0.000000009536743, z: 1.4551915e-13}
+      rotation: {x: -0.00000002381309, y: 0.00000012177206, z: 0.033062175, w: 0.9994533}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1}
+      transformModified: 1
+    - name: Base HumanRibcage
+      position: {x: -0.34991035, y: 0, z: 0}
+      rotation: {x: -0.000000004896984, y: 0.000000022012815, z: 0.006327555, w: 0.99998}
+      scale: {x: 0.9999994, y: 0.9999993, z: 0.9999999}
+      transformModified: 1
+    - name: Base HumanLArmCollarbone
+      position: {x: 0.017699432, y: 0.10349867, z: 0.03070572}
+      rotation: {x: 0.06358809, y: 0.6842711, z: 0.16581921, w: 0.707272}
+      scale: {x: 0.99999964, y: 1, z: 1.0000004}
+      transformModified: 1
+    - name: Base HumanLArmUpperarm
+      position: {x: -0.13447341, y: 0, z: 0.00000015258789}
+      rotation: {x: 0.21741812, y: 0.0016912222, z: -0.16071726, w: 0.96275467}
+      scale: {x: 0.9999995, y: 0.9999996, z: 1.000001}
+      transformModified: 1
+    - name: Base HumanLArmForearm
+      position: {x: -0.33021635, y: 0, z: 0}
+      rotation: {x: 0.070213564, y: -0.0075132237, z: -0.026098127, w: 0.9971623}
+      scale: {x: 1.0000004, y: 0.9999985, z: 1.0000008}
+      transformModified: 1
+    - name: Base HumanLArmPalm
+      position: {x: -0.28144753, y: -0.000000019073486, z: 0}
+      rotation: {x: -0.73202515, y: -0.00025132563, z: 0.07547476, w: 0.677084}
+      scale: {x: 1.0000014, y: 1.0000001, z: 0.9999995}
+      transformModified: 1
+    - name: Base HumanNeck1
+      position: {x: -0.00080978393, y: -0.0035656546, z: -0.0000000068476944}
+      rotation: {x: 1.5754117e-10, y: 0.000000009222771, z: -0.010897809, w: 0.99994063}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Base HumanNeck2
+      position: {x: -0.048728485, y: 0, z: 0}
+      rotation: {x: 5.870858e-13, y: 7.105428e-15, z: -4.171496e-27, w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+      transformModified: 1
+    - name: Base HumanHead
+      position: {x: -0.048728637, y: 0, z: 0}
+      rotation: {x: -2.3726107e-10, y: 0.0000000016529844, z: 0.010897807, w: 0.99994063}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Base HumanRCollarbone
+      position: {x: 0.017699432, y: 0.103498645, z: -0.030705713}
+      rotation: {x: -0.06358808, y: -0.6842712, z: 0.16581929, w: 0.7072718}
+      scale: {x: 0.99999964, y: 1, z: 1.0000005}
+      transformModified: 1
+    - name: Base HumanRUpperarm
+      position: {x: -0.13447341, y: 0, z: 0}
+      rotation: {x: -0.21741849, y: -0.0016910806, z: -0.16071703, w: 0.9627546}
+      scale: {x: 0.9999995, y: 1.0000005, z: 1.0000004}
+      transformModified: 1
+    - name: Base HumanRForearm
+      position: {x: -0.33021653, y: 0, z: 0}
+      rotation: {x: -0.07021339, y: 0.007512972, z: -0.026097868, w: 0.9971622}
+      scale: {x: 0.99999905, y: 1.0000012, z: 0.99999857}
+      transformModified: 1
+    - name: Base HumanRPalm
+      position: {x: -0.2814476, y: 0, z: 0}
+      rotation: {x: 0.73202527, y: 0.00025106236, z: 0.07547471, w: 0.67708385}
+      scale: {x: 0.99999875, y: 0.99999946, z: 1.0000008}
+      transformModified: 1
+    - name: Human_Blazer_001
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_002
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_003
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_004
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_005
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_006
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_007
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_008
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_009
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_010
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_011
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_012
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Blazer_013
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_001
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_002
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_003
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_004
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_005
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_006
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_007
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_008
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_009
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_010
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_011
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_012
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Head_013
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_001
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_002
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_003
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_004
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_005
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_006
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_007
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_008
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_009
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_010
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_011
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_012
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Pants_013
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_001
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_002
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_003
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_004
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_005
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_006
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_007
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_008
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_009
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_010
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_011
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_012
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shirt_013
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_001
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_002
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_003
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_004
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_005
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_006
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_007
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_008
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_009
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_010
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_011
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_012
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Shoes_013
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_001
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_002
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_003
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_004
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_005
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_006
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_007
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_008
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_009
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_010
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_011
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_012
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Human_Suitcase_013
+      position: {x: 0.25506854, y: 0.48141173, z: 0.08915986}
+      rotation: {x: -0.78562313, y: -0.035877936, z: -0.0035159057, w: 0.6176543}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
