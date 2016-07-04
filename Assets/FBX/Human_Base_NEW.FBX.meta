@@ -105,6 +105,36 @@ ModelImporter:
     100194: Human_Suitcase_011
     100196: Human_Suitcase_012
     100198: Human_Suitcase_013
+    100200: Human_Blazer_014
+    100202: Human_Blazer_015
+    100204: Human_Blazer_016
+    100206: Human_Blazer_017
+    100208: Human_Blazer_018
+    100210: Human_Head_014
+    100212: Human_Head_015
+    100214: Human_Head_016
+    100216: Human_Head_017
+    100218: Human_Head_018
+    100220: Human_Pants_014
+    100222: Human_Pants_015
+    100224: Human_Pants_016
+    100226: Human_Pants_017
+    100228: Human_Pants_018
+    100230: Human_Shirt_014
+    100232: Human_Shirt_015
+    100234: Human_Shirt_016
+    100236: Human_Shirt_017
+    100238: Human_Shirt_018
+    100240: Human_Shoes_014
+    100242: Human_Shoes_015
+    100244: Human_Shoes_016
+    100246: Human_Shoes_017
+    100248: Human_Shoes_018
+    100250: Human_Suitcase_014
+    100252: Human_Suitcase_015
+    100254: Human_Suitcase_016
+    100256: Human_Suitcase_017
+    100258: Human_Suitcase_018
     400000: Base HumanHead
     400002: Base HumanLArmCollarbone
     400004: Base HumanLArmForearm
@@ -205,6 +235,36 @@ ModelImporter:
     400194: Human_Suitcase_011
     400196: Human_Suitcase_012
     400198: Human_Suitcase_013
+    400200: Human_Blazer_014
+    400202: Human_Blazer_015
+    400204: Human_Blazer_016
+    400206: Human_Blazer_017
+    400208: Human_Blazer_018
+    400210: Human_Head_014
+    400212: Human_Head_015
+    400214: Human_Head_016
+    400216: Human_Head_017
+    400218: Human_Head_018
+    400220: Human_Pants_014
+    400222: Human_Pants_015
+    400224: Human_Pants_016
+    400226: Human_Pants_017
+    400228: Human_Pants_018
+    400230: Human_Shirt_014
+    400232: Human_Shirt_015
+    400234: Human_Shirt_016
+    400236: Human_Shirt_017
+    400238: Human_Shirt_018
+    400240: Human_Shoes_014
+    400242: Human_Shoes_015
+    400244: Human_Shoes_016
+    400246: Human_Shoes_017
+    400248: Human_Shoes_018
+    400250: Human_Suitcase_014
+    400252: Human_Suitcase_015
+    400254: Human_Suitcase_016
+    400256: Human_Suitcase_017
+    400258: Human_Suitcase_018
     2300000: Base HumanHead
     2300002: Base HumanLArmCollarbone
     2300004: Base HumanLArmForearm
@@ -502,6 +562,36 @@ ModelImporter:
     4300192: Human_Shirt_013
     4300194: Human_Blazer_013
     4300196: Human_Suitcase_013
+    4300198: Human_Pants_014
+    4300200: Human_Shoes_014
+    4300202: Human_Head_014
+    4300204: Human_Shirt_014
+    4300206: Human_Suitcase_014
+    4300208: Human_Blazer_014
+    4300210: Human_Pants_015
+    4300212: Human_Shoes_015
+    4300214: Human_Head_015
+    4300216: Human_Shirt_015
+    4300218: Human_Suitcase_015
+    4300220: Human_Blazer_015
+    4300222: Human_Pants_016
+    4300224: Human_Shoes_016
+    4300226: Human_Head_016
+    4300228: Human_Suitcase_016
+    4300230: Human_Blazer_016
+    4300232: Human_Shirt_016
+    4300234: Human_Pants_017
+    4300236: Human_Head_017
+    4300238: Human_Suitcase_017
+    4300240: Human_Blazer_017
+    4300242: Human_Shoes_017
+    4300244: Human_Shirt_017
+    4300246: Human_Blazer_018
+    4300248: Human_Head_018
+    4300250: Human_Pants_018
+    4300252: Human_Shoes_018
+    4300254: Human_Suitcase_018
+    4300256: Human_Shirt_018
     7400000: Idle
     7400002: Walk
     9500000: //RootNode
@@ -583,6 +673,36 @@ ModelImporter:
     13700150: Human_Shoes_011
     13700152: Human_Shoes_012
     13700154: Human_Shoes_013
+    13700156: Human_Blazer_014
+    13700158: Human_Blazer_015
+    13700160: Human_Blazer_016
+    13700162: Human_Blazer_017
+    13700164: Human_Blazer_018
+    13700166: Human_Head_014
+    13700168: Human_Head_015
+    13700170: Human_Head_016
+    13700172: Human_Head_017
+    13700174: Human_Head_018
+    13700176: Human_Pants_014
+    13700178: Human_Pants_015
+    13700180: Human_Pants_016
+    13700182: Human_Pants_017
+    13700184: Human_Pants_018
+    13700186: Human_Shirt_014
+    13700188: Human_Shirt_015
+    13700190: Human_Shirt_016
+    13700192: Human_Shirt_017
+    13700194: Human_Shirt_018
+    13700196: Human_Shoes_014
+    13700198: Human_Shoes_015
+    13700200: Human_Shoes_016
+    13700202: Human_Shoes_017
+    13700204: Human_Shoes_018
+    13700206: Human_Suitcase_014
+    13700208: Human_Suitcase_015
+    13700210: Human_Suitcase_016
+    13700212: Human_Suitcase_017
+    13700214: Human_Suitcase_018
   materials:
     importMaterials: 1
     materialName: 0
@@ -727,6 +847,16 @@ ModelImporter:
         weight: 0
       - path: Human_Blazer_013
         weight: 0
+      - path: Human_Blazer_014
+        weight: 0
+      - path: Human_Blazer_015
+        weight: 0
+      - path: Human_Blazer_016
+        weight: 0
+      - path: Human_Blazer_017
+        weight: 0
+      - path: Human_Blazer_018
+        weight: 0
       - path: Human_Head_001
         weight: 0
       - path: Human_Head_002
@@ -752,6 +882,16 @@ ModelImporter:
       - path: Human_Head_012
         weight: 0
       - path: Human_Head_013
+        weight: 0
+      - path: Human_Head_014
+        weight: 0
+      - path: Human_Head_015
+        weight: 0
+      - path: Human_Head_016
+        weight: 0
+      - path: Human_Head_017
+        weight: 0
+      - path: Human_Head_018
         weight: 0
       - path: Human_Pants_001
         weight: 0
@@ -779,6 +919,16 @@ ModelImporter:
         weight: 0
       - path: Human_Pants_013
         weight: 0
+      - path: Human_Pants_014
+        weight: 0
+      - path: Human_Pants_015
+        weight: 0
+      - path: Human_Pants_016
+        weight: 0
+      - path: Human_Pants_017
+        weight: 0
+      - path: Human_Pants_018
+        weight: 0
       - path: Human_Shirt_001
         weight: 0
       - path: Human_Shirt_002
@@ -804,6 +954,16 @@ ModelImporter:
       - path: Human_Shirt_012
         weight: 0
       - path: Human_Shirt_013
+        weight: 0
+      - path: Human_Shirt_014
+        weight: 0
+      - path: Human_Shirt_015
+        weight: 0
+      - path: Human_Shirt_016
+        weight: 0
+      - path: Human_Shirt_017
+        weight: 0
+      - path: Human_Shirt_018
         weight: 0
       - path: Human_Shoes_001
         weight: 0
@@ -831,6 +991,16 @@ ModelImporter:
         weight: 0
       - path: Human_Shoes_013
         weight: 0
+      - path: Human_Shoes_014
+        weight: 0
+      - path: Human_Shoes_015
+        weight: 0
+      - path: Human_Shoes_016
+        weight: 0
+      - path: Human_Shoes_017
+        weight: 0
+      - path: Human_Shoes_018
+        weight: 0
       - path: Human_Suitcase_001
         weight: 0
       - path: Human_Suitcase_002
@@ -856,6 +1026,16 @@ ModelImporter:
       - path: Human_Suitcase_012
         weight: 0
       - path: Human_Suitcase_013
+        weight: 0
+      - path: Human_Suitcase_014
+        weight: 0
+      - path: Human_Suitcase_015
+        weight: 0
+      - path: Human_Suitcase_016
+        weight: 0
+      - path: Human_Suitcase_017
+        weight: 0
+      - path: Human_Suitcase_018
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
@@ -966,6 +1146,16 @@ ModelImporter:
         weight: 0
       - path: Human_Blazer_013
         weight: 0
+      - path: Human_Blazer_014
+        weight: 0
+      - path: Human_Blazer_015
+        weight: 0
+      - path: Human_Blazer_016
+        weight: 0
+      - path: Human_Blazer_017
+        weight: 0
+      - path: Human_Blazer_018
+        weight: 0
       - path: Human_Head_001
         weight: 0
       - path: Human_Head_002
@@ -991,6 +1181,16 @@ ModelImporter:
       - path: Human_Head_012
         weight: 0
       - path: Human_Head_013
+        weight: 0
+      - path: Human_Head_014
+        weight: 0
+      - path: Human_Head_015
+        weight: 0
+      - path: Human_Head_016
+        weight: 0
+      - path: Human_Head_017
+        weight: 0
+      - path: Human_Head_018
         weight: 0
       - path: Human_Pants_001
         weight: 0
@@ -1018,6 +1218,16 @@ ModelImporter:
         weight: 0
       - path: Human_Pants_013
         weight: 0
+      - path: Human_Pants_014
+        weight: 0
+      - path: Human_Pants_015
+        weight: 0
+      - path: Human_Pants_016
+        weight: 0
+      - path: Human_Pants_017
+        weight: 0
+      - path: Human_Pants_018
+        weight: 0
       - path: Human_Shirt_001
         weight: 0
       - path: Human_Shirt_002
@@ -1043,6 +1253,16 @@ ModelImporter:
       - path: Human_Shirt_012
         weight: 0
       - path: Human_Shirt_013
+        weight: 0
+      - path: Human_Shirt_014
+        weight: 0
+      - path: Human_Shirt_015
+        weight: 0
+      - path: Human_Shirt_016
+        weight: 0
+      - path: Human_Shirt_017
+        weight: 0
+      - path: Human_Shirt_018
         weight: 0
       - path: Human_Shoes_001
         weight: 0
@@ -1070,6 +1290,16 @@ ModelImporter:
         weight: 0
       - path: Human_Shoes_013
         weight: 0
+      - path: Human_Shoes_014
+        weight: 0
+      - path: Human_Shoes_015
+        weight: 0
+      - path: Human_Shoes_016
+        weight: 0
+      - path: Human_Shoes_017
+        weight: 0
+      - path: Human_Shoes_018
+        weight: 0
       - path: Human_Suitcase_001
         weight: 0
       - path: Human_Suitcase_002
@@ -1095,6 +1325,16 @@ ModelImporter:
       - path: Human_Suitcase_012
         weight: 0
       - path: Human_Suitcase_013
+        weight: 0
+      - path: Human_Suitcase_014
+        weight: 0
+      - path: Human_Suitcase_015
+        weight: 0
+      - path: Human_Suitcase_016
+        weight: 0
+      - path: Human_Suitcase_017
+        weight: 0
+      - path: Human_Suitcase_018
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}

@@ -262,6 +262,10 @@ ModelImporter:
       transformMask:
       - path: 
         weight: 1
+      - path: Auriculares_Geo_2
+        weight: 0
+      - path: Auriculares_Geo_3
+        weight: 0
       - path: Base HumanPelvis
         weight: 1
       - path: Base HumanPelvis/Base HumanLLegThigh
@@ -315,7 +319,19 @@ ModelImporter:
       - path: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanRibcage/Base
           HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm/Base HumanRPalm
         weight: 1
+      - path: Gorro_Geo_2
+        weight: 0
+      - path: Gorro_Geo_3
+        weight: 0
       - path: Human_Base_GEO
+        weight: 0
+      - path: Maletin_Geo_0
+        weight: 0
+      - path: Paraguas_Geo_2
+        weight: 0
+      - path: Paraguas_Geo_3
+        weight: 0
+      - path: Tupe_Geo_1
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
