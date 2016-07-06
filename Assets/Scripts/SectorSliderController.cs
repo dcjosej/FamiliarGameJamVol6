@@ -22,10 +22,12 @@ public class SectorSliderController : MonoBehaviour
 
 	void Update()
 	{
-		float curveValue = Mathf.InverseLerp(0, MAX_NUM_INFECTED, Mathf.Clamp(GameLogic.instance.charactersInScene, 0, MAX_NUM_INFECTED));
-		float sliderValue = threatnessCurve.Evaluate(curveValue);
-		slider.value -= velocityLooseSector * sliderValue * Time.deltaTime;
+		//float curveValue = Mathf.InverseLerp(0, MAX_NUM_INFECTED, Mathf.Clamp(GameLogic.instance.charactersInScene, 0, MAX_NUM_INFECTED));
+		//float sliderValue = threatnessCurve.Evaluate(curveValue);
+		//slider.value -= velocityLooseSector * sliderValue * Time.deltaTime;
 		//slider.value = 1 - sliderValue;
+
+		slider.value -= velocityLooseSector * Time.deltaTime;
 	}
 
 	public void IncreaseValue()
