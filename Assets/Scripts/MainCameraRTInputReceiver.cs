@@ -6,6 +6,11 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 	public Camera cameraRT;
 	public MonitorNumber currentMonitorNumber;
 
+	/// <summary>
+	/// Persona a la que estamos apuntando
+	/// </summary>
+	private PersonController currentPersonController;
+
 
 	//public Texture2D cursorTexture;
 	//private CursorMode cursorMode = CursorMode.Auto;
@@ -14,7 +19,11 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 	void OnMouseDown()
 	{
 		Debug.Log("Pinchando en la pantalla!");
-		RayRenderTexture();
+		//RayRenderTexture();
+		if(currentPersonController != null)
+		{
+			currentPersonController.Click();
+		}
 	}
 	/*
 	void OnMouseOver()
@@ -39,7 +48,7 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 
 	void OnMouseOver()
 	{
-
+		CheckRaycast();
 	}
 
 
@@ -53,12 +62,43 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 		cameraRT = camera;
 	}
 
+
+	private void CheckRaycast()
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+
+		if (Physics.Raycast(ray, out hit))
+		{
+			Debug.Log("Primer ray: " + hit.collider.name);
+			ray = cameraRT.ViewportPointToRay(hit.textureCoord);
+
+			if (Physics.Raycast(ray, out hit))
+			{
+				Debug.Log("Chocando con cosas del mundo real por dios!!: " + hit.collider.tag);
+				if (hit.collider.tag == "StandardPerson")
+				{
+					currentPersonController = hit.collider.GetComponent<PersonController>();
+					GameLogic.instance.UpdateCursor(currentPersonController.converted ? CursorType.CORRECT : CursorType.FAIL);
+				}
+				else
+				{
+					GameLogic.instance.UpdateCursor(CursorType.NORMAL);
+				}
+			}
+			else
+			{
+				GameLogic.instance.UpdateCursor(CursorType.NORMAL);
+			}
+		}
+	}
 	
 
 	private void RayRenderTexture()
 	{
 
-
+		/*
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 
@@ -74,20 +114,22 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 				if (hit.collider.tag == "StandardPerson")
 				{
 					PersonController pc = hit.collider.GetComponent<PersonController>();
-					DifferentPersonController dpc = hit.collider.GetComponent<DifferentPersonController>();
+					//DifferentPersonController dpc = hit.collider.GetComponent<DifferentPersonController>();
 
-					if (pc.enabled)
-					{
+					//if (pc.enabled)
+					//{
 						pc.Click();
-						GameLogic.instance.ChangeCursorInGame(CursorType.FAIL);
-					}
-					else
-					{
-						dpc.Click();
-						GameLogic.instance.ChangeCursorInGame(CursorType.CORRECT);
-					}
+						GameLogic.instance.ChangeCursorInGame(pc.converted ? CursorType.CORRECT : CursorType.FAIL);
+					//}
+					//else
+					//{
+					//	dpc.Click();
+					//	GameLogic.instance.ChangeCursorInGame(CursorType.CORRECT);
+					//}
 				}
 			}
+			
 		}
+		*/
 	}
 }

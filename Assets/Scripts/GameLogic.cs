@@ -17,8 +17,12 @@ public class GameLogic : MonoBehaviour
 {
 	public int charactersInScene { get; set; }
 
+	[Header("Game Variables")]
 	public AnimationCurve timeToConvert;
 	public int maxNumCharactersToReachMinimunTime = 15;
+	public int timeBetweenInfectionLevels = 5;
+	public int globalInfectionLevel { get; set; }
+
 	private float nextTimeToConvert;
 	private int currentLevel = 0;
 
@@ -96,6 +100,8 @@ public class GameLogic : MonoBehaviour
 
 	void Start()
 	{
+		globalInfectionLevel = 0;
+
 		fader.FadeToClear();
 
 
@@ -129,38 +135,9 @@ public class GameLogic : MonoBehaviour
 		}
 
 		CheckKeyBoard();
-
-		CheckRaycast();
 	}
 
-	private void CheckRaycast()
-	{
-		//if (cursorSelected != CursorType.OUTSIDE_SCREEN)
-		//{
-			/*
-			PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
-			pointerEventData.position = Input.mousePosition;
 
-			List<RaycastResult> raycastResults = new List<RaycastResult>();
-			EventSystem.current.RaycastAll(pointerEventData, raycastResults);
-
-			Debug.Log("HIT: " + raycastResults.Count); 
-
-			if (raycastResults.Count > 0)
-			{
-				if (raycastResults[0].gameObject.CompareTag("Terminal"))
-				{
-					UpdateCursor(CursorType.OUTSIDE_SCREEN);
-				}
-
-				if (raycastResults[0].gameObject.CompareTag("MainScreenImage"))
-				{
-					UpdateCursor(CursorType.NORMAL);
-				}
-			}
-			*/
-		//}
-	}
 
 	private void CheckKeyBoard()
 	{
@@ -203,22 +180,9 @@ public class GameLogic : MonoBehaviour
 
 	private void Convert()
 	{
-		if(charactersInScene >= THREASHOLD_LEVEL0 && charactersInScene < THREASHOLD_LEVEL1)
-		{
-			currentLevel = 1;
-		}
-
-		if(charactersInScene >= THREASHOLD_LEVEL1 && charactersInScene < THREASHOLD_LEVEL2)
-		{
-			currentLevel = 2;
-		}else if(charactersInScene >= THREASHOLD_LEVEL2)
-		{
-			currentLevel = 3;
-		}
-
 		/*CONVERTIR A ALGUIEN*/
 		PersonController personController = GetRandomPerson();
-		personController.Convert(currentLevel);
+		personController.Convert();
 
 		nextTimeToConvert = GetTimeCurveValue();
 	}
@@ -256,22 +220,5 @@ public class GameLogic : MonoBehaviour
 		}
 
 		return res;
-	}
-
-	/// <summary>
-	/// Cambiamos el cursor cuando hacemos click sobre un personaje.
-	/// </summary>
-	/// <param name="cursorType"></param>
-	public void ChangeCursorInGame(CursorType cursorType)
-	{
-		StopAllCoroutines();
-		StartCoroutine(ChangeCursor(cursorType));
-	}
-
-	private IEnumerator ChangeCursor(CursorType cursorType)
-	{
-		UpdateCursor(cursorType);
-		yield return new WaitForSeconds(0.2f);
-		UpdateCursor(CursorType.NORMAL);
 	}
 }
