@@ -110,7 +110,8 @@ public class GameLogic : MonoBehaviour
 			instance = this;
 		}
 
-		Cursor.SetCursor(outsideScreenCursor, hotSpot, cursorMode);
+		//Cursor.SetCursor(outsideScreenCursor, hotSpot, cursorMode);
+		UpdateCursor(CursorType.OUTSIDE_SCREEN);
 	}
 
 	void Start()
