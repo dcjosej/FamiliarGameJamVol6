@@ -48,6 +48,7 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 
 	void OnMouseOver()
 	{
+		Cursor.visible = false;
 		CheckRaycast();
 	}
 
@@ -77,6 +78,7 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 			if (Physics.Raycast(ray, out hit))
 			{
 				Debug.Log("Chocando con cosas del mundo real por dios!!: " + hit.collider.tag);
+
 				if (hit.collider.tag == "StandardPerson")
 				{
 					currentPersonController = hit.collider.GetComponent<PersonController>();

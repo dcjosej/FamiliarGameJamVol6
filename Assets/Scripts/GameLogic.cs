@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public enum CursorType
 {
@@ -54,11 +54,12 @@ public class GameLogic : MonoBehaviour
 
 
 	[Header("Cursores")]
+	public Image imageCursor;
 	public Texture2D outsideScreenCursor;
-	public Texture2D normalCursor;
-	public Texture2D overCursor;
-	public Texture2D wrongCursor;
-	public Texture2D correctCursor;
+	public Sprite normalCursor;
+	public Sprite overCursor;
+	public Sprite failCursor;
+	public Sprite correctCursor;
 
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = Vector2.one * 32f;
@@ -68,34 +69,48 @@ public class GameLogic : MonoBehaviour
 
 	public void UpdateCursor(CursorType cursorSelected)
 	{
+		
 		switch (cursorSelected)
 		{
 			case CursorType.OUTSIDE_SCREEN:
 				Cursor.SetCursor(outsideScreenCursor, hotSpot, cursorMode);
+				imageCursor.gameObject.SetActive(false);
+				Cursor.visible = true;
 				break;
 			case CursorType.NORMAL:
-				Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
+				//Cursor.SetCursor(normalCursor, hotSpot, cursorMode);
+				imageCursor.gameObject.SetActive(true);
+				Cursor.visible = false;
+				imageCursor.sprite = normalCursor;
 				break;
 			case CursorType.CORRECT:
-				Cursor.SetCursor(correctCursor, hotSpot, cursorMode);
+				//Cursor.SetCursor(correctCursor, hotSpot, cursorMode);
+				imageCursor.gameObject.SetActive(true);
+				Cursor.visible = false;
+				imageCursor.sprite = correctCursor;
 				break;
 			case CursorType.FAIL:
-				Cursor.SetCursor(wrongCursor, hotSpot, cursorMode);
+				//Cursor.SetCursor(wrongCursor, hotSpot, cursorMode);
+				imageCursor.gameObject.SetActive(true);
+				Cursor.visible = false;
+				imageCursor.sprite = failCursor;
 				break;
 		}
-		this.cursorSelected = cursorSelected; 
+		this.cursorSelected = cursorSelected;
+		
 	}
 
 
 	void Awake()
 	{
+
+
 		if(instance == null)
 		{
 			instance = this;
 		}
 
 		Cursor.SetCursor(outsideScreenCursor, hotSpot, cursorMode);
-
 	}
 
 	void Start()
