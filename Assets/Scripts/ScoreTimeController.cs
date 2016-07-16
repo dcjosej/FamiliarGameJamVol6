@@ -10,6 +10,17 @@ public class ScoreTimeController : MonoBehaviour
 
 	public Text guiScoreTimer;
 
+
+	void OnEnable()
+	{
+		GameLogic.OnGameOver += OnGameOver;
+    }
+
+	void Start()
+	{
+		guiScoreTimer = GetComponent<Text>();
+	}
+
 	void Update()
 	{
 		timerCount += Time.deltaTime;
@@ -20,5 +31,10 @@ public class ScoreTimeController : MonoBehaviour
 		Debug.Log("" + ss);
 
 		guiScoreTimer.text = string.Format("{0:00}:{1:00}", mm, ss);
+	}
+
+	private void OnGameOver()
+	{
+		SocialManager.instance.AddScore((int)timerCount, SocialManager.MAIN_LEADERBOARD_ID);
 	}
 }

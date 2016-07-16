@@ -15,6 +15,11 @@ public enum CursorType
 
 public class GameLogic : MonoBehaviour
 {
+
+	//Events
+	public delegate void OnGameOverCallback();
+	public static event OnGameOverCallback OnGameOver;
+
 	public int charactersInScene { get; set; }
 
 	[Header("Game Variables")]
@@ -140,7 +145,7 @@ public class GameLogic : MonoBehaviour
 	{
 		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
 
-		if(threatnessLevel <= 0f)
+		if(threatnessLevel <= 0f && !isGameOver)
 		{
 			ActiveGameOver();
 		}
@@ -217,13 +222,14 @@ public class GameLogic : MonoBehaviour
 
 	private void ActiveGameOver()
 	{
-		if (!isGameOver)
+		if(OnGameOver != null)
 		{
-			StopAllCoroutines();
-			HUDController.instance.ActiveGameOver();
-			AudioManager.instance.PlayNoise();
-			isGameOver = true;
+			OnGameOver();
 		}
+		StopAllCoroutines();
+		HUDController.instance.ActiveGameOver();
+		AudioManager.instance.PlayNoise();
+		isGameOver = true;
 	}
 
 	public SpawnZoneController GetRandomRespawnZone(SpawnZoneController spawnZone)
