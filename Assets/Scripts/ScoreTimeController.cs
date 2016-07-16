@@ -28,7 +28,7 @@ public class ScoreTimeController : MonoBehaviour
 		float ss = Mathf.Floor(timerCount % 60);
 		float mm = Mathf.Floor(timerCount / 60);
 
-		Debug.Log("" + ss);
+		//Debug.Log("" + ss);
 
 		guiScoreTimer.text = string.Format("{0:00}:{1:00}", mm, ss);
 	}
@@ -36,5 +36,11 @@ public class ScoreTimeController : MonoBehaviour
 	private void OnGameOver()
 	{
 		SocialManager.instance.AddScore((int)timerCount, SocialManager.MAIN_LEADERBOARD_ID);
+	}
+
+	//--------------- TEST ---------------------
+	public void TEST_METHOD()
+	{
+		Debug.Log("aaaaaaaaaaaaaa---11111111-321-312-321-3-123-1");
 	}
 }

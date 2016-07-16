@@ -7,7 +7,7 @@ public class AutoText : MonoBehaviour
 {
 	public float timeBetweenCharacters;
 	public bool longText = true;
-	public TextAsset textAsset;
+	//public TextAsset textAsset;
 	public int maxNumLines = 10;
 
 	public bool writing { get; set; }
@@ -26,8 +26,19 @@ public class AutoText : MonoBehaviour
 	private string textInConsoleWithoutMarker = "";
 	private string textMarker = "<size=10>_</size>";
 
+	public void ShowAllText(string text)
+	{
+		StopAllCoroutines();
+
+		textComp.text = text;
+		//timeBetweenCharacters = 0;
+
+		writing = false;
+	}
+
 	void Update()
 	{
+		/*
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 
@@ -36,6 +47,7 @@ public class AutoText : MonoBehaviour
 			textComp.text = textAsset.text;
 			timeBetweenCharacters = 0;
 		}
+		*/
 	}
 
 	void Awake()
@@ -48,22 +60,26 @@ public class AutoText : MonoBehaviour
 	public void Clean()
 	{
 		textComp.text = "";
+		textInConsole = "";
+		textInConsoleWithoutMarker = "";
+		textMarker = "<size=10>_</size>";
+		initIndex = -1;
 	}
 
 	void Start()
 	{
 		lines = 0;
-		writing = false;
-		if (longText)
-		{
-			StartCoroutine(IETypeText2(textAsset.text));
-		}
+		//if (longText)
+		//{
+		//	//StartCoroutine(IETypeText2(textAsset.text));
+		//}
 	}
 
 	public void TypeText(string textToType, string htmlColor)
 	{
 		if (!writing)
 		{
+			StopAllCoroutines();
 			StartCoroutine(IETypeText(textToType, htmlColor));
 		}
 	}
@@ -77,11 +93,14 @@ public class AutoText : MonoBehaviour
 	//TODO: UTILIZAR SOLO UNA FUNCION DE ESCRIBIR
 	private IEnumerator IETypeText2(string text)
 	{
+		writing = true;
+
 		foreach (char letter in text.ToCharArray())
 		{
 			textComp.text += letter;
-			yield return new WaitForSeconds(timeBetweenCharacters);
+			yield return new WaitForSeconds(timeBetweenCharacters);			
 		}
+		writing = false;
 	}
 	
 
@@ -95,8 +114,6 @@ public class AutoText : MonoBehaviour
 			textComp.text = textInConsoleWithoutMarker;
 		}
 		textComp.text += "<color='#" + htmlColor.ToString() + "'> </color>";
-
-
 
 
 		initIndex += 9 + htmlColor.Length + 3;
@@ -119,8 +136,10 @@ public class AutoText : MonoBehaviour
 			yield return new WaitForSeconds(timeBetweenCharacters);
 		}
 
-		if (!GameLogic.instance.isGameOver)
-		{
+		writing = false;
+
+		//if (!GameLogic.instance.isGameOver )
+		//{
 			UpdateStringFields(true);
 			textComp.text = textInConsoleWithoutMarker;
 			//textComp.text += "\n";
@@ -128,8 +147,7 @@ public class AutoText : MonoBehaviour
 			textInConsole = textComp.text;
 			
 			initIndex += 9;
-        }
-		writing = false;
+        //}
 	}
 
 	private void CheckTextMarker()

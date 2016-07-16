@@ -23,19 +23,29 @@ public class ScreenFadeInOut : MonoBehaviour
 	public float fadeTime = 1f; //Tiempo de fade en segundos
 
 	public bool sceneStarting = true;
-	public bool startFading = false;
+	public bool fading { get; set; }
+	private CanvasGroup canvasGroup;
 
 	private Image fadeImage;
+
+
 
 	void Awake()
 	{
 		fadeImage = GetComponent<Image>();
 	}
 
-	
-	public void FadeToBlack()
+	void Start()
 	{
-		StartCoroutine(IEFadeToBlack());
+		canvasGroup = GetComponent<CanvasGroup>();
+
+		FadeToClear();
+	}
+
+	
+	public void FadeToBlack(int nextScene)
+	{
+		StartCoroutine(IEFadeToBlack(nextScene));
 	}
 
 	public void FadeToClear()
@@ -45,39 +55,56 @@ public class ScreenFadeInOut : MonoBehaviour
 
 	private IEnumerator IEFadeToClear()
 	{
+		fadeImage.gameObject.SetActive(true);
+
+
+		fading = true;
+		canvasGroup.blocksRaycasts = fading;
+
+
 		float time = 0f;
 		float t = 0f;
 		while (time <= fadeTime)
 		{
+			time += Time.deltaTime;
+			t = time / fadeTime;
 			fadeImage.color = Color.Lerp(Color.black, Color.clear, t);
 
-			//Debug.Log("T: " + t);
-
-			time += Time.deltaTime;
-			t = time / fadeTime;
 			yield return null;
 		}
+
+		fading = false;
+		canvasGroup.blocksRaycasts = fading;
+		//fadeImage.gameObject.SetActive(false);
 	}
 
-	private IEnumerator IEFadeToBlack()
+	private IEnumerator IEFadeToBlack(int nextScene)
 	{
+		fadeImage.gameObject.SetActive(true);
 		float time = 0f;
 		float t = 0f;
+
+		fading = true;
+		canvasGroup.blocksRaycasts = fading;
+
 		while (time <= fadeTime)
 		{
-			fadeImage.color = Color.Lerp(Color.clear, Color.black, t);
-
 			time += Time.deltaTime;
 			t = time / fadeTime;
+			fadeImage.color = Color.Lerp(Color.clear, Color.black, t);
+
+
 			yield return null;
 		}
 
-		EndScene();
+		fading = false;
+		canvasGroup.blocksRaycasts = fading;
+		//fadeImage.gameObject.SetActive(false);
+		EndScene(nextScene);
 	}
 
-	void EndScene()
+	void EndScene(int nextScene)
 	{
-			SceneManager.LoadScene(1);
+		SceneManager.LoadSceneAsync(nextScene);
 	}
-
 }

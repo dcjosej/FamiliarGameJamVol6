@@ -5,12 +5,46 @@ using System.Collections;
 public class TutosLogic : MonoBehaviour
 {
 
+	public TextAsset[] texts;
+	private TextAsset currentText;
+	private bool endReached;
+
+	public AutoText autoText;
+	
+
 	public ScreenFadeInOut fader;
+
+	private int textAssetIndex = 0;
+
+	void Start()
+	{
+		currentText = texts[0];
+		TypeTextAsset();
+	}
 
 	void Update()
 	{
-
 		CheckKeyboard();
+	}
+
+	public void TypeTextAsset()
+	{
+		autoText.Clean();
+		autoText.TypeText(currentText.text, Utils.OrangeColor);
+	}
+	
+	public void NextText()
+	{
+		textAssetIndex++;
+		//textAssetIndex = textAssetIndex >= texts.Length ? texts.Length - 1 : textAssetIndex;
+
+		endReached = textAssetIndex >= texts.Length - 1;
+		currentText = texts[textAssetIndex];
+	}
+	
+	public void ShowAllText()
+	{
+		autoText.ShowAllText(currentText.text);
 	}	
 
 	private void CheckKeyboard()
@@ -18,7 +52,26 @@ public class TutosLogic : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Return))
 		{
 			//SceneManager.LoadScene(1);
-			fader.FadeToBlack();
+			if (endReached && !autoText.writing)
+			{
+				fader.FadeToBlack(2);
+			}
+		}
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			if (autoText.writing)
+			{
+				ShowAllText();
+			}
+			else
+			{
+				if (!endReached)
+				{
+					NextText();
+					TypeTextAsset();
+				}
+			}
 		}
 	}
 }

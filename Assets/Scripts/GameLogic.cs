@@ -12,6 +12,13 @@ public enum CursorType
 	FAIL
 }
 
+public enum GameState
+{
+	LOGING,
+	IN_GAME,
+	GAME_OVER
+}
+
 
 public class GameLogic : MonoBehaviour
 {
@@ -41,8 +48,11 @@ public class GameLogic : MonoBehaviour
 	public SpawnZoneController[] spawnZones;
 	public GameObject[] standardPeopleInScene;
 
-	public bool isGameOver = false;
 
+
+	public bool isGameOver = false;
+	public GameState gameState;
+	public GameObject people;
 
 
 	public Camera mainCameraRT;
@@ -119,7 +129,19 @@ public class GameLogic : MonoBehaviour
 		UpdateCursor(CursorType.OUTSIDE_SCREEN);
 	}
 
-	void Start()
+
+
+	public void SetState(GameState gameState)
+	{
+		switch (gameState)
+		{
+			case GameState.IN_GAME:
+				StartGame();
+				break;
+		}
+	}
+
+	public void StartGame()
 	{
 		globalInfectionLevel = 0;
 
@@ -130,6 +152,12 @@ public class GameLogic : MonoBehaviour
 		nextTimeToConvert = GetTimeCurveValue();
 		standardPeopleInScene = GameObject.FindGameObjectsWithTag("StandardPerson");
 		StartCoroutine(ConvertPeople());
+	}
+
+
+	void Start()
+	{
+
 	}
 
 	public PersonController GetRandomPerson()
