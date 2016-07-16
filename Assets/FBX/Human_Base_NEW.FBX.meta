@@ -135,6 +135,33 @@ ModelImporter:
     100254: Human_Suitcase_016
     100256: Human_Suitcase_017
     100258: Human_Suitcase_018
+    100260: Afro_Geo_001
+    100262: Auriculares_Geo_001
+    100264: Auriculares_Geo_002
+    100266: Auriculares_Geo_003
+    100268: Auriculares_Geo_004
+    100270: Auriculares_Geo_005
+    100272: Cresta_Geo_001
+    100274: Gafas_Geo_001
+    100276: Gafas_Geo_002
+    100278: Gafas_Geo_003
+    100280: Gafas_Geo_004
+    100282: Gafas_Geo_005
+    100284: Gafas_Geo_006
+    100286: Gafas_Geo_007
+    100288: Gorro_Geo_001
+    100290: Gorro_Geo_002
+    100292: Gorro_Geo_003
+    100294: Gorro_Geo_004
+    100296: Gorro_Geo_005
+    100298: Gorro_Geo_006
+    100300: Gorro_Geo_007
+    100302: Human_Suitcase_019
+    100304: Human_Suitcase_020
+    100306: Human_Suitcase_021
+    100308: Tupe_Geo_001
+    100310: Tupe_Geo_002
+    100312: Tupe_Geo_003
     400000: Base HumanHead
     400002: Base HumanLArmCollarbone
     400004: Base HumanLArmForearm
@@ -265,6 +292,33 @@ ModelImporter:
     400254: Human_Suitcase_016
     400256: Human_Suitcase_017
     400258: Human_Suitcase_018
+    400260: Afro_Geo_001
+    400262: Auriculares_Geo_001
+    400264: Auriculares_Geo_002
+    400266: Auriculares_Geo_003
+    400268: Auriculares_Geo_004
+    400270: Auriculares_Geo_005
+    400272: Cresta_Geo_001
+    400274: Gafas_Geo_001
+    400276: Gafas_Geo_002
+    400278: Gafas_Geo_003
+    400280: Gafas_Geo_004
+    400282: Gafas_Geo_005
+    400284: Gafas_Geo_006
+    400286: Gafas_Geo_007
+    400288: Gorro_Geo_001
+    400290: Gorro_Geo_002
+    400292: Gorro_Geo_003
+    400294: Gorro_Geo_004
+    400296: Gorro_Geo_005
+    400298: Gorro_Geo_006
+    400300: Gorro_Geo_007
+    400302: Human_Suitcase_019
+    400304: Human_Suitcase_020
+    400306: Human_Suitcase_021
+    400308: Tupe_Geo_001
+    400310: Tupe_Geo_002
+    400312: Tupe_Geo_003
     2300000: Base HumanHead
     2300002: Base HumanLArmCollarbone
     2300004: Base HumanLArmForearm
@@ -592,6 +646,33 @@ ModelImporter:
     4300252: Human_Shoes_018
     4300254: Human_Suitcase_018
     4300256: Human_Shirt_018
+    4300258: Tupe_Geo_001
+    4300260: Auriculares_Geo_002
+    4300262: Auriculares_Geo_003
+    4300264: Gorro_Geo_001
+    4300266: Auriculares_Geo_001
+    4300268: Auriculares_Geo_004
+    4300270: Auriculares_Geo_005
+    4300272: Gorro_Geo_002
+    4300274: Gorro_Geo_003
+    4300276: Gorro_Geo_004
+    4300278: Gorro_Geo_005
+    4300280: Gorro_Geo_006
+    4300282: Gorro_Geo_007
+    4300284: Cresta_Geo_001
+    4300286: Tupe_Geo_002
+    4300288: Tupe_Geo_003
+    4300290: Afro_Geo_001
+    4300292: Gafas_Geo_001
+    4300294: Gafas_Geo_002
+    4300296: Gafas_Geo_003
+    4300298: Gafas_Geo_004
+    4300300: Gafas_Geo_005
+    4300302: Gafas_Geo_006
+    4300304: Gafas_Geo_007
+    4300306: Human_Suitcase_019
+    4300308: Human_Suitcase_020
+    4300310: Human_Suitcase_021
     7400000: Idle
     7400002: Walk
     9500000: //RootNode
@@ -703,6 +784,33 @@ ModelImporter:
     13700210: Human_Suitcase_016
     13700212: Human_Suitcase_017
     13700214: Human_Suitcase_018
+    13700216: Afro_Geo_001
+    13700218: Auriculares_Geo_001
+    13700220: Auriculares_Geo_002
+    13700222: Auriculares_Geo_003
+    13700224: Auriculares_Geo_004
+    13700226: Auriculares_Geo_005
+    13700228: Cresta_Geo_001
+    13700230: Gafas_Geo_001
+    13700232: Gafas_Geo_002
+    13700234: Gafas_Geo_003
+    13700236: Gafas_Geo_004
+    13700238: Gafas_Geo_005
+    13700240: Gafas_Geo_006
+    13700242: Gafas_Geo_007
+    13700244: Gorro_Geo_001
+    13700246: Gorro_Geo_002
+    13700248: Gorro_Geo_003
+    13700250: Gorro_Geo_004
+    13700252: Gorro_Geo_005
+    13700254: Gorro_Geo_006
+    13700256: Gorro_Geo_007
+    13700258: Human_Suitcase_019
+    13700260: Human_Suitcase_020
+    13700262: Human_Suitcase_021
+    13700264: Tupe_Geo_001
+    13700266: Tupe_Geo_002
+    13700268: Tupe_Geo_003
   materials:
     importMaterials: 1
     materialName: 0
@@ -720,7 +828,7 @@ ModelImporter:
       and has rotation animation that will be discarded.\n\t'Base HumanNeck2' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerLeg
-      average position error 0.3 mm and maximum position error 8.5 mm at time 3: 7
+      average position error 0.3 mm and maximum position error 8.6 mm at time 3: 7
       (84.0%) Frame 79\n\tRightLowerLeg average position error 0.6 mm and maximum
       position error 12.6 mm at time 2:15 (67.0%) Frame 63\n\tLeftUpperArm average
       position error 1.6 mm and maximum position error 5.5 mm at time 3:10 (87.2%)
