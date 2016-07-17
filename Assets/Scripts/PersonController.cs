@@ -30,10 +30,19 @@ public class PersonController : MonoBehaviour
 			ActiveStandardElements();
 
 			converted = false;
+			GameLogic.instance.globalInfectionLevel -= infectedLevel;
+			GameLogic.instance.ApplyReward(CalculateNormalizedInfectionLevel());
+
 			infectedLevel = 0;
 			GameLogic.instance.charactersInScene--;
 			StopAllCoroutines();
 		}
+	}
+
+	private float CalculateNormalizedInfectionLevel()
+	{
+		float res = Mathf.InverseLerp(1, elements.Length, infectedLevel);
+		return res;
 	}
 
 	/// <summary>
@@ -251,6 +260,8 @@ public class PersonController : MonoBehaviour
 			elements[randomIndex].SetActive(true);
 
 			applied = true;
+
+			GameLogic.instance.globalInfectionLevel++;
 
 			return elements[randomIndex];
 		}

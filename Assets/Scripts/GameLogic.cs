@@ -12,13 +12,6 @@ public enum CursorType
 	FAIL
 }
 
-public enum GameState
-{
-	LOGING,
-	IN_GAME,
-	GAME_OVER
-}
-
 
 public class GameLogic : MonoBehaviour
 {
@@ -33,7 +26,18 @@ public class GameLogic : MonoBehaviour
 	public AnimationCurve timeToConvert;
 	public int maxNumCharactersToReachMinimunTime = 15;
 	public int timeBetweenInfectionLevels = 5;
-	public int globalInfectionLevel { get; set; }
+	public int globalInfectionLevel;
+	public float minReward;
+	public float maxReward;
+	public float maxLoseVelocity;
+	public int maxCharacterToMaxLoseVelocity = 10;
+	public AnimationCurve velocityCurve;
+
+
+	[Header("GUI References")]
+	public SectorSliderController sectorSliderController;
+
+	[Header("")]
 
 	private float nextTimeToConvert;
 	private int currentLevel = 0;
@@ -51,7 +55,7 @@ public class GameLogic : MonoBehaviour
 
 
 	public bool isGameOver = false;
-	public GameState gameState;
+	//public GameState gameState;
 	public GameObject people;
 
 
@@ -131,15 +135,15 @@ public class GameLogic : MonoBehaviour
 
 
 
-	public void SetState(GameState gameState)
-	{
-		switch (gameState)
-		{
-			case GameState.IN_GAME:
-				StartGame();
-				break;
-		}
-	}
+	//public void SetState(GameState gameState)
+	//{
+	//	switch (gameState)
+	//	{
+	//		case GameState.IN_GAME:
+	//			StartGame();
+	//			break;
+	//	}
+	//}
 
 	public void StartGame()
 	{
@@ -157,8 +161,24 @@ public class GameLogic : MonoBehaviour
 
 	void Start()
 	{
-
+		StartGame();
 	}
+
+	#region GAMEPLAY
+	public float GetLoseVelocity()
+	{
+		float t = Mathf.InverseLerp(0, maxNumCharactersToReachMinimunTime, charactersInScene);
+		float curveValue = velocityCurve.Evaluate(t);
+		float res = Mathf.Lerp(0, maxLoseVelocity, curveValue);
+		return res;
+	}
+
+	public void ApplyReward(float normalizedInfectionLevel)
+	{
+		float reward = Mathf.Lerp(maxReward, minReward, normalizedInfectionLevel);
+		sectorSliderController.ApplyReward(reward);
+	}
+	#endregion
 
 	public PersonController GetRandomPerson()
 	{

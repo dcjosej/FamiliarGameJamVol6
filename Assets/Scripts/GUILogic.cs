@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class GUILogic : MonoBehaviour {
 
-	public Text numbersOfCharacters;
+	//public Text numbersOfCharacters;
 
-	void Update()
-	{
-		UpdateNumbersOfCharacters();
-	}
+	//void Update()
+	//{
+	//	UpdateNumbersOfCharacters();
+	//}
 
-	public void UpdateNumbersOfCharacters()
-	{
-		numbersOfCharacters.text = GameLogic.instance.charactersInScene.ToString();
-	}
+	//public void UpdateNumbersOfCharacters()
+	//{
+	//	numbersOfCharacters.text = GameLogic.instance.charactersInScene.ToString();
+	//}
 }

@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class SectorSliderController : MonoBehaviour
 {
-	public float velocityLooseSector = 0.0025f;
-	public float incrementThreatRestored = 0.04f;
-	public const int MAX_NUM_INFECTED = 20;
-	public AnimationCurve threatnessCurve;
+	//public float velocityLooseSector = 0.0025f;
+	//public float incrementThreatRestored = 0.04f;
+	//public const int MAX_NUM_INFECTED = 20;
+	//public AnimationCurve threatnessCurve;
 
 	private Slider slider;
 	
@@ -27,11 +27,18 @@ public class SectorSliderController : MonoBehaviour
 		//slider.value -= velocityLooseSector * sliderValue * Time.deltaTime;
 		//slider.value = 1 - sliderValue;
 
-		slider.value -= velocityLooseSector * Time.deltaTime;
+		slider.value -= GameLogic.instance.GetLoseVelocity() * Time.deltaTime;
+		//float t = GameLogic.instance.charactersInScene / GameLogic.instance.maxCharacterToMaxLoseVelocity;
+		//float xValue = Mathf.Lerp(0, GameLogic.instance.maxCharacterToMaxLoseVelocity, t);
+	}
+
+	public void ApplyReward(float reward)
+	{
+		slider.value += reward;
 	}
 
 	public void IncreaseValue()
 	{
-		slider.value += incrementThreatRestored;
+		//slider.value += incrementThreatRestored;
 	}
 }
