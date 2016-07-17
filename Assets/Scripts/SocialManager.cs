@@ -6,6 +6,9 @@ public class SocialManager : MonoBehaviour
 
 	public const int MAIN_LEADERBOARD_ID = 169398;
 
+	private bool loggedLikeGuest;
+	public string guestName;
+
 	private static SocialManager _instance;
 	public static SocialManager instance
 	{
@@ -25,6 +28,16 @@ public class SocialManager : MonoBehaviour
 	}
 
 	void Start()
+	{
+		//GameJolt.UI.Manager.Instance.ShowSignIn();
+	}
+
+	public void LogGuest(string guest)
+	{
+		Debug.Log("GUEST NAME: " + guest);
+	}
+
+	public void LoginWithGamejolt()
 	{
 		GameJolt.UI.Manager.Instance.ShowSignIn();
 	}

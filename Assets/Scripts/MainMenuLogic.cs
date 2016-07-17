@@ -6,7 +6,7 @@ public class MainMenuLogic : MonoBehaviour {
 
 	void Start()
 	{
-		ScreenFadeInOut.instance.FadeToClear();
+		//ScreenFadeInOut.instance.FadeToClear();
 	}
 
 	void Update()
@@ -24,6 +24,7 @@ public class MainMenuLogic : MonoBehaviour {
 
 	public void StartGame()
 	{
-		SceneManager.LoadScene(2);
+		ScreenFadeInOut.instance.FadeToBlack(1);
+		//SceneManager.LoadScene(1);
 	}
 }
