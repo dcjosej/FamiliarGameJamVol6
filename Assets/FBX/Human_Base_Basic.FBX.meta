@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: 80bc329783143bf489d5ba68fb4d1110
+timeCreated: 1468712848
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base HumanHead
+    100002: Base HumanLArmCollarbone
+    100004: Base HumanLArmForearm
+    100006: Base HumanLArmPalm
+    100008: Base HumanLArmUpperarm
+    100010: Base HumanLLegCalf
+    100012: Base HumanLLegFoot
+    100014: Base HumanLLegThigh
+    100016: Base HumanNeck1
+    100018: Base HumanNeck2
+    100020: Base HumanPelvis
+    100022: Base HumanRCalf
+    100024: Base HumanRCollarbone
+    100026: Base HumanRFoot
+    100028: Base HumanRForearm
+    100030: Base HumanRibcage
+    100032: Base HumanRPalm
+    100034: Base HumanRThigh
+    100036: Base HumanRUpperarm
+    100038: Base HumanSpine1
+    100040: Base HumanSpine2
+    100042: //RootNode
+    100044: Human_Blazer_001
+    100046: Human_Head_001
+    100048: Human_Pants_001
+    100050: Human_Shirt_001
+    100052: Human_Shoes_001
+    100054: Human_Suitcase_001
+    400000: Base HumanHead
+    400002: Base HumanLArmCollarbone
+    400004: Base HumanLArmForearm
+    400006: Base HumanLArmPalm
+    400008: Base HumanLArmUpperarm
+    400010: Base HumanLLegCalf
+    400012: Base HumanLLegFoot
+    400014: Base HumanLLegThigh
+    400016: Base HumanNeck1
+    400018: Base HumanNeck2
+    400020: Base HumanPelvis
+    400022: Base HumanRCalf
+    400024: Base HumanRCollarbone
+    400026: Base HumanRFoot
+    400028: Base HumanRForearm
+    400030: Base HumanRibcage
+    400032: Base HumanRPalm
+    400034: Base HumanRThigh
+    400036: Base HumanRUpperarm
+    400038: Base HumanSpine1
+    400040: Base HumanSpine2
+    400042: //RootNode
+    400044: Human_Blazer_001
+    400046: Human_Head_001
+    400048: Human_Pants_001
+    400050: Human_Shirt_001
+    400052: Human_Shoes_001
+    400054: Human_Suitcase_001
+    4300000: Human_Suitcase_001
+    4300002: Human_Pants_001
+    4300004: Human_Shirt_001
+    4300006: Human_Head_001
+    4300008: Human_Blazer_001
+    4300010: Human_Shoes_001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Human_Blazer_001
+    13700002: Human_Head_001
+    13700004: Human_Pants_001
+    13700006: Human_Shirt_001
+    13700008: Human_Shoes_001
+    13700010: Human_Suitcase_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

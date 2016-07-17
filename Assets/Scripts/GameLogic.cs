@@ -58,7 +58,7 @@ public class GameLogic : MonoBehaviour
 	public Camera mainCameraRT;
 
 
-	public ScreenFadeInOut fader;
+	//public ScreenFadeInOut fader;
 
 
 
@@ -145,7 +145,7 @@ public class GameLogic : MonoBehaviour
 	{
 		globalInfectionLevel = 0;
 
-		fader.FadeToClear();
+		//fader.FadeToClear();
 
 
 		charactersInScene = 0;
