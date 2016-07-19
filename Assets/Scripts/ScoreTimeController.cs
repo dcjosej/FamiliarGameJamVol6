@@ -24,13 +24,15 @@ public class ScoreTimeController : MonoBehaviour
 	void Update()
 	{
 		timerCount += Time.deltaTime;
-		
-		float ss = Mathf.Floor(timerCount % 60);
+
+		float zz = Mathf.Floor((timerCount * 60)%60);
+        float ss = Mathf.Floor(timerCount % 60);
 		float mm = Mathf.Floor(timerCount / 60);
+		float hh = Mathf.Floor(mm / 60);
 
 		//Debug.Log("" + ss);
 
-		guiScoreTimer.text = string.Format("{0:00}:{1:00}", mm, ss);
+		guiScoreTimer.text = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", hh, mm, ss, zz);
 	}
 
 	private void OnGameOver()
