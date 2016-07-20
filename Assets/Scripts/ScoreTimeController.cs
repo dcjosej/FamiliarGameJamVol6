@@ -25,7 +25,7 @@ public class ScoreTimeController : MonoBehaviour
 	{
 		timerCount += Time.deltaTime;
 
-		float zz = Mathf.Floor((timerCount * 60)%60);
+		float zz = Mathf.Floor((timerCount * 100)%100);
         float ss = Mathf.Floor(timerCount % 60);
 		float mm = Mathf.Floor(timerCount / 60);
 		float hh = Mathf.Floor(mm / 60);
