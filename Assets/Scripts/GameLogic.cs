@@ -52,8 +52,8 @@ public class GameLogic : MonoBehaviour
 	public int timeToNextZone = 5;
 
 
-	public float minReward;
-	public float maxReward;
+	//public float minReward;
+	//public float maxReward;
 	//public float maxLoseVelocity;
 	//public int maxCharacterToMaxLoseVelocity = 10;
 	public AnimationCurve infectionVelocityCurve;
