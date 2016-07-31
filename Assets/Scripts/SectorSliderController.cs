@@ -1,13 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SectorSliderController : MonoBehaviour
 {
-	//public float velocityLooseSector = 0.0025f;
-	//public float incrementThreatRestored = 0.04f;
-	//public const int MAX_NUM_INFECTED = 20;
-	//public AnimationCurve threatnessCurve;
-
 	private Slider slider;
 	
 	void Awake()
@@ -22,14 +18,7 @@ public class SectorSliderController : MonoBehaviour
 
 	void Update()
 	{
-		//float curveValue = Mathf.InverseLerp(0, MAX_NUM_INFECTED, Mathf.Clamp(GameLogic.instance.charactersInScene, 0, MAX_NUM_INFECTED));
-		//float sliderValue = threatnessCurve.Evaluate(curveValue);
-		//slider.value -= velocityLooseSector * sliderValue * Time.deltaTime;
-		//slider.value = 1 - sliderValue;
-
-		slider.value -= GameLogic.instance.GetLoseVelocity() * Time.deltaTime;
-		//float t = GameLogic.instance.charactersInScene / GameLogic.instance.maxCharacterToMaxLoseVelocity;
-		//float xValue = Mathf.Lerp(0, GameLogic.instance.maxCharacterToMaxLoseVelocity, t);
+		slider.value = slider.maxValue - GameLogic.instance.GetSliderValue();
 	}
 
 	public void ApplyReward(float reward)
@@ -37,8 +26,10 @@ public class SectorSliderController : MonoBehaviour
 		slider.value += reward;
 	}
 
+	/*
 	public void IncreaseValue()
 	{
-		//slider.value += incrementThreatRestored;
+		throw new NotImplementedException();
 	}
+	*/
 }

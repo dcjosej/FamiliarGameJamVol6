@@ -49,10 +49,4 @@ public class HUDController : MonoBehaviour
 	{
 		consoleAutoText.TypeText(cleaningCompleted, ColorUtility.ToHtmlStringRGB(Color.green));
 	}
-
-	public void IncreaseBar()
-	{
-		sectorSliderController.IncreaseValue();
-	}
-
 }

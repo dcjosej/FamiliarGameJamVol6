@@ -22,16 +22,41 @@ public class GameLogic : MonoBehaviour
 
 	public int charactersInScene { get; set; }
 
-	[Header("Game Variables")]
-	public AnimationCurve timeToConvert;
-	public int maxNumCharactersToReachMinimunTime = 15;
-	public int timeBetweenInfectionLevels = 5;
+
+	[Header("DEBUG (QUITAR ESTE HEDAER EN LA RELEASE)")]
 	public int globalInfectionLevel;
+
+	[Header("Game Variables")]
+	//public AnimationCurve timeToConvert;
+
+
+	/// <summary>
+	/// Minima velocidad de conversion (Cada X segundos transformamos a una persona).
+	/// </summary>
+	[Tooltip("Minima velocidad de conversion (Cada X segundos transformamos a una persona)")]
+	public float minTimeToNextCharacterConversion = 15;
+
+
+
+	/// <summary>
+	/// Maxima velocidad de conversion (Cada X segundos transformamos a una persona).
+	/// </summary>
+	[Tooltip("Maxima velocidad de conversion (Cada X segundos transformamos a una persona)")]
+	public float maxTimeToNextCharacterConversion = 4;
+
+	[Tooltip("Cuantos infectados le corresponden a una unidad de peligro ('Un trozo del slider')")]
+	public int numberOfCharacterToDangerousUnit = 5;
+
+	public int maxNumCharactersToReachMinimunTime = 15;
+	[Tooltip("Tiempo para la conversion de la siguiente zona del infectado (Cabeza, cuerpo, zapatos...)")]
+	public int timeToNextZone = 5;
+
+
 	public float minReward;
 	public float maxReward;
-	public float maxLoseVelocity;
-	public int maxCharacterToMaxLoseVelocity = 10;
-	public AnimationCurve velocityCurve;
+	//public float maxLoseVelocity;
+	//public int maxCharacterToMaxLoseVelocity = 10;
+	public AnimationCurve infectionVelocityCurve;
 
 
 	[Header("GUI References")]
@@ -165,19 +190,17 @@ public class GameLogic : MonoBehaviour
 	}
 
 	#region GAMEPLAY
-	public float GetLoseVelocity()
+	public float GetSliderValue()
 	{
-		float t = Mathf.InverseLerp(0, maxNumCharactersToReachMinimunTime, charactersInScene);
-		float curveValue = velocityCurve.Evaluate(t);
-		float res = Mathf.Lerp(0, maxLoseVelocity, curveValue);
+		//int res = 0;
+		//float t = Mathf.InverseLerp(0, maxNumCharactersToReachMinimunTime, charactersInScene);
+		//float curveValue = infectionVelocityCurve.Evaluate(t);
+		//float res = Mathf.Lerp(0, 4, curveValue);
+
+		int res = charactersInScene / numberOfCharacterToDangerousUnit;
 		return res;
 	}
-
-	public void ApplyReward(float normalizedInfectionLevel)
-	{
-		float reward = Mathf.Lerp(maxReward, minReward, normalizedInfectionLevel);
-		sectorSliderController.ApplyReward(reward);
-	}
+	
 	#endregion
 
 	public PersonController GetRandomPerson()
@@ -243,8 +266,10 @@ public class GameLogic : MonoBehaviour
 	private float GetTimeCurveValue()
 	{
 		float xValueCurve = Mathf.InverseLerp(0, maxNumCharactersToReachMinimunTime, charactersInScene);
-		float res = timeToConvert.Evaluate(xValueCurve);
+		float curveValue = infectionVelocityCurve.Evaluate(xValueCurve);
+		float res = Mathf.Lerp(maxTimeToNextCharacterConversion, minTimeToNextCharacterConversion, curveValue);
 		return res;
+		//return 0.0f;
 	}
 
 	private void Convert()

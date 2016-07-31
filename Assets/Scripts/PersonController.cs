@@ -31,7 +31,6 @@ public class PersonController : MonoBehaviour
 
 			converted = false;
 			GameLogic.instance.globalInfectionLevel -= infectedLevel;
-			GameLogic.instance.ApplyReward(CalculateNormalizedInfectionLevel());
 
 			infectedLevel = 0;
 			GameLogic.instance.charactersInScene--;
@@ -102,7 +101,7 @@ public class PersonController : MonoBehaviour
 		//Vamos cambiando zonas cada cierto tiempo hasta tener la persona completamente cambiada
 		while (infectedLevel < elements.Length - 1)
 		{
-			yield return new WaitForSeconds(GameLogic.instance.timeBetweenInfectionLevels);
+			yield return new WaitForSeconds(GameLogic.instance.timeToNextZone);
 			ChangeAppearence();
 		}
 	}
@@ -211,8 +210,7 @@ public class PersonController : MonoBehaviour
 
 			HUDController.instance.TypeCleaningCompleted();
 			AudioManager.instance.PlayConversionAccepted();
-
-			HUDController.instance.IncreaseBar();
+			
 
 			//this.enabled = false;
 			MindRestored();
@@ -242,6 +240,7 @@ public class PersonController : MonoBehaviour
 			Vector3 newPosition = spawnPointController.transform.position;
 			newPosition.y = transform.position.y;
 			transform.position = newPosition;
+			transform.position += transform.forward * 20;
 		}
 	}
 
