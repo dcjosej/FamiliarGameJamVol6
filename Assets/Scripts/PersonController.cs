@@ -111,10 +111,41 @@ public class PersonController : MonoBehaviour
 	/// </summary>
 	private void ChangeAppearence()
 	{
-		ElementsZone notAppliedZone = Array.Find(elements, x => !x.applied);
-		GameObject selectedElement = notAppliedZone.ActiveRandomElement();
+		ElementsZone[] notAppliedZones = Array.FindAll(elements, x => !x.applied);
+
+		ElementsZone selectedZone = SelectZoneWeightedRandom(notAppliedZones);
+
+
+		GameObject selectedElement = selectedZone.ActiveRandomElement();
 		activeElements.Add(selectedElement);
 		infectedLevel++;
+	}
+
+	private ElementsZone SelectZoneWeightedRandom(ElementsZone[] notAppliedZones)
+	{
+		ElementsZone res = null;
+
+		Array.Sort(notAppliedZones);
+
+		float weightedIndex = UnityEngine.Random.Range(0f, 1f);
+
+		foreach(ElementsZone ez in notAppliedZones)
+		{
+
+			float weightElement = GameLogic.instance.GetProbabilityByZone(ez.zone) / 100f;
+
+			if (weightedIndex < weightElement)
+			{
+				res = ez;
+				break;
+			}
+
+			weightedIndex -= weightElement;
+
+		}
+
+
+		return res;
 	}
 
 	/// <summary>
@@ -245,11 +276,12 @@ public class PersonController : MonoBehaviour
 	}
 
 	[System.Serializable]
-	public class ElementsZone
+	public class ElementsZone: IComparable<ElementsZone>
 	{
 		//[HideInInspector]
 		public bool applied;
 		public GameObject[] elements;
+		public Zone zone;
 
 		public GameObject ActiveRandomElement()
 		{
@@ -263,6 +295,26 @@ public class PersonController : MonoBehaviour
 			GameLogic.instance.globalInfectionLevel++;
 
 			return elements[randomIndex];
+		}
+
+		public int CompareTo(ElementsZone other)
+		{
+			int res = 0;
+			if(GameLogic.instance.GetProbabilityByZone(zone) > GameLogic.instance.GetProbabilityByZone(other.zone))
+			{
+				res = -1;
+			}
+			else if(GameLogic.instance.GetProbabilityByZone(zone) < GameLogic.instance.GetProbabilityByZone(other.zone))
+			{
+				res = 1;
+			}
+			return res;
+		}
+
+		public override string ToString()
+		{
+			string res = zone + " " + GameLogic.instance.GetProbabilityByZone(zone);
+			return res;
 		}
 	}
 }

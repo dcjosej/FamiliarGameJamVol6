@@ -52,6 +52,9 @@ public class GameLogic : MonoBehaviour
 	public int timeToNextZone = 5;
 
 
+	public PersonZonesProbability zonesProbabilities;
+
+
 	//public float minReward;
 	//public float maxReward;
 	//public float maxLoseVelocity;
@@ -198,6 +201,12 @@ public class GameLogic : MonoBehaviour
 		//float res = Mathf.Lerp(0, 4, curveValue);
 
 		int res = charactersInScene / numberOfCharacterToDangerousUnit;
+		return res;
+	}
+
+	public float GetProbabilityByZone(Zone zone)
+	{
+		float res = zonesProbabilities.GetZoneProbabilityByZone(zone).probability;
 		return res;
 	}
 	
