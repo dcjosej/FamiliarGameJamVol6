@@ -16,9 +16,19 @@ public enum CursorType
 public class GameLogic : MonoBehaviour
 {
 
+
+
+
+
 	//Events
 	public delegate void OnGameOverCallback();
 	public static event OnGameOverCallback OnGameOver;
+
+
+
+	public static bool CURSOR_CHANGING = false;
+
+
 
 	public int charactersInScene { get; set; }
 
@@ -26,6 +36,8 @@ public class GameLogic : MonoBehaviour
 	[Header("DEBUG (QUITAR ESTE HEDAER EN LA RELEASE)")]
 	public int globalInfectionLevel;
 
+
+	#region GAMEPLAY VARIABLES
 	[Header("Game Variables")]
 	//public AnimationCurve timeToConvert;
 
@@ -55,11 +67,19 @@ public class GameLogic : MonoBehaviour
 	public PersonZonesProbability zonesProbabilities;
 
 
+	
+
 	//public float minReward;
 	//public float maxReward;
 	//public float maxLoseVelocity;
 	//public int maxCharacterToMaxLoseVelocity = 10;
 	public AnimationCurve infectionVelocityCurve;
+
+	#endregion
+
+	[Header("Others")]
+	[Tooltip("Segundos que permanece el cursor cambiado de Color cuando hemos pulsado sobre una persona")]
+	public float secondsToRestablishCursor = 0.5f;
 
 
 	[Header("GUI References")]
@@ -104,9 +124,9 @@ public class GameLogic : MonoBehaviour
 	public Image imageCursor;
 	public Texture2D outsideScreenCursor;
 	public Sprite normalCursor;
-	public Sprite overCursor;
 	public Sprite failCursor;
 	public Sprite correctCursor;
+	public Sprite hoverCursor;
 
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = Vector2.one * 32f;
@@ -141,6 +161,11 @@ public class GameLogic : MonoBehaviour
 				imageCursor.gameObject.SetActive(true);
 				Cursor.visible = false;
 				imageCursor.sprite = failCursor;
+				break;
+			case CursorType.HOVER:
+				imageCursor.gameObject.SetActive(true);
+				Cursor.visible = false;
+				imageCursor.sprite = hoverCursor;
 				break;
 		}
 		this.cursorSelected = cursorSelected;
@@ -211,6 +236,26 @@ public class GameLogic : MonoBehaviour
 	}
 	
 	#endregion
+
+	public void PersonClicked(bool wasInfected)
+	{
+		StartCoroutine(ChangeCursor(wasInfected));
+	}
+
+	private IEnumerator ChangeCursor(bool wasInfected)
+	{
+		float time = 0;
+
+		UpdateCursor(wasInfected ? CursorType.CORRECT : CursorType.FAIL);
+
+		CURSOR_CHANGING = true;
+        while (time <= secondsToRestablishCursor)
+		{
+			time += Time.deltaTime;
+			yield return null;
+		}
+		CURSOR_CHANGING = false;
+    }
 
 	public PersonController GetRandomPerson()
 	{

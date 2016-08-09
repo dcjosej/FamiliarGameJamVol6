@@ -234,6 +234,9 @@ public class PersonController : MonoBehaviour
 
 	void OnMouseDown()
 	{
+
+		GameLogic.instance.PersonClicked(converted);
+
 		if (converted)
 		{
 			StopCoroutine("ConvertPerson");

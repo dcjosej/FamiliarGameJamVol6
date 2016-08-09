@@ -70,9 +70,11 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 		RaycastHit hit;
 
 
-		if (Physics.Raycast(ray, out hit))
+		if (Physics.Raycast(ray, out hit) && !GameLogic.CURSOR_CHANGING)
 		{
 			Debug.Log("Primer ray: " + hit.collider.name);
+
+
 			ray = cameraRT.ViewportPointToRay(hit.textureCoord);
 
 			if (Physics.Raycast(ray, out hit))
@@ -82,7 +84,8 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 				if (hit.collider.tag == "StandardPerson")
 				{
 					currentPersonController = hit.collider.GetComponent<PersonController>();
-					GameLogic.instance.UpdateCursor(currentPersonController.converted ? CursorType.CORRECT : CursorType.FAIL);
+					GameLogic.instance.UpdateCursor(CursorType.HOVER);
+					//GameLogic.instance.UpdateCursor(currentPersonController.converted ? CursorType.CORRECT : CursorType.FAIL);
 				}
 				else
 				{
