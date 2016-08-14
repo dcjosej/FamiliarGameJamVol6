@@ -270,7 +270,7 @@ public class GameLogic : MonoBehaviour
 	{
 		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
 
-		if(threatnessLevel <= 0f && !isGameOver)
+		if(threatnessLevel >= HUDController.instance.sectorSliderController.GetMaxValue() && !isGameOver)
 		{
 			ActiveGameOver();
 		}
@@ -338,6 +338,7 @@ public class GameLogic : MonoBehaviour
 
 	private void CheckKeyBoardGameOver()
 	{
+		/*
 		if (Input.GetKeyDown(KeyCode.Y))
 		{
 			SceneManager.LoadScene(1);
@@ -345,6 +346,7 @@ public class GameLogic : MonoBehaviour
 		{
 			SceneManager.LoadScene(0);
 		}
+		*/
 	}
 
 	private void ActiveGameOver()
@@ -354,6 +356,8 @@ public class GameLogic : MonoBehaviour
 			OnGameOver();
 		}
 		StopAllCoroutines();
+
+		people.SetActive(false);
 		HUDController.instance.ActiveGameOver();
 		AudioManager.instance.PlayNoise();
 		isGameOver = true;

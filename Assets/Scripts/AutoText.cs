@@ -12,6 +12,8 @@ public class AutoText : MonoBehaviour
 
 	public bool writing { get; set; }
 	public int lines { get; set; }
+	public bool alowKeyboardTyping = false;
+
 	private Text textComp;
 
 
@@ -26,6 +28,11 @@ public class AutoText : MonoBehaviour
 	private string textInConsoleWithoutMarker = "";
 	private string textMarker = "<size=10>_</size>";
 
+
+
+	//COROUTINES
+	private Coroutine typeTextCoroutine;
+
 	public void ShowAllText(string text)
 	{
 		StopAllCoroutines();
@@ -38,6 +45,15 @@ public class AutoText : MonoBehaviour
 
 	void Update()
 	{
+
+		if (alowKeyboardTyping)
+		{
+			if (Input.GetKeyDown(KeyCode.Y))
+			{
+				TypeText("Y", Utils.OrangeColor);
+			}
+		}
+
 		/*
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
@@ -79,8 +95,12 @@ public class AutoText : MonoBehaviour
 	{
 		if (!writing)
 		{
-			StopAllCoroutines();
-			StartCoroutine(IETypeText(textToType, htmlColor));
+			//StopAllCoroutines();
+			if(typeTextCoroutine != null)
+			{
+				StopCoroutine(typeTextCoroutine);
+			}
+			typeTextCoroutine = StartCoroutine(IETypeText(textToType, htmlColor));
 		}
 	}
 

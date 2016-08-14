@@ -32,6 +32,8 @@ public class HUDController : MonoBehaviour
 
 		consoleAutoText.Clean();
 
+
+		consoleAutoText.TypeText("Texto de game over", Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}
 
