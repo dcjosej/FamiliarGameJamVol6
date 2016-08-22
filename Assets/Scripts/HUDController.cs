@@ -31,9 +31,9 @@ public class HUDController : MonoBehaviour
 		gameOverEmergencia.SetActive(true);
 
 		consoleAutoText.Clean();
-
-
-		consoleAutoText.TypeText("Texto de game over", Utils.OrangeColor);
+		consoleAutoText.allowKeyboardTyping = true;
+		consoleAutoText.maxNumLines = 4;
+		consoleAutoText.TypeText(AutoText.PLAY_AGAIN_TEXT, Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}
 

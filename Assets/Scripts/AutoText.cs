@@ -12,7 +12,7 @@ public class AutoText : MonoBehaviour
 
 	public bool writing { get; set; }
 	public int lines { get; set; }
-	public bool alowKeyboardTyping = false;
+	public bool allowKeyboardTyping = false;
 
 	private Text textComp;
 
@@ -28,6 +28,16 @@ public class AutoText : MonoBehaviour
 	private string textInConsoleWithoutMarker = "";
 	private string textMarker = "<size=10>_</size>";
 
+
+	#region KEYBOARD TYPING
+	public const string PLAY_AGAIN_TEXT = "Has sido despedido. ¿Quieres ser reasignado a otro sector? (y/n): ";
+	public const string WRONG_INPUT = "\n\nInvalid Input!\n\n";
+
+	private string previousConsoleMessage = "";
+
+	private int maximunCharacters = 1;
+	private string input = "";
+	#endregion
 
 
 	//COROUTINES
@@ -46,12 +56,38 @@ public class AutoText : MonoBehaviour
 	void Update()
 	{
 
-		if (alowKeyboardTyping)
+		if (allowKeyboardTyping)
 		{
-			if (Input.GetKeyDown(KeyCode.Y))
+			if (input.Length < maximunCharacters)
 			{
-				TypeText("Y", Utils.OrangeColor);
+				if (Input.GetKeyDown(KeyCode.Y))
+				{
+					string character = "y";
+					TypeText(character, Utils.OrangeColor);
+					input += character;
+				}
+
+				if (Input.GetKeyDown(KeyCode.N))
+				{
+					string character = "n";
+					TypeText(character, Utils.OrangeColor);
+					input += character;
+				}
 			}
+
+			if (Input.GetKeyDown(KeyCode.Backspace) && input.Length > 0)
+			{
+				BackSpace();
+			}
+
+			if (Input.GetKeyDown(KeyCode.Return))
+			{
+				if(input == "")
+				{
+					StartCoroutine(ConsoleError(WRONG_INPUT, Utils.RedColor));
+				}
+			}
+
 		}
 
 		/*
@@ -64,6 +100,12 @@ public class AutoText : MonoBehaviour
 			timeBetweenCharacters = 0;
 		}
 		*/
+	}
+
+	private IEnumerator ConsoleError(string msg, string htmlColor)
+	{
+		yield return StartCoroutine(IETypeText(msg, htmlColor));
+		yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
 	}
 
 	void Awake()
@@ -133,13 +175,14 @@ public class AutoText : MonoBehaviour
 		{
 			textComp.text = textInConsoleWithoutMarker;
 		}
-		textComp.text += "<color='#" + htmlColor.ToString() + "'> </color>";
+		textComp.text += "<color='#" + htmlColor.ToString() + "'></color>";
 
 
 		initIndex += 9 + htmlColor.Length + 3;
+		
 		//initIndex += 17;
 		//initIndex++;
-		if (lines > maxNumLines && !GameLogic.instance.isGameOver)
+		if (lines > maxNumLines)
 		{
 			DeleteFirstLine();
 			UpdateStringFields(false);
@@ -160,23 +203,42 @@ public class AutoText : MonoBehaviour
 
 		//if (!GameLogic.instance.isGameOver )
 		//{
+
+
+		if (!allowKeyboardTyping)
+		{
 			UpdateStringFields(true);
-			textComp.text = textInConsoleWithoutMarker;
-			//textComp.text += "\n";
-			textComp.text += textMarker;
-			textInConsole = textComp.text;
+		}
+		else
+		{
+			initIndex--;
+		}
+		textComp.text = textInConsoleWithoutMarker;
+		//textComp.text += "\n";
+		textComp.text += textMarker;
+		textInConsole = textComp.text;
 			
-			initIndex += 9;
+		initIndex += 9;
+		initIndex--;
         //}
 	}
 
-	private void CheckTextMarker()
+	private void BackSpace()
 	{
-		if (!textComp.text.Contains(textMarker))
-		{
-			textComp.text += textMarker;
-		}
-	}
+		textInConsoleWithoutMarker = textInConsoleWithoutMarker.Substring(0, textInConsoleWithoutMarker.Length - 26);
+		textInConsole = textInConsoleWithoutMarker + textMarker;
+
+		initIndex -= 26;
+		input = input.Substring(0, input.Length - 1);
+    }
+
+	//private void CheckTextMarker()
+	//{
+	//	if (!textComp.text.Contains(textMarker))
+	//	{
+	//		textComp.text += textMarker;
+	//	}
+	//}
 
 	private void UpdateStringFields(bool newLine)
 	{
