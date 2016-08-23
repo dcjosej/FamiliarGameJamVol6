@@ -32,7 +32,7 @@ public class HUDController : MonoBehaviour
 
 		consoleAutoText.Clean();
 		consoleAutoText.allowKeyboardTyping = true;
-		consoleAutoText.maxNumLines = 4;
+		consoleAutoText.maxNumLines = 10;
 		consoleAutoText.TypeText(AutoText.PLAY_AGAIN_TEXT, Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}

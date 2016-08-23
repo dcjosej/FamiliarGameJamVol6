@@ -31,7 +31,7 @@ public class AutoText : MonoBehaviour
 
 	#region KEYBOARD TYPING
 	public const string PLAY_AGAIN_TEXT = "Has sido despedido. ¿Quieres ser reasignado a otro sector? (y/n): ";
-	public const string WRONG_INPUT = "\n\nInvalid Input!\n\n";
+	public const string WRONG_INPUT = "Invalid Input!";
 
 	private string previousConsoleMessage = "";
 
@@ -56,28 +56,44 @@ public class AutoText : MonoBehaviour
 	void Update()
 	{
 
-		if (allowKeyboardTyping)
+		if (true)
 		{
 			if (input.Length < maximunCharacters)
 			{
+				string selectedCharacter = "";
 				if (Input.GetKeyDown(KeyCode.Y))
 				{
-					string character = "y";
-					TypeText(character, Utils.OrangeColor);
-					input += character;
+					selectedCharacter = "y";
+					input += selectedCharacter;
 				}
 
 				if (Input.GetKeyDown(KeyCode.N))
 				{
-					string character = "n";
-					TypeText(character, Utils.OrangeColor);
-					input += character;
+					selectedCharacter = "n";
+					input += selectedCharacter;
 				}
+
+				if(selectedCharacter != "")
+				{
+					initIndex -= 7;
+
+					textInConsoleWithoutMarker = textInConsoleWithoutMarker.Insert(initIndex, selectedCharacter);
+					textInConsole = textInConsole.Insert(initIndex, selectedCharacter);
+					textComp.text = textInConsole;
+				}
+
 			}
 
 			if (Input.GetKeyDown(KeyCode.Backspace) && input.Length > 0)
 			{
-				BackSpace();
+				textInConsoleWithoutMarker = textInConsoleWithoutMarker.Remove(initIndex, 1);
+				textInConsole = textInConsole.Remove(initIndex, 1);
+				textComp.text = textInConsole;
+
+				initIndex += 7;
+				//initIndex--;
+
+				input = input.Substring(0, input.Length - 1);
 			}
 
 			if (Input.GetKeyDown(KeyCode.Return))
@@ -104,8 +120,20 @@ public class AutoText : MonoBehaviour
 
 	private IEnumerator ConsoleError(string msg, string htmlColor)
 	{
+		allowKeyboardTyping = false;
+		//yield return StartCoroutine(IETypeText("", htmlColor));
+		//textInConsoleWithoutMarker += "\n";
+		//initIndex++;
+		//yield return StartCoroutine(IETypeText("", htmlColor));
+
+		initIndex++;
+		UpdateStringFields(true);
+
 		yield return StartCoroutine(IETypeText(msg, htmlColor));
-		yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
+		allowKeyboardTyping = true;
+        yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
+		
+		//allowKeyboardTyping = true;
 	}
 
 	void Awake()
@@ -211,13 +239,18 @@ public class AutoText : MonoBehaviour
 		}
 		else
 		{
+			UpdateStringFields(false);
 			initIndex--;
 		}
+
+
+		//UpdateStringFields(!allowKeyboardTyping);
 		textComp.text = textInConsoleWithoutMarker;
 		//textComp.text += "\n";
 		textComp.text += textMarker;
 		textInConsole = textComp.text;
-			
+
+
 		initIndex += 9;
 		initIndex--;
         //}
@@ -280,7 +313,7 @@ public class AutoText : MonoBehaviour
 
 	private void DeleteFirstLine()
 	{
-		string pattern = @"(<color='[#\w+]+'>)([\w\s\\.\\:]*)<\/color>";
+		string pattern = @"(<color='[#\w+]+'>)([\w\s\\.\\:\/\)\(\¿\?!]*)<\/color>";
 		Regex regex = new Regex(pattern);
 		MatchCollection matches = regex.Matches(textComp.text);
         string substringColor = matches[0].Groups[1].ToString();
@@ -298,6 +331,11 @@ public class AutoText : MonoBehaviour
 		{
 			initIndex -= (matches[0].ToString().Length + 1);
         }
+
+		//if (allowKeyboardTyping)
+		//{
+		//	initIndex += 2;
+		//}
 	}
 
 	/*
