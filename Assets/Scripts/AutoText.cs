@@ -55,23 +55,31 @@ public class AutoText : MonoBehaviour
 
 	void Update()
 	{
-
-		if (true)
+		//Debug.Log("ENTRADA DE TECLADO: " + Input.inputString);
+        if (allowKeyboardTyping && !writing)
 		{
 			if (input.Length < maximunCharacters)
 			{
-				string selectedCharacter = "";
-				if (Input.GetKeyDown(KeyCode.Y))
-				{
-					selectedCharacter = "y";
-					input += selectedCharacter;
-				}
 
-				if (Input.GetKeyDown(KeyCode.N))
+				string selectedCharacter = "";
+				
+				if(Input.inputString.Length > 0 && !Input.inputString.Contains("\r"))
 				{
-					selectedCharacter = "n";
-					input += selectedCharacter;
-				}
+					selectedCharacter = Input.inputString[0].ToString();
+                }
+				
+				input += selectedCharacter;
+				//if (Input.GetKeyDown(KeyCode.Y))
+				//{
+				//	selectedCharacter = "y";
+				//	input += selectedCharacter;
+				//}
+
+				//if (Input.GetKeyDown(KeyCode.N))
+				//{
+				//	selectedCharacter = "n";
+				//	input += selectedCharacter;
+				//}
 
 				if(selectedCharacter != "")
 				{
@@ -86,20 +94,21 @@ public class AutoText : MonoBehaviour
 
 			if (Input.GetKeyDown(KeyCode.Backspace) && input.Length > 0)
 			{
-				textInConsoleWithoutMarker = textInConsoleWithoutMarker.Remove(initIndex, 1);
-				textInConsole = textInConsole.Remove(initIndex, 1);
-				textComp.text = textInConsole;
-
-				initIndex += 7;
-				//initIndex--;
-
-				input = input.Substring(0, input.Length - 1);
+				BackSpace();
 			}
 
 			if (Input.GetKeyDown(KeyCode.Return))
 			{
-				if(input == "")
+				if(input != "y" && input != "n")
 				{
+					//Symbolic delete of the last character for update the index
+					//initIndex += 6;
+
+					if(input.Length > 0)
+					{
+						initIndex += 8;
+						input = "";
+					}
 					StartCoroutine(ConsoleError(WRONG_INPUT, Utils.RedColor));
 				}
 			}
@@ -258,12 +267,18 @@ public class AutoText : MonoBehaviour
 
 	private void BackSpace()
 	{
-		textInConsoleWithoutMarker = textInConsoleWithoutMarker.Substring(0, textInConsoleWithoutMarker.Length - 26);
-		textInConsole = textInConsoleWithoutMarker + textMarker;
+		
+		textInConsoleWithoutMarker = textInConsoleWithoutMarker.Remove(initIndex, 1);
+		textInConsole = textInConsole.Remove(initIndex, 1);
+		textComp.text = textInConsole;
 
-		initIndex -= 26;
+		
 		input = input.Substring(0, input.Length - 1);
-    }
+		initIndex += 7;
+		//initIndex--;
+
+
+	}
 
 	//private void CheckTextMarker()
 	//{
