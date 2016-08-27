@@ -51,4 +51,9 @@ public class HUDController : MonoBehaviour
 	{
 		consoleAutoText.TypeText(cleaningCompleted, ColorUtility.ToHtmlStringRGB(Color.green));
 	}
+
+	public void ConsoleReponse(string msg, string hexColor, bool repeatMessage)
+	{
+		consoleAutoText.ConsoleResponse(msg, hexColor, repeatMessage);
+	}
 }

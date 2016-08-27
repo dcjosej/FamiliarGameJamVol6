@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class AutoText : MonoBehaviour
 {
+
+	#region EVENTS
+	public delegate void OnInputReceivedCallback(string input);
+	public static event OnInputReceivedCallback OnInputReceived;
+	#endregion
+
+
+
 	public float timeBetweenCharacters;
 	public bool longText = true;
 	//public TextAsset textAsset;
@@ -28,10 +36,14 @@ public class AutoText : MonoBehaviour
 	private string textInConsoleWithoutMarker = "";
 	private string textMarker = "<size=10>_</size>";
 
-
-	#region KEYBOARD TYPING
+	#region CONSTANTES
 	public const string PLAY_AGAIN_TEXT = "Has sido despedido. ¿Quieres ser reasignado a otro sector? (y/n): ";
 	public const string WRONG_INPUT = "Invalid Input!";
+	public const string GOOD_LUCK = "Good Luck!";
+	public const string NOT_PLAY_AGAIN = "...";
+	#endregion
+
+	#region KEYBOARD TYPING
 
 	private string previousConsoleMessage = "";
 
@@ -99,18 +111,18 @@ public class AutoText : MonoBehaviour
 
 			if (Input.GetKeyDown(KeyCode.Return))
 			{
-				if(input != "y" && input != "n")
-				{
-					//Symbolic delete of the last character for update the index
-					//initIndex += 6;
 
-					if(input.Length > 0)
-					{
-						initIndex += 8;
-						input = "";
-					}
-					StartCoroutine(ConsoleError(WRONG_INPUT, Utils.RedColor));
+				if(OnInputReceived != null)
+				{
+					OnInputReceived(input);
 				}
+				
+				//if(input.Length > 0)
+				//{
+				//	initIndex += 8;
+				//	input = "";
+				//}
+				//StartCoroutine(ConsoleError(WRONG_INPUT, Utils.RedColor));
 			}
 
 		}
@@ -127,7 +139,17 @@ public class AutoText : MonoBehaviour
 		*/
 	}
 
-	private IEnumerator ConsoleError(string msg, string htmlColor)
+	public void ConsoleResponse(string msg, string hexColor, bool repeatMessage)
+	{
+		if (input.Length > 0)
+		{
+			initIndex += 8;
+			input = "";
+		}
+		StartCoroutine(ConsoleError(msg, hexColor, repeatMessage));
+	}
+
+	private IEnumerator ConsoleError(string msg, string htmlColor, bool repeatMessage = true)
 	{
 		allowKeyboardTyping = false;
 		//yield return StartCoroutine(IETypeText("", htmlColor));
@@ -139,9 +161,12 @@ public class AutoText : MonoBehaviour
 		UpdateStringFields(true);
 
 		yield return StartCoroutine(IETypeText(msg, htmlColor));
-		allowKeyboardTyping = true;
-        yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
-		
+
+		if (repeatMessage)
+		{
+			allowKeyboardTyping = true;
+			yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
+		}
 		//allowKeyboardTyping = true;
 	}
 
