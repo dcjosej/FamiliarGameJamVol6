@@ -383,7 +383,8 @@ public class GameLogic : MonoBehaviour
 	{
 		if(input == "y")
 		{
-			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.RedColor, false);
+			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
+			PersistentData.instance.InitRandomData();
 			ScreenFadeInOut.instance.FadeToBlack(2);
 
 		}

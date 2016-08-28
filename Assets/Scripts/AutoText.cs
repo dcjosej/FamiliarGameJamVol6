@@ -170,8 +170,17 @@ public class AutoText : MonoBehaviour
 		//allowKeyboardTyping = true;
 	}
 
+	public void StopTyping()
+	{
+		StopCoroutine(typeTextCoroutine);
+	}
+
 	void Awake()
 	{
+		if(typeTextCoroutine != null)
+		{
+			StopCoroutine(typeTextCoroutine);
+		}
 		textComp = GetComponent<Text>();
 		initIndex = textComp.text.Length - 1;
 		StartCoroutine(AnimateText());
@@ -179,11 +188,17 @@ public class AutoText : MonoBehaviour
 
 	public void Clean()
 	{
+		if (typeTextCoroutine != null)
+		{
+			StopCoroutine(typeTextCoroutine);
+		}
+
 		textComp.text = "";
 		textInConsole = "";
 		textInConsoleWithoutMarker = "";
 		textMarker = "<size=10>_</size>";
 		initIndex = -1;
+		writing = false;
 	}
 
 	void Start()

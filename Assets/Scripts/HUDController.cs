@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
@@ -17,6 +19,11 @@ public class HUDController : MonoBehaviour
 
 	public static HUDController instance;
 
+	[Header("GUI References")]
+	public Text textCurrentDate;
+	public Text textCurrentSector;
+	public Text textCurrentTime;
+
 	void Awake()
 	{
 		if(instance == null)
@@ -25,10 +32,28 @@ public class HUDController : MonoBehaviour
 		}
 	}
 
+	void OnEnable()
+	{
+		UpdateGUI();
+	}
+
+	void Update()
+	{
+		textCurrentTime.text = DateTime.Now.ToString("HH:mm");
+	}
+
+	private void UpdateGUI()
+	{
+		DateTime currentDate = DateTime.Now;
+		textCurrentDate.text = currentDate.ToString("dd/MM") + "/3048";
+		textCurrentSector.text = PersistentData.instance.currentSector.ToString("00") + PersistentData.instance.currentLetter;
+    }
+
 	public void ActiveGameOver()
 	{
 		gameOverNoise.SetActive(true);
 		gameOverEmergencia.SetActive(true);
+
 
 		consoleAutoText.Clean();
 		consoleAutoText.allowKeyboardTyping = true;
@@ -44,16 +69,21 @@ public class HUDController : MonoBehaviour
 
 	public void TypeThreatDetected()
 	{
-		consoleAutoText.TypeText(threatDetected + ": " + GameLogic.instance.charactersInScene, ColorUtility.ToHtmlStringRGB(Color.red));
+		consoleAutoText.TypeText(threatDetected + ": " + GameLogic.instance.charactersInScene, Utils.RedColor);
 	}
 	
 	public void TypeCleaningCompleted()
 	{
-		consoleAutoText.TypeText(cleaningCompleted, ColorUtility.ToHtmlStringRGB(Color.green));
+		consoleAutoText.TypeText(cleaningCompleted, Utils.GreenColor);
 	}
 
 	public void ConsoleReponse(string msg, string hexColor, bool repeatMessage)
 	{
 		consoleAutoText.ConsoleResponse(msg, hexColor, repeatMessage);
+	}
+
+	public void CleanConsole()
+	{
+		consoleAutoText.Clean();
 	}
 }
