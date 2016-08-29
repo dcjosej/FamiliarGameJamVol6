@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
   m_Fog: 1
-  m_FogColor: {r: 0.25, g: 0.24816176, b: 0.24816176, a: 1}
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.025
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 1}
+  m_AmbientSkyColor: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -475,6 +475,9 @@ MonoBehaviour:
   gameOverEmergencia: {fileID: 652361226}
   sectorSliderController: {fileID: 1718871104}
   gameOverNoise: {fileID: 2009905214}
+  textCurrentDate: {fileID: 69840325}
+  textCurrentSector: {fileID: 1925854205}
+  textCurrentTime: {fileID: 2139805082}
 --- !u!1 &60986201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,39 +1024,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 123419743}
---- !u!28 &128943929
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  serializedVersion: 2
-  m_Width: 256
-  m_Height: 1
-  m_CompleteImageSize: 1024
-  m_TextureFormat: 5
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_ReadAllowed: 1
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  image data: 1024
-  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &146500357
 Prefab:
   m_ObjectHideFlags: 0
@@ -1178,6 +1148,39 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 151069996}
+--- !u!28 &154705552
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 1024
+  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &166837022
 Prefab:
   m_ObjectHideFlags: 0
@@ -1411,7 +1414,7 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 5
-    m_lensFlareGradTexture: {fileID: 128943929}
+    m_lensFlareGradTexture: {fileID: 1903389192}
     m_lensFlareHaloParams: {x: 0.5, y: 0.573, z: 1, w: 128}
     m_lensFlareHaloChrDistortion: 1.51
     m_lensFlareGaussianBlurAmount: 1
@@ -3573,7 +3576,7 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 5
-    m_lensFlareGradTexture: {fileID: 1552495251}
+    m_lensFlareGradTexture: {fileID: 708543583}
     m_lensFlareHaloParams: {x: 0.5, y: 0.573, z: 1, w: 128}
     m_lensFlareHaloChrDistortion: 1.51
     m_lensFlareGaussianBlurAmount: 1
@@ -5896,6 +5899,39 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a2e587034d846647b593aa159d7ed8d, type: 2}
   m_IsPrefabParent: 0
+--- !u!28 &708543583
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 1024
+  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &710636864
 Prefab:
   m_ObjectHideFlags: 0
@@ -6193,7 +6229,7 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 5
-    m_lensFlareGradTexture: {fileID: 1711976284}
+    m_lensFlareGradTexture: {fileID: 1805190967}
     m_lensFlareHaloParams: {x: 0.5, y: 0.573, z: 1, w: 128}
     m_lensFlareHaloChrDistortion: 1.51
     m_lensFlareGaussianBlurAmount: 1
@@ -8909,21 +8945,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   probabilities:
   - zone: 0
-    probability: 38
+    probability: 19
   - zone: 1
-    probability: 25
+    probability: 19
   - zone: 2
-    probability: 0
+    probability: 10
   - zone: 3
-    probability: 37
+    probability: 18
   - zone: 4
-    probability: 0
+    probability: 11
   - zone: 5
-    probability: 0
+    probability: 5
   - zone: 6
-    probability: 0
+    probability: 10
   - zone: 7
-    probability: 0
+    probability: 8
 --- !u!1001 &1122578317
 Prefab:
   m_ObjectHideFlags: 0
@@ -9321,7 +9357,7 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 5
-    m_lensFlareGradTexture: {fileID: 1819603744}
+    m_lensFlareGradTexture: {fileID: 1244104080}
     m_lensFlareHaloParams: {x: 0.5, y: 0.573, z: 1, w: 128}
     m_lensFlareHaloChrDistortion: 1.51
     m_lensFlareGaussianBlurAmount: 1
@@ -9813,6 +9849,39 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 1237425805}
+--- !u!28 &1244104080
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 1024
+  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1247745172
 Prefab:
   m_ObjectHideFlags: 0
@@ -10645,6 +10714,48 @@ MonoBehaviour:
   - {fileID: 1285638696}
   - {fileID: 1497971323}
   - {fileID: 2113208822}
+--- !u!1001 &1368985847
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.79076385
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.7297835
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -137.0959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013120901666, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ff49d6aaad1e5664e8442d00576900ef, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1376481431
 GameObject:
   m_ObjectHideFlags: 0
@@ -11763,39 +11874,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 1546979615}
---- !u!28 &1552495251
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  serializedVersion: 2
-  m_Width: 256
-  m_Height: 1
-  m_CompleteImageSize: 1024
-  m_TextureFormat: 5
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_ReadAllowed: 1
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  image data: 1024
-  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1559310915
 Prefab:
   m_ObjectHideFlags: 0
@@ -12753,7 +12831,7 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 5
-    m_lensFlareGradTexture: {fileID: 1875514897}
+    m_lensFlareGradTexture: {fileID: 154705552}
     m_lensFlareHaloParams: {x: 0.1, y: 0.573, z: 1, w: 128}
     m_lensFlareHaloChrDistortion: 1.51
     m_lensFlareGaussianBlurAmount: 1
@@ -13135,39 +13213,6 @@ RectTransform:
   m_AnchoredPosition: {x: -151.1, y: 18.3}
   m_SizeDelta: {x: 602, y: 424}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!28 &1711976284
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  serializedVersion: 2
-  m_Width: 256
-  m_Height: 1
-  m_CompleteImageSize: 1024
-  m_TextureFormat: 5
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_ReadAllowed: 1
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  image data: 1024
-  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1713695652
 Prefab:
   m_ObjectHideFlags: 0
@@ -13289,7 +13334,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 2
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -13679,6 +13724,39 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 1796677381}
+--- !u!28 &1805190967
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 1024
+  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1813955611
 Prefab:
   m_ObjectHideFlags: 0
@@ -13729,39 +13807,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 1813955611}
---- !u!28 &1819603744
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  serializedVersion: 2
-  m_Width: 256
-  m_Height: 1
-  m_CompleteImageSize: 1024
-  m_TextureFormat: 5
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_ReadAllowed: 1
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  image data: 1024
-  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1834990133
 Prefab:
   m_ObjectHideFlags: 0
@@ -13995,39 +14040,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 1866669805}
---- !u!28 &1875514897
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  serializedVersion: 2
-  m_Width: 256
-  m_Height: 1
-  m_CompleteImageSize: 1024
-  m_TextureFormat: 5
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_ReadAllowed: 1
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 0
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  image data: 1024
-  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &1891296523
 Prefab:
   m_ObjectHideFlags: 0
@@ -14128,6 +14140,39 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416052, guid: 360690836ba479a4fad0f316e2ce6ac5, type: 2}
   m_PrefabInternal: {fileID: 1895508927}
+--- !u!28 &1903389192
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_ReadAllowed: 1
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 0
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  image data: 1024
+  _typelessdata: fffffffffffbfbfffff7f7fffff3f3ffffefefffffebebffffe7e7ffffe3e3ffffdfdfffffdbdbffffd7d7ffffd3d3ffffcfcfffffcbcbffffc7c7ffffc3c3ffffbfbfffffbbbbffffb7b7ffffb3b3ffffafafffffababffffa7a7ffffa3a3ffff9f9fffff9b9bffff9797ffff9393ffff8f8fffff8b8bffff8787ffff8383ffff7f7fffff7b7bffff7777ffff7373ffff6f6fffff6b6bffff6767ffff6363ffff5f5fffff5b5bffff5757ffff5353ffff4f4fffff4b4bffff4747ffff4343ffff3f3fffff3b3bffff3737ffff3333ffff2f2fffff2b2bffff2727ffff2323ffff1f1fffff1b1bffff1717ffff1313ffff0f0fffff0b0bffff0707ffff0303ffff0000feff0004faff0008f6ff000cf2ff0010eeff0014eaff0018e6ff001ce2ff0020deff0024daff0028d6ff002cd2ff0030ceff0034caff0038c6ff003cc2ff0040beff0044baff0048b6ff004cb2ff0050aeff0054aaff0058a6ff005ca2ff00609eff00649aff006896ff006c92ff00708eff00748aff007886ff007c82ff00807eff00847aff008876ff008c72ff00906eff00946aff009866ff009c62ff00a05eff00a45aff00a856ff00ac52ff00b04eff00b44aff00b846ff00bc42ff00c03eff00c43aff00c836ff00cc32ff00d02eff00d42aff00d826ff00dc22ff00e01eff00e41aff00e816ff00ec12ff00f00eff00f40aff00f806ff00fc02ff01fe00ff05fe00ff09fe00ff0dfd00ff11fd00ff15fd00ff19fc00ff1dfc00ff21fc00ff25fc00ff29fb00ff2dfb00ff31fb00ff35fa00ff39fa00ff3dfa00ff41f901ff45f901ff49f901ff4df801ff51f801ff55f801ff59f701ff5df701ff61f701ff65f701ff69f601ff6df601ff71f601ff75f501ff79f501ff7df501ff81f402ff85f402ff89f402ff8df302ff91f302ff95f302ff99f202ff9df202ffa1f202ffa5f202ffa9f102ffadf102ffb1f102ffb5f002ffb9f002ffbdf002ffc1ef03ffc5ef03ffc9ef03ffcdee03ffd1ee03ffd5ee03ffd9ed03ffdded03ffe1ed03ffe5ed03ffe9ec03ffedec03fff1ec03fff5eb03fff9eb03fffdeb03ffffe803ffffe403ffffe003ffffdd03ffffd903ffffd503ffffd203ffffce03ffffca03ffffc703ffffc303ffffbf03ffffbc03ffffb803ffffb403ffffb103ffffad02ffffa902ffffa602ffffa202ffff9e02ffff9b02ffff9702ffff9302ffff9002ffff8c02ffff8802ffff8502ffff8102ffff7d02ffff7a02ffff7602ffff7201ffff6f01ffff6b01ffff6701ffff6401ffff6001ffff5c01ffff5901ffff5501ffff5101ffff4e01ffff4a01ffff4601ffff4301ffff3f01ffff3b01ffff3700ffff3400ffff3000ffff2c00ffff2900ffff2500ffff2100ffff1e00ffff1a00ffff1600ffff1300ffff0f00ffff0b00ffff0800ffff0400ffff0000
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1911094175
 Prefab:
   m_ObjectHideFlags: 0

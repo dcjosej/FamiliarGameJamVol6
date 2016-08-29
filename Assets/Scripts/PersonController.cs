@@ -6,8 +6,6 @@ using System;
 public class PersonController : MonoBehaviour
 {
 	public ElementsZone[] elements;
-
-
 	public bool converted = false;
 
 
@@ -51,6 +49,10 @@ public class PersonController : MonoBehaviour
 	{
 		foreach(ElementsZone ez in elements)
 		{
+			if(ez.zone == Zone.GAFAS || ez.zone == Zone.HEAD_COMPLEMENTS)
+			{
+				continue;
+			}
 			ez.elements[0].gameObject.SetActive(true);
 			activeElements.Add(ez.elements[0]);
 		}
@@ -115,6 +117,10 @@ public class PersonController : MonoBehaviour
 
 		ElementsZone selectedZone = SelectZoneWeightedRandom(notAppliedZones);
 
+		if(selectedZone == null)
+		{
+			return;
+		}
 
 		GameObject selectedElement = selectedZone.ActiveRandomElement();
 		activeElements.Add(selectedElement);
@@ -134,7 +140,7 @@ public class PersonController : MonoBehaviour
 
 			float weightElement = GameLogic.instance.GetProbabilityByZone(ez.zone) / 100f;
 
-			if (weightedIndex < weightElement)
+			if (weightedIndex <= weightElement)
 			{
 				res = ez;
 				break;
@@ -144,6 +150,10 @@ public class PersonController : MonoBehaviour
 
 		}
 
+		if(res == null)
+		{
+			Debug.Log("");
+		}
 
 		return res;
 	}

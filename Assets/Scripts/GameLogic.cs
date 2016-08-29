@@ -200,6 +200,9 @@ public class GameLogic : MonoBehaviour
 
 	public void StartGame()
 	{
+		AutoText.OnInputReceived += OnInputReceived;
+
+
 		globalInfectionLevel = 0;
 
 		//fader.FadeToClear();
@@ -374,4 +377,26 @@ public class GameLogic : MonoBehaviour
 
 		return res;
 	}
+
+	#region SUBSCRIPTION EVENTS
+	private void OnInputReceived(string input)
+	{
+		if(input == "y")
+		{
+			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
+			PersistentData.instance.InitRandomData();
+			ScreenFadeInOut.instance.FadeToBlack(2);
+
+		}
+		else if(input == "n")
+		{
+			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
+			ScreenFadeInOut.instance.FadeToBlack(0);
+		}
+		else
+		{
+			HUDController.instance.ConsoleReponse(AutoText.WRONG_INPUT, Utils.RedColor, true);
+		}
+	}
+	#endregion
 }
