@@ -363,6 +363,7 @@ public class GameLogic : MonoBehaviour
 		people.SetActive(false);
 		HUDController.instance.ActiveGameOver();
 		AudioManager.instance.PlayNoise();
+		
 		isGameOver = true;
 	}
 
@@ -387,11 +388,15 @@ public class GameLogic : MonoBehaviour
 			PersistentData.instance.InitRandomData();
 			ScreenFadeInOut.instance.FadeToBlack(2);
 
+			AutoText.OnInputReceived -= OnInputReceived;
+
 		}
 		else if(input == "n")
 		{
 			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
 			ScreenFadeInOut.instance.FadeToBlack(0);
+
+			AutoText.OnInputReceived -= OnInputReceived;
 		}
 		else
 		{
