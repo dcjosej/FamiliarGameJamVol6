@@ -77,6 +77,7 @@ public class GameLogic : MonoBehaviour
 
 	[Range(0, 10)]
 	public int dangerousThreashold;
+	private bool dangerousAdvertisementShowed = false;
 
 	#endregion
 
@@ -276,7 +277,20 @@ public class GameLogic : MonoBehaviour
 	{
 		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
 
-		if(threatnessLevel >= HUDController.instance.sectorSliderController.GetMaxValue() && !isGameOver)
+
+		if(threatnessLevel >= dangerousThreashold && !dangerousAdvertisementShowed)
+		{
+			HUDController.instance.ShowDangerAdvertisement();
+			dangerousAdvertisementShowed = true;
+		}else
+		{
+			dangerousAdvertisementShowed = false;
+		}
+
+
+
+
+		if (threatnessLevel >= HUDController.instance.sectorSliderController.GetMaxValue() && !isGameOver)
 		{
 			ActiveGameOver();
 		}

@@ -41,13 +41,16 @@ public class HUDController : MonoBehaviour
 	void OnEnable()
 	{
 		UpdateGUI();
-
-		StartCoroutine(AnimateDangerText());
 	}
 
 	void Update()
 	{
 		textCurrentTime.text = DateTime.Now.ToString("HH:mm");
+	}
+
+	public void ShowDangerAdvertisement()
+	{
+		StartCoroutine(AnimateDangerText());
 	}
 
 	private void UpdateGUI()
@@ -100,15 +103,14 @@ public class HUDController : MonoBehaviour
 		float time = 0f;
 		float t = 0;
 		Color colorFrom = textDanger.color;
-        bool animating = true;
 		textDanger.gameObject.SetActive(true);
-		while (animating)
+		while (t <= 1f)
 		{
+			time += Time.deltaTime;
+			t = time / timeAnimationDanger;
 			float curveValue = Mathf.Lerp(0f, 1f, t);
 			colorFrom.a = textDangerAlphaAnimationCurve.Evaluate(curveValue);
 			textDanger.color = colorFrom;
-			time += Time.deltaTime;
-			t = time / timeAnimationDanger;
 			yield return null;
 		}
 		textDanger.gameObject.SetActive(false);
