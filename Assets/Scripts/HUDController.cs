@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +25,11 @@ public class HUDController : MonoBehaviour
 	public Text textCurrentSector;
 	public Text textCurrentTime;
 
+	[Header("Danger")]
+	public Text textDanger;
+	public AnimationCurve textDangerAlphaAnimationCurve;
+	public float timeAnimationDanger = 4f;
+
 	void Awake()
 	{
 		if(instance == null)
@@ -35,6 +41,8 @@ public class HUDController : MonoBehaviour
 	void OnEnable()
 	{
 		UpdateGUI();
+
+		StartCoroutine(AnimateDangerText());
 	}
 
 	void Update()
@@ -85,5 +93,24 @@ public class HUDController : MonoBehaviour
 	public void CleanConsole()
 	{
 		consoleAutoText.Clean();
+	}
+
+	private IEnumerator AnimateDangerText()
+	{
+		float time = 0f;
+		float t = 0;
+		Color colorFrom = textDanger.color;
+        bool animating = true;
+		textDanger.gameObject.SetActive(true);
+		while (animating)
+		{
+			float curveValue = Mathf.Lerp(0f, 1f, t);
+			colorFrom.a = textDangerAlphaAnimationCurve.Evaluate(curveValue);
+			textDanger.color = colorFrom;
+			time += Time.deltaTime;
+			t = time / timeAnimationDanger;
+			yield return null;
+		}
+		textDanger.gameObject.SetActive(false);
 	}
 }

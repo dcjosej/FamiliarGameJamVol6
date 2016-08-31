@@ -75,6 +75,9 @@ public class GameLogic : MonoBehaviour
 	//public int maxCharacterToMaxLoseVelocity = 10;
 	public AnimationCurve infectionVelocityCurve;
 
+	[Range(0, 10)]
+	public int dangerousThreashold;
+
 	#endregion
 
 	[Header("Others")]

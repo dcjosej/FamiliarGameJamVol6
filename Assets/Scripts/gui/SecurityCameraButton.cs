@@ -15,6 +15,8 @@ public class SecurityCameraButton : MonoBehaviour {
 	public MonitorNumber myMonitorNumber;
 	public MonitorNumber currentMonitorNumber;
 
+	public LightCameraController lightCameraController;
+	public LightCamera lightCamera;
 
 	void Awake()
 	{
@@ -32,7 +34,8 @@ public class SecurityCameraButton : MonoBehaviour {
 	void OnMouseDown()
 	{
 		UpdateMainScreen();
-	}
+		lightCameraController.LightOn(lightCamera);
+    }
 
 	public void UpdateMainScreen()
 	{
