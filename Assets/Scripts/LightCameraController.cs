@@ -7,6 +7,12 @@ public class LightCameraController : MonoBehaviour
 
 	public LightCamera[] lightsCameras;
 
+
+	void Start()
+	{
+		LightOn(lightsCameras[0]);
+	}
+
 	public void LightOn(LightCamera lightCamera)
 	{
 		lightCamera.TurnOn(lightOn);
