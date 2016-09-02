@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,6 +55,12 @@ public class AutoText : MonoBehaviour
 
 	//COROUTINES
 	private Coroutine typeTextCoroutine;
+
+
+
+	private Queue<IEnumerator> queueCoroutines;
+	private bool processingQueue = false;
+
 
 	public void ShowAllText(string text)
 	{
@@ -208,19 +215,40 @@ public class AutoText : MonoBehaviour
 		//{
 		//	//StartCoroutine(IETypeText2(textAsset.text));
 		//}
-	}
+		queueCoroutines = new Queue<IEnumerator>();
+    }
 
 	public void TypeText(string textToType, string htmlColor)
 	{
-		if (!writing)
-		{
+		//if (!writing)
+		//{
 			//StopAllCoroutines();
-			if(typeTextCoroutine != null)
+			//if(typeTextCoroutine != null)
+			//{
+			//	StopCoroutine(typeTextCoroutine);
+			//}
+
+			queueCoroutines.Enqueue(IETypeText(textToType, htmlColor));
+			if (!processingQueue)
 			{
-				StopCoroutine(typeTextCoroutine);
+				typeTextCoroutine = StartCoroutine(ProcessStack());
 			}
-			typeTextCoroutine = StartCoroutine(IETypeText(textToType, htmlColor));
+				//typeTextCoroutine = StartCoroutine(IETypeText(textToType, htmlColor));
+		//}
+	}
+
+	private IEnumerator ProcessStack()
+	{
+		processingQueue = true;
+		while(queueCoroutines.Count > 0)
+		{
+			IEnumerator coroutine = queueCoroutines.Dequeue();
+			while (coroutine.MoveNext())
+			{
+				yield return coroutine.Current;
+			}
 		}
+		processingQueue = false;
 	}
 
 	public void TypeTextGameOver()
