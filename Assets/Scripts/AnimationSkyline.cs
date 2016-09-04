@@ -26,7 +26,7 @@ public class AnimationSkyline : MonoBehaviour {
 
 		if (fontSkyline.localPosition.z <= -886)
 		{
-			if(fontSkyline.gameObject.name == "Skyline1")
+			if(fontSkyline == skyline1)
 			{
 				skyline1.localPosition = respawnPosition;
 				fontSkyline = skyline2;
