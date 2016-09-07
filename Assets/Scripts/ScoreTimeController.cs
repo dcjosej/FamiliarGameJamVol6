@@ -41,7 +41,7 @@ public class ScoreTimeController : MonoBehaviour
 
 	private void OnGameOver()
 	{
-		SocialManager.instance.AddScore((int)timerCount, SocialManager.MAIN_LEADERBOARD_ID);
+		SocialManager.instance.AddScore((int)timerCount, guiScoreTimer.text);
 		isActive = false;
 	}
 }

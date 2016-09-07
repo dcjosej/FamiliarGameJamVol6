@@ -54,7 +54,7 @@ public class TutosLogic : MonoBehaviour
 			//SceneManager.LoadScene(1);
 			if (endReached && !autoText.writing)
 			{
-				fader.FadeToBlack(2);
+				fader.FadeToBlackLoadScene(2);
 			}
 		}
 

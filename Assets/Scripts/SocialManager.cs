@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GameJolt.API.Objects;
 using System.Collections;
 
 public class SocialManager : MonoBehaviour
@@ -7,7 +8,7 @@ public class SocialManager : MonoBehaviour
 	public const int MAIN_LEADERBOARD_ID = 169398;
 
 	private bool loggedLikeGuest;
-	public string guestName;
+	public string prefixTextScore = "Service time:";
 
 	private static SocialManager _instance;
 	public static SocialManager instance
@@ -27,58 +28,29 @@ public class SocialManager : MonoBehaviour
 		DontDestroyOnLoad(this);
 	}
 
-	void Start()
-	{
-		//GameJolt.UI.Manager.Instance.ShowSignIn();
-	}
-
-	public void LogGuest(string guest)
-	{
-		Debug.Log("GUEST NAME: " + guest);
-	}
-
 	public void LoginWithGamejolt()
 	{
 		GameJolt.UI.Manager.Instance.ShowSignIn();
 	}
 
-	public void AddScore(int value, int tableId)
+	public void AddScore(int value, string serviceTime)
 	{
-		string text = "A ESTE TEXTO HAY QUE DARLE UNA VUERTESITA"; //TODO: CREAR TEXTO PARA LEADERBOARDS
-		GameJolt.API.Scores.Add(value, text, tableId, "", (bool success) => 
-		{
-			Debug.Log("EXITO!");
-		});
+		string text = "Service time:" + " " + serviceTime;
+		GameJolt.API.Scores.Add(value, text, PersistentData.instance.employeeId, MAIN_LEADERBOARD_ID, "", AddScoreCallback);
     }
 
-
-	#region TESTING METHODS
-	/*
-	public void AddScore()
+	public void GetScores(System.Action<Score[]> getScoresCallback)
 	{
-		int scoreValue = 150;
-		string scoreText = "150 seconds, Congrats!";
-		int tableID = 0;
-		string extraData = "";
-		GameJolt.API.Scores.Add(scoreValue, scoreText, 0, "", null);
+		GameJolt.API.Scores.Get(getScoresCallback, 169398, 3);
 	}
-	*/
-	
 
-#if UNITY_EDITOR
-	void Update()
+	private void AddScoreCallback(bool success)
 	{
-		if (Input.GetKeyUp(KeyCode.P))
+		if (!success)
 		{
-			//AddScore();
-		}
-
-		if (Input.GetKeyUp(KeyCode.O))
-		{
-			GameJolt.UI.Manager.Instance.ShowLeaderboards();
+			Debug.Log("######### NO SE HA PODIDO SUBIR LA PUNTUACION A LOS LEADERBOARDS Y DEBERIA SALIR ALGO POR LA CONSOLA #########");
 		}
 	}
-#endif
 
-#endregion
+
 }

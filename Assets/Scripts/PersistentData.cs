@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class PersistentData : MonoBehaviour
@@ -17,20 +17,41 @@ public class PersistentData : MonoBehaviour
 	}
 
 
-	private string candidateSectors = "ACDEFGHIJKLMNPRSTUVWXYZ";
-	public int currentSector { get; set; }
+
+	private const string EMPLOYEE_PREFIX = "Employee";
+	private const string RANDOM_NUMBER = "0123456789";
+
+
+	//public int currentSector { get; set; }
 	public string currentLetter { get; set; }
+	public string employeeId { get; set; }
+	public int numberOfDigitsIdEmployee = 6;
 
 	void Awake()
 	{
-		InitRandomData();
+		//InitRandomData();
+		InitEmployeeId();
 	}
 
-	public void InitRandomData()
-	{
-		int indexRandomCharacter = Random.Range(0, candidateSectors.Length);
+	//public void InitRandomData()
+	//{
+	//	int indexRandomCharacter = Random.Range(0, candidateSectors.Length);
 
-		currentLetter = candidateSectors[indexRandomCharacter].ToString();
-		currentSector = Random.Range(1, 100);
+	//	currentLetter = candidateSectors[indexRandomCharacter].ToString();
+	//	//currentSector = Random.Range(1, 100);
+	//}
+
+	private void InitEmployeeId()
+	{
+		string selectedNumber = "";
+		
+		for(int i = 0; i < numberOfDigitsIdEmployee; i++)
+		{
+			int randomIndex = Random.Range(0, RANDOM_NUMBER.Length);
+			selectedNumber += RANDOM_NUMBER[randomIndex];	
+		}
+
+		employeeId = EMPLOYEE_PREFIX + " " + selectedNumber;
+		Debug.Log("ERES EL EMPLEADO: " + employeeId);
 	}
 }

@@ -48,8 +48,6 @@ public class GameLogic : MonoBehaviour
 	[Tooltip("Minima velocidad de conversion (Cada X segundos transformamos a una persona)")]
 	public float minTimeToNextCharacterConversion = 15;
 
-
-
 	/// <summary>
 	/// Maxima velocidad de conversion (Cada X segundos transformamos a una persona).
 	/// </summary>
@@ -136,7 +134,8 @@ public class GameLogic : MonoBehaviour
 	private Vector2 hotSpot = Vector2.one * 32f;
 	public CursorType cursorSelected;
 
-
+	[Header("Tiempo de servicio")]
+	public ScoreTimeController scoreTimeController;
 
 	public void UpdateCursor(CursorType cursorSelected)
 	{
@@ -380,6 +379,8 @@ public class GameLogic : MonoBehaviour
 		people.SetActive(false);
 		HUDController.instance.ActiveGameOver();
 		AudioManager.instance.PlayNoise();
+
+
 		
 		isGameOver = true;
 	}
@@ -402,8 +403,8 @@ public class GameLogic : MonoBehaviour
 		if(input == "y")
 		{
 			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
-			PersistentData.instance.InitRandomData();
-			ScreenFadeInOut.instance.FadeToBlack(2);
+			//PersistentData.instance.InitRandomData();
+			ScreenFadeInOut.instance.FadeToBlackLoadScene(2);
 
 			AutoText.OnInputReceived -= OnInputReceived;
 
@@ -411,7 +412,7 @@ public class GameLogic : MonoBehaviour
 		else if(input == "n")
 		{
 			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
-			ScreenFadeInOut.instance.FadeToBlack(0);
+			ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
 
 			AutoText.OnInputReceived -= OnInputReceived;
 		}

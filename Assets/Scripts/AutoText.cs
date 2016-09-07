@@ -184,13 +184,27 @@ public class AutoText : MonoBehaviour
 
 	void Awake()
 	{
-		if(typeTextCoroutine != null)
+		//if(typeTextCoroutine != null)
+		//{
+		//	StopCoroutine(typeTextCoroutine);
+		//}
+		//textComp = GetComponent<Text>();
+		//initIndex = textComp.text.Length - 1;
+		//StartCoroutine(AnimateText());
+	}
+
+	public void Initialize()
+	{
+		if (typeTextCoroutine != null)
 		{
 			StopCoroutine(typeTextCoroutine);
 		}
 		textComp = GetComponent<Text>();
 		initIndex = textComp.text.Length - 1;
 		StartCoroutine(AnimateText());
+
+		lines = 0;
+		queueCoroutines = new Queue<IEnumerator>();
 	}
 
 	public void Clean()
@@ -210,12 +224,12 @@ public class AutoText : MonoBehaviour
 
 	void Start()
 	{
-		lines = 0;
-		//if (longText)
-		//{
-		//	//StartCoroutine(IETypeText2(textAsset.text));
-		//}
-		queueCoroutines = new Queue<IEnumerator>();
+		//lines = 0;
+		////if (longText)
+		////{
+		////	//StartCoroutine(IETypeText2(textAsset.text));
+		////}
+		//queueCoroutines = new Queue<IEnumerator>();
     }
 
 	public void TypeText(string textToType, string htmlColor)

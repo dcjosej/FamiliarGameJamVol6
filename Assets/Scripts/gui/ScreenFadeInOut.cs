@@ -28,6 +28,9 @@ public class ScreenFadeInOut : MonoBehaviour
 
 	private Image fadeImage;
 
+	public delegate void FadeToBlackFinishedDelegate();
+	public FadeToBlackFinishedDelegate fadeToBlackFinishedCallback;
+
 
 
 	void Awake()
@@ -42,8 +45,24 @@ public class ScreenFadeInOut : MonoBehaviour
 		FadeToClear();
 	}
 
-	
-	public void FadeToBlack(int nextScene)
+	//public void FadeToBlack(float fadeTime)
+	//{
+	//	this.fadeTime = fadeTime;	
+	//}
+
+	public void BlackAndClear(float fadeTime)
+	{
+		this.fadeTime = fadeTime;
+		StartCoroutine(BlackAndClearIE());
+	}
+
+	private IEnumerator BlackAndClearIE()
+	{
+		yield return StartCoroutine(IEFadeToBlack(-1));
+		yield return StartCoroutine(IEFadeToClear());
+	}
+
+	public void FadeToBlackLoadScene(int nextScene)
 	{
 		StartCoroutine(IEFadeToBlack(nextScene));
 	}
@@ -100,7 +119,17 @@ public class ScreenFadeInOut : MonoBehaviour
 		fading = false;
 		canvasGroup.blocksRaycasts = fading;
 		//fadeImage.gameObject.SetActive(false);
-		EndScene(nextScene);
+
+
+		if (fadeToBlackFinishedCallback != null)
+		{
+			fadeToBlackFinishedCallback();
+		}
+
+		if (nextScene > -1)
+		{
+			EndScene(nextScene);
+		}
 	}
 
 	void EndScene(int nextScene)

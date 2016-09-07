@@ -41,6 +41,7 @@ public class HUDController : MonoBehaviour
 	void OnEnable()
 	{
 		UpdateGUI();
+		consoleAutoText.Initialize();
 	}
 
 	void Update()
@@ -57,7 +58,7 @@ public class HUDController : MonoBehaviour
 	{
 		DateTime currentDate = DateTime.Now;
 		textCurrentDate.text = currentDate.ToString("dd/MM") + "/3048";
-		textCurrentSector.text = PersistentData.instance.currentSector.ToString("00") + PersistentData.instance.currentLetter;
+		//textCurrentSector.text = PersistentData.instance.currentSector.ToString("00") + PersistentData.instance.currentLetter;
     }
 
 	public void ActiveGameOver()
