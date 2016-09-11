@@ -22,6 +22,10 @@ public class AutoText : MonoBehaviour
 	public bool writing { get; set; }
 	public int lines { get; set; }
 	public bool allowKeyboardTyping = false;
+	[Range(10f, 30f)]
+	public float markerSize = 10;
+	public float markerAnimationTime = 0.5f;
+	public bool markerToNextLine = true;
 
 	private Text textComp;
 
@@ -164,6 +168,7 @@ public class AutoText : MonoBehaviour
 	private IEnumerator ConsoleError(string msg, string htmlColor, bool repeatMessage = true)
 	{
 		allowKeyboardTyping = false;
+		markerToNextLine = !allowKeyboardTyping;
 		//yield return StartCoroutine(IETypeText("", htmlColor));
 		//textInConsoleWithoutMarker += "\n";
 		//initIndex++;
@@ -177,6 +182,7 @@ public class AutoText : MonoBehaviour
 		if (repeatMessage)
 		{
 			allowKeyboardTyping = true;
+			markerToNextLine = !allowKeyboardTyping;
 			yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
 		}
 		//allowKeyboardTyping = true;
@@ -224,7 +230,7 @@ public class AutoText : MonoBehaviour
 		textComp.text = "";
 		textInConsole = "";
 		textInConsoleWithoutMarker = "";
-		textMarker = "<size=10>_</size>";
+		textMarker = "<size=" + markerSize + ">_</size>";
 		initIndex = -1;
 		writing = false;
 		processingQueue = false;
@@ -332,15 +338,22 @@ public class AutoText : MonoBehaviour
 		//{
 
 
-		if (!allowKeyboardTyping)
+		UpdateStringFields(markerToNextLine);
+
+		if (allowKeyboardTyping)
 		{
-			UpdateStringFields(true);
-		}
-		else
-		{
-			UpdateStringFields(false);
 			initIndex--;
 		}
+
+		//if (!allowKeyboardTyping)
+		//{
+		//	UpdateStringFields(true);
+		//}
+		//else
+		//{
+		//	UpdateStringFields(false);
+		//	initIndex--;
+		//}
 
 
 		//UpdateStringFields(!allowKeyboardTyping);
@@ -405,13 +418,13 @@ public class AutoText : MonoBehaviour
 			if (textInConsoleWithoutMarker != "")
 			{
 				textComp.text = textInConsoleWithoutMarker;
-				yield return new WaitForSeconds(0.5f);
+				yield return new WaitForSeconds(markerAnimationTime);
 				textComp.text = textInConsole;
-				yield return new WaitForSeconds(0.5f);
+				yield return new WaitForSeconds(markerAnimationTime);
 			}
 			else
 			{
-				yield return new WaitForSeconds(0.5f);
+				yield return new WaitForSeconds(markerAnimationTime);
 			}
 		}
 	}

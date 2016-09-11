@@ -11,18 +11,24 @@ public class MainMenuLogic : MonoBehaviour {
 
 	public bool transitioning { get; set; }
 
+	private CanvasGroup currentCanvasGroup;
+
 	[Header("GUI References")]
 	public CanvasGroup cgHighScoreScreen;
 	public CanvasGroup cgMainMenuScreen;
 	public CanvasGroup cgTutorialScreen;
-	public CanvasGroup cgPressEnter;
+	public CanvasGroup cgCreditsScreen;
+	public CanvasGroup cgSplashScreen;
+    public CanvasGroup cgPressEnter;
 	public CanvasGroup cgMainMenuButtons;
+	
 	public Texture2D normalCursor;
 
 
 	void Start()
 	{
 		Cursor.SetCursor(normalCursor, Vector2.one * 32f, CursorMode.Auto);
+		currentCanvasGroup = cgSplashScreen;
 	}
 
 	public void StartGame()
@@ -40,7 +46,7 @@ public class MainMenuLogic : MonoBehaviour {
 			FadersController.instance.BlackAndClear(fadeInTime, ShowTutorialScreen, true);
 			//ScreenFadeInOut.instance.BlackAndClear(fadeTimeTransition);
 			//ScreenFadeInOut.instance.fadeToBlackFinishedCallback = ShowTutorialScreen;
-			cgMainMenuScreen.interactable = false;
+			currentCanvasGroup.interactable = false;
 		}
 	}
 
@@ -51,7 +57,16 @@ public class MainMenuLogic : MonoBehaviour {
 			FadersController.instance.BlackAndClear(fadeTimeTransition, ShowHighScoresScreen, true);
 			//ScreenFadeInOut.instance.BlackAndClear(fadeTimeTransition);
 			//ScreenFadeInOut.instance.fadeToBlackFinishedCallback = ShowHighScoresScreen;
-			cgMainMenuScreen.interactable = false;
+			currentCanvasGroup.interactable = false;
+		}
+	}
+
+	public void Credits()
+	{
+		if(!transitioning && !FadersController.instance.fading)
+		{
+			FadersController.instance.BlackAndClear(fadeTimeTransition, ShowCreditsScreen, true);
+			currentCanvasGroup.interactable = false;
 		}
 	}
 
@@ -62,7 +77,7 @@ public class MainMenuLogic : MonoBehaviour {
 			FadersController.instance.BlackAndClear(fadeTimeTransition, ShowMainMenu, true);
 			//ScreenFadeInOut.instance.BlackAndClear(fadeTimeTransition);
 			//ScreenFadeInOut.instance.fadeToBlackFinishedCallback = ShowMainMenu;
-			cgHighScoreScreen.interactable = false;
+			currentCanvasGroup.interactable = false;
 		}
 	}
 
@@ -122,23 +137,34 @@ public class MainMenuLogic : MonoBehaviour {
 
 	private void ShowHighScoresScreen()
 	{
-		cgMainMenuScreen.gameObject.SetActive(false);
+		currentCanvasGroup.gameObject.SetActive(false);
 		cgHighScoreScreen.gameObject.SetActive(true);
 		cgHighScoreScreen.interactable = true;
+		currentCanvasGroup = cgHighScoreScreen;
     }
 
 	private void ShowMainMenu()
 	{
-		cgHighScoreScreen.gameObject.SetActive(false);
+		currentCanvasGroup.gameObject.SetActive(false);
 		cgMainMenuScreen.gameObject.SetActive(true);
 		cgMainMenuScreen.interactable = true;
+		currentCanvasGroup = cgMainMenuScreen;
 	}
 
 	private void ShowTutorialScreen()
 	{
-		cgMainMenuScreen.gameObject.SetActive(false);
+		currentCanvasGroup.gameObject.SetActive(false);
 		cgTutorialScreen.gameObject.SetActive(true);
 		cgTutorialScreen.interactable = true;
+		currentCanvasGroup = cgTutorialScreen;
+	}
+
+	private void ShowCreditsScreen()
+	{
+		currentCanvasGroup.gameObject.SetActive(false);
+		cgCreditsScreen.gameObject.SetActive(true);
+		cgCreditsScreen.interactable = true;
+		currentCanvasGroup = cgCreditsScreen;
 	}
 
 	#endregion
