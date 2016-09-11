@@ -22,7 +22,7 @@ public class SplashScreenController : MonoBehaviour
 	private IEnumerator WaitForSplashScreen()
 	{
 		yield return new WaitForSeconds(splashTime);
-		mainMenuLogic.BackToMainMenu();
+		FadersController.instance.FadeToBlack(1);
 	}
 
 	void OnDisable()

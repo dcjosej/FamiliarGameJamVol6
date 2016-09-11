@@ -70,6 +70,11 @@ public class MainMenuLogic : MonoBehaviour {
 		}
 	}
 
+	public void Exit()
+	{
+		Application.Quit();
+	}
+
 	public void BackToMainMenu()
 	{
 		if (!transitioning && !FadersController.instance.fading)
