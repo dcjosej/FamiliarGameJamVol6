@@ -61,6 +61,11 @@ public class AutoText : MonoBehaviour
 	private Queue<IEnumerator> queueCoroutines;
 	private bool processingQueue = false;
 
+	
+	void OnDisable()
+	{
+		StopAllCoroutines();
+	}
 
 	public void ShowAllText(string text)
 	{
@@ -205,6 +210,8 @@ public class AutoText : MonoBehaviour
 
 		lines = 0;
 		queueCoroutines = new Queue<IEnumerator>();
+
+		Clean();
 	}
 
 	public void Clean()
@@ -213,13 +220,14 @@ public class AutoText : MonoBehaviour
 		{
 			StopCoroutine(typeTextCoroutine);
 		}
-
+		//StopAllCoroutines();
 		textComp.text = "";
 		textInConsole = "";
 		textInConsoleWithoutMarker = "";
 		textMarker = "<size=10>_</size>";
 		initIndex = -1;
 		writing = false;
+		processingQueue = false;
 	}
 
 	void Start()

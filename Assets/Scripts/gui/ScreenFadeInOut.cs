@@ -6,24 +6,24 @@ using UnityEngine.UI;
 public class ScreenFadeInOut : MonoBehaviour
 {
 
-	private static ScreenFadeInOut _instance;
-	public static ScreenFadeInOut instance
-	{
-		get
-		{
-			if(_instance == null)
-			{
-				_instance = FindObjectOfType<ScreenFadeInOut>();
-			}
-			return _instance;
-		}
-	}
+	//private static ScreenFadeInOut _instance;
+	//public static ScreenFadeInOut instance
+	//{
+	//	get
+	//	{
+	//		if(_instance == null)
+	//		{
+	//			_instance = FindObjectOfType<ScreenFadeInOut>();
+	//		}
+	//		return _instance;
+	//	}
+	//}
 
 
 	public float fadeTime = 1f; //Tiempo de fade en segundos
 
 	public bool sceneStarting = true;
-	public bool fading { get; set; }
+	//public bool fading { get; set; }
 	private CanvasGroup canvasGroup;
 
 	private Image fadeImage;
@@ -50,10 +50,11 @@ public class ScreenFadeInOut : MonoBehaviour
 	//	this.fadeTime = fadeTime;	
 	//}
 
-	public void BlackAndClear(float fadeTime)
+	public void BlackAndClear(float fadeTime, FadeToBlackFinishedDelegate fadeToBlackCallback)
 	{
 		this.fadeTime = fadeTime;
-		StartCoroutine(BlackAndClearIE());
+		this.fadeToBlackFinishedCallback = fadeToBlackCallback;
+        StartCoroutine(BlackAndClearIE());
 	}
 
 	private IEnumerator BlackAndClearIE()
@@ -77,8 +78,8 @@ public class ScreenFadeInOut : MonoBehaviour
 		fadeImage.gameObject.SetActive(true);
 
 
-		fading = true;
-		canvasGroup.blocksRaycasts = fading;
+		FadersController.instance.fading = true;
+		canvasGroup.blocksRaycasts = FadersController.instance.fading;
 
 
 		float time = 0f;
@@ -92,8 +93,8 @@ public class ScreenFadeInOut : MonoBehaviour
 			yield return null;
 		}
 
-		fading = false;
-		canvasGroup.blocksRaycasts = fading;
+		FadersController.instance.fading = false;
+		canvasGroup.blocksRaycasts = FadersController.instance.fading;
 		//fadeImage.gameObject.SetActive(false);
 	}
 
@@ -103,8 +104,8 @@ public class ScreenFadeInOut : MonoBehaviour
 		float time = 0f;
 		float t = 0f;
 
-		fading = true;
-		canvasGroup.blocksRaycasts = fading;
+		FadersController.instance.fading = true;
+		canvasGroup.blocksRaycasts = FadersController.instance.fading;
 
 		while (time <= fadeTime)
 		{
@@ -116,8 +117,8 @@ public class ScreenFadeInOut : MonoBehaviour
 			yield return null;
 		}
 
-		fading = false;
-		canvasGroup.blocksRaycasts = fading;
+		FadersController.instance.fading = false;
+		canvasGroup.blocksRaycasts = FadersController.instance.fading;
 		//fadeImage.gameObject.SetActive(false);
 
 

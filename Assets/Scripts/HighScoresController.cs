@@ -4,6 +4,9 @@ using System.Collections;
 
 public class HighScoresController : MonoBehaviour
 {
+
+	public MainMenuLogic mainMenuLogic;
+
 	[Header("GUI References")]
 	public AutoText autotext;
 
@@ -14,12 +17,16 @@ public class HighScoresController : MonoBehaviour
 
 	void OnEnable()
 	{
+		KeyboardManager.OnKeyPressed += OnKeyPressed;
+
 		autotext.Initialize();
 		autotext.TypeText(header.text, Utils.OrangeColor);
-
 		SocialManager.instance.GetScores(ShowHighscores);
+	}
 
-		
+	void OnDisable()
+	{
+		KeyboardManager.OnKeyPressed -= OnKeyPressed;
 	}
 
 	private void ShowHighscores(Score[] scores)
@@ -32,5 +39,16 @@ public class HighScoresController : MonoBehaviour
 
 		autotext.TypeText("\n", Utils.OrangeColor);
 		autotext.TypeText(footer.text, Utils.OrangeColor);
+	}
+
+	private void OnKeyPressed(KeyCode keyCode)
+	{
+		switch (keyCode)
+		{
+			case KeyCode.Escape:
+				mainMenuLogic.BackToMainMenu();
+				break;
+
+		}
 	}
 }
