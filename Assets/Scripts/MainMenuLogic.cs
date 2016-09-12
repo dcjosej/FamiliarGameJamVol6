@@ -18,7 +18,7 @@ public class MainMenuLogic : MonoBehaviour {
 	public CanvasGroup cgMainMenuScreen;
 	public CanvasGroup cgTutorialScreen;
 	public CanvasGroup cgCreditsScreen;
-	public CanvasGroup cgSplashScreen;
+	//public CanvasGroup cgSplashScreen;
     public CanvasGroup cgPressEnter;
 	public CanvasGroup cgMainMenuButtons;
 	
@@ -28,7 +28,7 @@ public class MainMenuLogic : MonoBehaviour {
 	void Start()
 	{
 		Cursor.SetCursor(normalCursor, Vector2.one * 32f, CursorMode.Auto);
-		currentCanvasGroup = cgSplashScreen;
+		currentCanvasGroup = cgMainMenuScreen;
 	}
 
 	public void StartGame()
