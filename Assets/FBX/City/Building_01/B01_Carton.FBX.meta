@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: eafd93fad7c79da46a34238aeae2ddb7
+timeCreated: 1473611957
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: B01_Carton
+    100004: B01_Corner (1)
+    100006: B01_Corner (1)001
+    100008: B01_Corner (1)002
+    100010: B01_Pillar (1)
+    100012: B01_Wall (1)
+    100014: Default_Prototype_Emisive_Orange
+    100016: Default_Prototype_Emisive_White
+    100018: Default_Prototype_Steel
+    100020: Default_Prototype_Wall
+    400000: //RootNode
+    400002: B01_Carton
+    400004: B01_Corner (1)
+    400006: B01_Corner (1)001
+    400008: B01_Corner (1)002
+    400010: B01_Pillar (1)
+    400012: B01_Wall (1)
+    400014: Default_Prototype_Emisive_Orange
+    400016: Default_Prototype_Emisive_White
+    400018: Default_Prototype_Steel
+    400020: Default_Prototype_Wall
+    2300000: //RootNode
+    2300002: B01_Carton
+    2300004: B01_Corner (1)
+    2300006: B01_Corner (1)001
+    2300008: B01_Corner (1)002
+    2300010: B01_Pillar (1)
+    2300012: B01_Wall (1)
+    2300014: Default_Prototype_Emisive_Orange
+    2300016: Default_Prototype_Emisive_White
+    2300018: Default_Prototype_Steel
+    2300020: Default_Prototype_Wall
+    3300000: //RootNode
+    3300002: B01_Carton
+    3300004: B01_Corner (1)
+    3300006: B01_Corner (1)001
+    3300008: B01_Corner (1)002
+    3300010: B01_Pillar (1)
+    3300012: B01_Wall (1)
+    3300014: Default_Prototype_Emisive_Orange
+    3300016: Default_Prototype_Emisive_White
+    3300018: Default_Prototype_Steel
+    3300020: Default_Prototype_Wall
+    4300000: B01_Carton
+    4300002: Default_Prototype_Wall
+    4300004: Default_Prototype_Emisive_White
+    4300006: Default_Prototype_Steel
+    4300008: Default_Prototype_Emisive_Orange
+    4300010: B01_Wall (1)
+    4300012: B01_Corner (1)
+    4300014: B01_Pillar (1)
+    4300016: B01_Corner (1)001
+    4300018: B01_Corner (1)002
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
