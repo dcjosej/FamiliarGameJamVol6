@@ -7,7 +7,15 @@ using System.Collections.Generic;
 public class MB_ChangePerson : MonoBehaviour {
     public MB3_MeshBaker meshBaker;
 
+	public Mesh myMesh;
+	public GameObject myGameObject;
+
+
 	public Renderer[] defaultAppearence;
+
+	//public Renderer glasses2;
+
+	//public bool wearGlasses;
 
     //public Renderer[] clothingAndBodyPartsBareTorso;
     //public Renderer[] clothingAndBodyPartsBareTorsoDamagedArm;
@@ -25,6 +33,22 @@ public class MB_ChangePerson : MonoBehaviour {
 		ChangeOutfit(defaultAppearence);
 	}
 
+	public void AddCloth(Zone zone, Renderer outfitRenderer)
+	{ 
+
+	}
+
+	//void Update()
+	//{
+	//	if (Input.GetKeyDown(KeyCode.G) && wearGlasses)
+	//	{
+	//		List<Renderer> aux = new List<Renderer>();
+	//		aux.AddRange(defaultAppearence);
+	//		aux.Add(glasses2);
+	//		ChangeOutfit(aux.ToArray());
+	//	}
+	//}
+
 	//void OnGUI () {
 	//    if (GUILayout.Button("Wear Hoodie"))
 	//    {
@@ -40,7 +64,7 @@ public class MB_ChangePerson : MonoBehaviour {
 	//    }
 	//}
 
-	void ChangeOutfit(Renderer[] outfit)
+	public void ChangeOutfit(Renderer[] outfit)
 	{
 		//collect the meshes we will be removing
 		List<GameObject> objectsWeAreRemoving = new List<GameObject>();
