@@ -232,7 +232,9 @@ public class AutoText : MonoBehaviour
 		textInConsoleWithoutMarker = "";
 		textMarker = "<size=" + markerSize + ">_</size>";
 		initIndex = -1;
+		queueCoroutines.Clear();
 		writing = false;
+		lines = 0;
 		processingQueue = false;
 	}
 
