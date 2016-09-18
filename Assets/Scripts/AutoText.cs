@@ -306,6 +306,10 @@ public class AutoText : MonoBehaviour
 		writing = true;
 		lines++;
 
+
+		AudioManager.instance.PlayTypeText();
+
+
 		if(textInConsoleWithoutMarker != "")
 		{
 			textComp.text = textInConsoleWithoutMarker;

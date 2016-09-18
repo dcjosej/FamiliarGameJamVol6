@@ -286,9 +286,12 @@ public class GameLogic : MonoBehaviour
 		if(threatnessLevel >= dangerousThreashold && !dangerousAdvertisementShowed)
 		{
 			HUDController.instance.ShowDangerAdvertisement();
+			AudioManager.instance.PlayDangerAlarm();
 			dangerousAdvertisementShowed = true;
-		}else
-		{
+		}
+
+		if(threatnessLevel < dangerousThreashold)
+        {
 			dangerousAdvertisementShowed = false;
 		}
 
@@ -337,6 +340,7 @@ public class GameLogic : MonoBehaviour
 	{
 		while (true)
 		{
+			AudioManager.instance.PlayThreatDetected();
 			Convert();
 			yield return new WaitForSeconds(nextTimeToConvert);
 		}
