@@ -3897,7 +3897,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011371705210}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.00000008940697}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000008940697}
   m_LocalPosition: {x: -23.045, y: -2.1100001, z: 18.154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5305,6 +5305,7 @@ MonoBehaviour:
     zone: 7
   converted: 0
   changePerson: {fileID: 114000010009417098}
+  skRenderer: {fileID: 137000011410047396}
 --- !u!136 &136000011750009438
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -7398,7 +7399,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6aabe34b9bb816c40b7a3c87a678bccc, type: 2}
+  - {fileID: 2100000, guid: b006f8435c6a8674787c2254481d50be, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}

@@ -8,7 +8,11 @@ public class PersonController : MonoBehaviour
 	public ElementsZone[] elements;
 	public bool converted = false;
 	public MB_ChangePerson changePerson;
+	public SkinnedMeshRenderer skRenderer;
 
+	//[Header("Materials")]
+	//public Material humanConversionMaterial;
+	//public Material humanAtlas;
 
 	private int infectedLevel = 0;
 
@@ -35,7 +39,16 @@ public class PersonController : MonoBehaviour
 			infectedLevel = 0;
 			GameLogic.instance.charactersInScene--;
 			StopAllCoroutines();
+
+			StartCoroutine(RestoringHumanIE());
 		}
+	}
+
+	private IEnumerator RestoringHumanIE()
+	{
+		skRenderer.sharedMaterial = GameLogic.instance.humanConversionMaterial;
+		yield return new WaitForSeconds(GameLogic.instance.secondsToRestablishCursor);
+		skRenderer.sharedMaterial = GameLogic.instance.humanAtlas;
 	}
 
 	private float CalculateNormalizedInfectionLevel()

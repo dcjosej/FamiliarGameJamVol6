@@ -79,6 +79,10 @@ public class GameLogic : MonoBehaviour
 
 	#endregion
 
+	[Header("Materiales comunes")]
+	public Material humanConversionMaterial;
+	public Material humanAtlas;
+
 	[Header("Others")]
 	[Tooltip("Segundos que permanece el cursor cambiado de Color cuando hemos pulsado sobre una persona")]
 	public float secondsToRestablishCursor = 0.5f;
