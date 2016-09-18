@@ -7,14 +7,19 @@ public class PersonController : MonoBehaviour
 {
 	public ElementsZone[] elements;
 	public bool converted = false;
+	public MB_ChangePerson changePerson;
+	public SkinnedMeshRenderer skRenderer;
 
+	//[Header("Materials")]
+	//public Material humanConversionMaterial;
+	//public Material humanAtlas;
 
 	private int infectedLevel = 0;
 
-	private List<GameObject> activeElements = new List<GameObject>();
+	private List<Renderer> activeElements = new List<Renderer>();
 
 
-	void OnEnable()
+	void Start()
 	{
 		MindRestored();
 	}
@@ -26,6 +31,7 @@ public class PersonController : MonoBehaviour
 			DisableActiveElements();
 			activeElements.Clear();
 			ActiveStandardElements();
+			changePerson.ChangeOutfit(activeElements.ToArray());
 
 			converted = false;
 			GameLogic.instance.globalInfectionLevel -= infectedLevel;
@@ -33,7 +39,16 @@ public class PersonController : MonoBehaviour
 			infectedLevel = 0;
 			GameLogic.instance.charactersInScene--;
 			StopAllCoroutines();
+
+			StartCoroutine(RestoringHumanIE());
 		}
+	}
+
+	private IEnumerator RestoringHumanIE()
+	{
+		skRenderer.sharedMaterial = GameLogic.instance.humanConversionMaterial;
+		yield return new WaitForSeconds(GameLogic.instance.secondsToRestablishCursor);
+		skRenderer.sharedMaterial = GameLogic.instance.humanAtlas;
 	}
 
 	private float CalculateNormalizedInfectionLevel()
@@ -63,7 +78,7 @@ public class PersonController : MonoBehaviour
 	/// </summary>
 	private void DisableActiveElements()
 	{
-		foreach(GameObject go in activeElements)
+		foreach(Renderer go in activeElements)
 		{
 			go.gameObject.SetActive(false);
 		}
@@ -122,8 +137,9 @@ public class PersonController : MonoBehaviour
 			return;
 		}
 
-		GameObject selectedElement = selectedZone.ActiveRandomElement();
+		Renderer selectedElement = selectedZone.ActiveRandomElement();
 		activeElements.Add(selectedElement);
+		changePerson.ChangeOutfit(activeElements.ToArray());
 		infectedLevel++;
 	}
 
@@ -293,15 +309,15 @@ public class PersonController : MonoBehaviour
 	{
 		//[HideInInspector]
 		public bool applied;
-		public GameObject[] elements;
+		public Renderer[] elements;
 		public Zone zone;
 
-		public GameObject ActiveRandomElement()
+		public Renderer ActiveRandomElement()
 		{
-			elements[0].SetActive(false);
+			elements[0].gameObject.SetActive(false);
 
 			int randomIndex = UnityEngine.Random.Range(1, elements.Length);
-			elements[randomIndex].SetActive(true);
+			elements[randomIndex].gameObject.SetActive(true);
 
 			applied = true;
 
