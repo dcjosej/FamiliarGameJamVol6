@@ -18,8 +18,12 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 		graphic = GetComponent<Graphic>();
 	}
 
-	public void Select()
+	public void Select(bool playSound = true)
 	{
+		if (graphic.color != hoverColor && playSound)
+		{
+			AudioManager.instance.PlayMouseHover();
+		}
 		graphic.color = hoverColor;
 	}
 
@@ -31,7 +35,7 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		buttonsController.SelectButton(this, eventData);
-		graphic.color = hoverColor;
+		Select();
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
@@ -39,11 +43,12 @@ public class CustomButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		clickFunction.Invoke();
+		ExectueFunction();
 	}
 
 	public void ExectueFunction()
 	{
+		AudioManager.instance.PlayMouseClick();
 		clickFunction.Invoke();
 	}
 }

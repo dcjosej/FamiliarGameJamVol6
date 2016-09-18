@@ -41,7 +41,7 @@ public class HUDController : MonoBehaviour
 	void OnEnable()
 	{
 		UpdateGUI();
-		consoleAutoText.Initialize();
+		consoleAutoText.Initialize(false);
 	}
 
 	void Update()

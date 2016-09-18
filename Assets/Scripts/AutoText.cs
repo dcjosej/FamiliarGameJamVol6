@@ -63,7 +63,7 @@ public class AutoText : MonoBehaviour
 
 
 	private Queue<IEnumerator> queueCoroutines;
-	private bool processingQueue = false;
+	public bool processingQueue { get; set; }
 
 	
 	void OnDisable()
@@ -204,7 +204,7 @@ public class AutoText : MonoBehaviour
 		//StartCoroutine(AnimateText());
 	}
 
-	public void Initialize()
+	public void Initialize(bool cleanConsole = true)
 	{
 		if (typeTextCoroutine != null)
 		{
@@ -217,7 +217,10 @@ public class AutoText : MonoBehaviour
 		lines = 0;
 		queueCoroutines = new Queue<IEnumerator>();
 
-		Clean();
+		if (cleanConsole)
+		{
+			Clean();
+		}
 	}
 
 	public void Clean()
@@ -270,7 +273,8 @@ public class AutoText : MonoBehaviour
 	private IEnumerator ProcessStack()
 	{
 		processingQueue = true;
-		while(queueCoroutines.Count > 0)
+		AudioManager.instance.PlayTypeText();
+		while (queueCoroutines.Count > 0)
 		{
 			IEnumerator coroutine = queueCoroutines.Dequeue();
 			while (coroutine.MoveNext())
@@ -279,6 +283,7 @@ public class AutoText : MonoBehaviour
 			}
 		}
 		processingQueue = false;
+		AudioManager.instance.StopPlayTypeText();
 	}
 
 	public void TypeTextGameOver()
@@ -307,7 +312,7 @@ public class AutoText : MonoBehaviour
 		lines++;
 
 
-		AudioManager.instance.PlayTypeText();
+		
 
 
 		if(textInConsoleWithoutMarker != "")

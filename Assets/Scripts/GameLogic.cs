@@ -221,6 +221,7 @@ public class GameLogic : MonoBehaviour
 		nextTimeToConvert = GetTimeCurveValue();
 		standardPeopleInScene = GameObject.FindGameObjectsWithTag("StandardPerson");
 		StartCoroutine(ConvertPeople());
+		AudioManager.instance.PlayLoopCPU();
 	}
 
 

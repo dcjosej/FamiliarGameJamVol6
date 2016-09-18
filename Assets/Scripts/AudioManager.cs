@@ -7,13 +7,28 @@ public class AudioManager : MonoBehaviour
 	public static AudioManager instance;
 
 	
-	[SerializeField]private AudioSource loopCPU;
-	[SerializeField]private AudioSource conversionFail;
-	[SerializeField]private AudioSource conversionAccepted;
-	[SerializeField]private AudioSource noise;
-	[SerializeField]private AudioSource dangerAlarm;
-	[SerializeField]private AudioSource typeText;
-	[SerializeField]private AudioSource threatDetected;
+	[SerializeField]
+	private AudioSource loopCPU;
+	[SerializeField]
+	private AudioSource conversionFail;
+	[SerializeField]
+	private AudioSource conversionAccepted;
+	[SerializeField]
+	private AudioSource noise;
+	[SerializeField]
+	private AudioSource dangerAlarm;
+	[SerializeField]
+	private AudioSource typeText;
+	[SerializeField]
+	private AudioSource threatDetected;
+	[SerializeField]
+	private AudioSource guiFx;
+
+	[Header("Clips GUI")]
+	[SerializeField]
+	private AudioClip mouseHover;
+	[SerializeField]
+	private AudioClip mouseClick;
 
 
 	void Awake()
@@ -44,25 +59,17 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayTypeText()
 	{
-		if (!dangerAlarm.isPlaying)
+		if (!typeText.isPlaying)
 		{
-			StartCoroutine(PlayTypeTextIE());
+			typeText.loop = true;
+			typeText.Play();
 		}
 	}
 
-	private IEnumerator PlayTypeTextIE()
+	public void StopPlayTypeText()
 	{
-
-		typeText.loop = true;
-		typeText.Play();
-		while (HUDController.instance.consoleAutoText.writing)
-		{
-			yield return null;
-		}
-
 		typeText.loop = false;
 	}
-
 
 	public void PlayDangerAlarm()
 	{
@@ -85,5 +92,23 @@ public class AudioManager : MonoBehaviour
 		threatDetected.Stop();
 		threatDetected.Play();
 	}
+
+	public void PlayLoopCPU()
+	{
+		loopCPU.loop = true;
+		loopCPU.Play();
+	}
+
+	#region GUI FX
+	public void PlayMouseHover()
+	{
+		guiFx.PlayOneShot(mouseHover);
+	}
+
+	public void PlayMouseClick()
+	{
+		guiFx.PlayOneShot(mouseClick);
+	}
+	#endregion
 
 }
