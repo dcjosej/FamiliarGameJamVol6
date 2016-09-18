@@ -41,7 +41,7 @@ public class HUDController : MonoBehaviour
 	void OnEnable()
 	{
 		UpdateGUI();
-		consoleAutoText.Initialize();
+		consoleAutoText.Initialize(false);
 	}
 
 	void Update()
@@ -66,11 +66,10 @@ public class HUDController : MonoBehaviour
 		gameOverNoise.SetActive(true);
 		gameOverEmergencia.SetActive(true);
 
-
-		consoleAutoText.Clean();
 		consoleAutoText.allowKeyboardTyping = true;
 		consoleAutoText.markerToNextLine = false;
         consoleAutoText.maxNumLines = 10;
+		consoleAutoText.Clean();
 		consoleAutoText.TypeText(AutoText.PLAY_AGAIN_TEXT, Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}

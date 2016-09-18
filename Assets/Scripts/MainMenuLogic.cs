@@ -34,7 +34,7 @@ public class MainMenuLogic : MonoBehaviour {
 	public void StartGame()
 	{
 		//ScreenFadeInOut.instance.FadeToBlackLoadScene(1);
-		FadersController.instance.FadeToBlack(1);
+		FadersController.instance.FadeToBlack(2);
 	}
 
 	#region BUTTON FUNCTIONS

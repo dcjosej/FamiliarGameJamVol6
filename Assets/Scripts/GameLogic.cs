@@ -85,7 +85,9 @@ public class GameLogic : MonoBehaviour
 
 	[Header("Others")]
 	[Tooltip("Segundos que permanece el cursor cambiado de Color cuando hemos pulsado sobre una persona")]
-	public float secondsToRestablishCursor = 0.5f;
+	public float secondsToRestablishCursor = 0.3f;
+	[Tooltip("Segundos que permanece el material de combersión cuando hemos restaurado a una persona")]
+	public float secondsToRestablishMaterial = 0.1f;
 
 
 	[Header("GUI References")]
@@ -219,6 +221,7 @@ public class GameLogic : MonoBehaviour
 		nextTimeToConvert = GetTimeCurveValue();
 		standardPeopleInScene = GameObject.FindGameObjectsWithTag("StandardPerson");
 		StartCoroutine(ConvertPeople());
+		AudioManager.instance.PlayLoopCPU();
 	}
 
 
@@ -284,9 +287,12 @@ public class GameLogic : MonoBehaviour
 		if(threatnessLevel >= dangerousThreashold && !dangerousAdvertisementShowed)
 		{
 			HUDController.instance.ShowDangerAdvertisement();
+			AudioManager.instance.PlayDangerAlarm();
 			dangerousAdvertisementShowed = true;
-		}else
-		{
+		}
+
+		if(threatnessLevel < dangerousThreashold)
+        {
 			dangerousAdvertisementShowed = false;
 		}
 
@@ -335,6 +341,7 @@ public class GameLogic : MonoBehaviour
 	{
 		while (true)
 		{
+			AudioManager.instance.PlayThreatDetected();
 			Convert();
 			yield return new WaitForSeconds(nextTimeToConvert);
 		}
@@ -418,7 +425,7 @@ public class GameLogic : MonoBehaviour
 		{
 			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
 			//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
-			FadersController.instance.FadeToBlack(0);
+			FadersController.instance.FadeToBlack(1);
 
 			AutoText.OnInputReceived -= OnInputReceived;
 		}

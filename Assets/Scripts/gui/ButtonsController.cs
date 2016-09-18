@@ -15,14 +15,14 @@ public class ButtonsController : MonoBehaviour
 		{
 			button.Init();
 		}
-		buttons[selectedButtonIndex].Select();
+		buttons[selectedButtonIndex].Select(false);
 	}
 
 	void OnEnable()
 	{
 		KeyboardManager.OnKeyPressed += OnKeyPressed;
 		selectedButtonIndex = 0;
-		UpdateSelectedButton();
+		UpdateSelectedButton(false);
 	}
 
 	void OnDisable()
@@ -72,10 +72,10 @@ public class ButtonsController : MonoBehaviour
 		UpdateSelectedButton();
 	}
 
-	private void UpdateSelectedButton()
+	private void UpdateSelectedButton(bool playSound = true)
 	{
 
-		buttons[selectedButtonIndex].Select();
+		buttons[selectedButtonIndex].Select(playSound);
 
 		SelectButton(buttons[selectedButtonIndex]);
 	}

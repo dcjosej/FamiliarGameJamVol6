@@ -47,7 +47,7 @@ public class PersonController : MonoBehaviour
 	private IEnumerator RestoringHumanIE()
 	{
 		skRenderer.sharedMaterial = GameLogic.instance.humanConversionMaterial;
-		yield return new WaitForSeconds(GameLogic.instance.secondsToRestablishCursor);
+		yield return new WaitForSeconds(GameLogic.instance.secondsToRestablishMaterial);
 		skRenderer.sharedMaterial = GameLogic.instance.humanAtlas;
 	}
 

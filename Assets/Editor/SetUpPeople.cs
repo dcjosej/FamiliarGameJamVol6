@@ -37,7 +37,17 @@ public class SetUpPeople : EditorWindow
 			GenerateMeshes();	
 		}
 
+		if(GUILayout.Button("Count People"))
+		{
+			CountPeople();
+		}
+
 		so.ApplyModifiedProperties();
+	}
+
+	private void CountPeople()
+	{
+		Debug.Log(Selection.gameObjects.Length + " people");
 	}
 
 	private void GenerateMeshes()
