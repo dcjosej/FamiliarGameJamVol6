@@ -40,7 +40,7 @@ MonoBehaviour:
       y: -0
       width: 1
       height: 1
-  resultMaterial: {fileID: 2100000, guid: 6aabe34b9bb816c40b7a3c87a678bccc, type: 2}
+  resultMaterial: {fileID: 2100000, guid: b006f8435c6a8674787c2254481d50be, type: 2}
   resultMaterials: []
   doMultiMaterial: 0
   fixOutOfBoundsUVs: 0
