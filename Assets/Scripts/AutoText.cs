@@ -273,7 +273,12 @@ public class AutoText : MonoBehaviour
 	private IEnumerator ProcessStack()
 	{
 		processingQueue = true;
-		AudioManager.instance.PlayTypeText();
+
+		if (AudioManager.instance != null)
+		{
+			AudioManager.instance.PlayTypeText();
+		}
+
 		while (queueCoroutines.Count > 0)
 		{
 			IEnumerator coroutine = queueCoroutines.Dequeue();
@@ -283,7 +288,11 @@ public class AutoText : MonoBehaviour
 			}
 		}
 		processingQueue = false;
-		AudioManager.instance.StopPlayTypeText();
+
+		if (AudioManager.instance != null)
+		{
+			AudioManager.instance.StopPlayTypeText();
+		}
 	}
 
 	public void TypeTextGameOver()
