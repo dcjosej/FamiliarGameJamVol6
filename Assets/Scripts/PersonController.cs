@@ -300,7 +300,7 @@ public class PersonController : MonoBehaviour
 			Vector3 newPosition = spawnPointController.transform.position;
 			newPosition.y = transform.position.y;
 			transform.position = newPosition;
-			transform.position += transform.forward * 20;
+			transform.position += transform.forward * 10;
 		}
 	}
 
