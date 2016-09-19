@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: c9bb60bfce2e95a44bec4282e92c6b08
+timeCreated: 1474244424
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: B05_Carton
+    100002: B05_Column (1)
+    100004: B05_Corner (1)
+    100006: B05_Cornisa (1)
+    100008: B05_Door_01 (1)
+    100010: B05_Door_02 (1)
+    100012: B05_FrontalWall (1)
+    100014: B05_Pasamano (1)
+    100016: B05_Pillar_01 (1)
+    100018: B05_Pillar_Corner (1)
+    100020: B05_Stairs (1)
+    100022: B05_Techo
+    100024: B05_Tunnel_Wall (1)
+    100026: B05_Tunnel_Wall_Back
+    100028: B05_Tunnel_Wall_Front
+    100030: B05_Wall (1)
+    100032: B05_Wall_Concretel (1)
+    100034: B05_Wall_Front (1)
+    100036: B05_Window_01 (1)
+    100038: B05_Window_02 (1)
+    100040: //RootNode
+    100042: Default_Prototype
+    100044: Default_Prototype_Concrete
+    100046: Default_Prototype_Emisive_Green
+    100048: Default_Prototype_Emisive_White
+    100050: Default_Prototype_Steel
+    100052: Default_Prototype_Wall
+    400000: B05_Carton
+    400002: B05_Column (1)
+    400004: B05_Corner (1)
+    400006: B05_Cornisa (1)
+    400008: B05_Door_01 (1)
+    400010: B05_Door_02 (1)
+    400012: B05_FrontalWall (1)
+    400014: B05_Pasamano (1)
+    400016: B05_Pillar_01 (1)
+    400018: B05_Pillar_Corner (1)
+    400020: B05_Stairs (1)
+    400022: B05_Techo
+    400024: B05_Tunnel_Wall (1)
+    400026: B05_Tunnel_Wall_Back
+    400028: B05_Tunnel_Wall_Front
+    400030: B05_Wall (1)
+    400032: B05_Wall_Concretel (1)
+    400034: B05_Wall_Front (1)
+    400036: B05_Window_01 (1)
+    400038: B05_Window_02 (1)
+    400040: //RootNode
+    400042: Default_Prototype
+    400044: Default_Prototype_Concrete
+    400046: Default_Prototype_Emisive_Green
+    400048: Default_Prototype_Emisive_White
+    400050: Default_Prototype_Steel
+    400052: Default_Prototype_Wall
+    2300000: B05_Carton
+    2300002: B05_Column (1)
+    2300004: B05_Corner (1)
+    2300006: B05_Cornisa (1)
+    2300008: B05_Door_01 (1)
+    2300010: B05_Door_02 (1)
+    2300012: B05_FrontalWall (1)
+    2300014: B05_Pasamano (1)
+    2300016: B05_Pillar_01 (1)
+    2300018: B05_Pillar_Corner (1)
+    2300020: B05_Stairs (1)
+    2300022: B05_Techo
+    2300024: B05_Tunnel_Wall (1)
+    2300026: B05_Tunnel_Wall_Back
+    2300028: B05_Tunnel_Wall_Front
+    2300030: B05_Wall (1)
+    2300032: B05_Wall_Concretel (1)
+    2300034: B05_Wall_Front (1)
+    2300036: B05_Window_01 (1)
+    2300038: B05_Window_02 (1)
+    2300040: Default_Prototype
+    2300042: Default_Prototype_Concrete
+    2300044: Default_Prototype_Emisive_Green
+    2300046: Default_Prototype_Emisive_White
+    2300048: Default_Prototype_Steel
+    2300050: Default_Prototype_Wall
+    3300000: B05_Carton
+    3300002: B05_Column (1)
+    3300004: B05_Corner (1)
+    3300006: B05_Cornisa (1)
+    3300008: B05_Door_01 (1)
+    3300010: B05_Door_02 (1)
+    3300012: B05_FrontalWall (1)
+    3300014: B05_Pasamano (1)
+    3300016: B05_Pillar_01 (1)
+    3300018: B05_Pillar_Corner (1)
+    3300020: B05_Stairs (1)
+    3300022: B05_Techo
+    3300024: B05_Tunnel_Wall (1)
+    3300026: B05_Tunnel_Wall_Back
+    3300028: B05_Tunnel_Wall_Front
+    3300030: B05_Wall (1)
+    3300032: B05_Wall_Concretel (1)
+    3300034: B05_Wall_Front (1)
+    3300036: B05_Window_01 (1)
+    3300038: B05_Window_02 (1)
+    3300040: Default_Prototype
+    3300042: Default_Prototype_Concrete
+    3300044: Default_Prototype_Emisive_Green
+    3300046: Default_Prototype_Emisive_White
+    3300048: Default_Prototype_Steel
+    3300050: Default_Prototype_Wall
+    4300000: B05_Stairs (1)
+    4300002: B05_Pasamano (1)
+    4300004: B05_Door_01 (1)
+    4300006: B05_Window_01 (1)
+    4300008: B05_Window_02 (1)
+    4300010: B05_Pillar_01 (1)
+    4300012: B05_Pillar_Corner (1)
+    4300014: B05_Door_02 (1)
+    4300016: B05_FrontalWall (1)
+    4300018: B05_Cornisa (1)
+    4300020: B05_Wall_Front (1)
+    4300022: B05_Carton
+    4300024: B05_Wall (1)
+    4300026: B05_Corner (1)
+    4300028: B05_Column (1)
+    4300030: B05_Wall_Concretel (1)
+    4300032: B05_Techo
+    4300034: B05_Tunnel_Wall (1)
+    4300036: B05_Tunnel_Wall_Front
+    4300038: B05_Tunnel_Wall_Back
+    4300040: Default_Prototype
+    4300042: Default_Prototype_Wall
+    4300044: Default_Prototype_Emisive_White
+    4300046: Default_Prototype_Concrete
+    4300048: Default_Prototype_Steel
+    4300050: Default_Prototype_Emisive_Green
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
