@@ -16,6 +16,8 @@ public class MainCameraRTInputReceiver : MonoBehaviour
 	//private CursorMode cursorMode = CursorMode.Auto;
 	//private Vector2 hotSpot = Vector2.one * 0.5f;
 
+	
+
 	void OnMouseDown()
 	{
 		Debug.Log("Pinchando en la pantalla!");

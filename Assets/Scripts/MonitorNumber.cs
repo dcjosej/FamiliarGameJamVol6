@@ -22,4 +22,18 @@ public class MonitorNumber : MonoBehaviour
 		text.text = monitorNumber.ToString();
 	}
 
+	public void OnMouseOver()
+	{
+		if (text.color != Color.white)
+		{
+			AudioManager.instance.PlayMouseHover();
+		}
+			text.color = Color.white;
+	}
+
+	public void OnMouseExit()
+	{
+		text.color = new Color(1, 1, 1, 0.38f);
+    }
+
 }
