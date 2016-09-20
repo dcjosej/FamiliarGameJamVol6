@@ -51,7 +51,12 @@ public class PersistentData : MonoBehaviour
 			selectedNumber += RANDOM_NUMBER[randomIndex];	
 		}
 
+
 		employeeId = EMPLOYEE_PREFIX + " " + selectedNumber;
+		//employeeId = "Employee 999999";
+
+
+
 		Debug.Log("ERES EL EMPLEADO: " + employeeId);
 	}
 }

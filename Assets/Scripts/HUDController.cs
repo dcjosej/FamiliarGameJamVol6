@@ -25,6 +25,13 @@ public class HUDController : MonoBehaviour
 	public Text textCurrentSector;
 	public Text textCurrentTime;
 
+	[Header("Game Over References")]
+	public GameObject gameOverMainScreen;
+	public AutoText gameOverStatementAutoText;
+	public TextAsset gameOverText;
+	public GameObject sectorControlSlider;
+	public LightCameraController lightsCamerasController;
+
 	[Header("Danger")]
 	public Text textDanger;
 	public AnimationCurve textDangerAlphaAnimationCurve;
@@ -65,12 +72,18 @@ public class HUDController : MonoBehaviour
 	{
 		gameOverNoise.SetActive(true);
 		gameOverEmergencia.SetActive(true);
+		sectorControlSlider.SetActive(false);
+		lightsCamerasController.GameOver();
 
 		consoleAutoText.allowKeyboardTyping = true;
 		consoleAutoText.markerToNextLine = false;
         consoleAutoText.maxNumLines = 10;
 		consoleAutoText.Clean();
 		consoleAutoText.TypeText(AutoText.PLAY_AGAIN_TEXT, Utils.OrangeColor);
+
+		gameOverMainScreen.SetActive(true);
+		gameOverStatementAutoText.Initialize(true);
+		gameOverStatementAutoText.TypeText(gameOverText.text, Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}
 

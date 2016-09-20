@@ -69,6 +69,23 @@ public class AudioManager : MonoBehaviour
 	public void StopPlayTypeText()
 	{
 		typeText.loop = false;
+		StartCoroutine(FadeOutVolume(typeText));
+	}
+
+	private IEnumerator FadeOutVolume(AudioSource audioSource)
+	{
+		float t = 0f;
+		float time = 0f;
+		float volSrc = audioSource.volume;
+		while(t <= 1)
+		{
+			t = time / 0.2f;
+			time += Time.deltaTime;
+			audioSource.volume = Mathf.Lerp(volSrc, 0, t);
+			yield return null;
+		}
+		audioSource.Stop();
+        audioSource.volume = volSrc;
 	}
 
 	public void PlayDangerAlarm()
