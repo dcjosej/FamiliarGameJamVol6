@@ -32,6 +32,7 @@ ModelImporter:
     100048: Default_Prototype_Emisive_White
     100050: Default_Prototype_Steel
     100052: Default_Prototype_Wall
+    100054: B06_Pomo (1)
     400000: B05_Carton
     400002: B05_Column (1)
     400004: B05_Corner (1)
@@ -59,6 +60,7 @@ ModelImporter:
     400048: Default_Prototype_Emisive_White
     400050: Default_Prototype_Steel
     400052: Default_Prototype_Wall
+    400054: B06_Pomo (1)
     2300000: B05_Carton
     2300002: B05_Column (1)
     2300004: B05_Corner (1)
@@ -85,6 +87,7 @@ ModelImporter:
     2300046: Default_Prototype_Emisive_White
     2300048: Default_Prototype_Steel
     2300050: Default_Prototype_Wall
+    2300052: B06_Pomo (1)
     3300000: B05_Carton
     3300002: B05_Column (1)
     3300004: B05_Corner (1)
@@ -111,6 +114,7 @@ ModelImporter:
     3300046: Default_Prototype_Emisive_White
     3300048: Default_Prototype_Steel
     3300050: Default_Prototype_Wall
+    3300052: B06_Pomo (1)
     4300000: B05_Stairs (1)
     4300002: B05_Pasamano (1)
     4300004: B05_Door_01 (1)
@@ -137,6 +141,7 @@ ModelImporter:
     4300046: Default_Prototype_Concrete
     4300048: Default_Prototype_Steel
     4300050: Default_Prototype_Emisive_Green
+    4300052: B06_Pomo (1)
     9500000: //RootNode
   materials:
     importMaterials: 1
