@@ -41,7 +41,14 @@ public class ScoreTimeController : MonoBehaviour
 
 	private void OnGameOver()
 	{
-		SocialManager.instance.AddScore((int)timerCount, guiScoreTimer.text);
+		if (SocialManager.instance != null)
+		{
+			SocialManager.instance.AddScore((int)timerCount, guiScoreTimer.text);
+		}
+		else
+		{
+			Debug.Log("NO HAS INICIADO EL JUEGO DESDE LA ESCENA 1!!");
+		}
 		isActive = false;
 	}
 }

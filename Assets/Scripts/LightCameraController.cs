@@ -27,4 +27,12 @@ public class LightCameraController : MonoBehaviour
 			lc.TurnOff();
 		}
 	}
+
+	public void GameOver()
+	{
+		foreach(LightCamera lightCamera in lightsCameras)
+		{
+			lightCamera.TurnOff();
+		}
+	}
 }
