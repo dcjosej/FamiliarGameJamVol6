@@ -348,9 +348,9 @@ public class GameLogic : MonoBehaviour
 	{
 		while (true)
 		{
+			yield return new WaitForSeconds(nextTimeToConvert);
 			AudioManager.instance.PlayThreatDetected();
 			Convert();
-			yield return new WaitForSeconds(nextTimeToConvert);
 		}
 	}
 
