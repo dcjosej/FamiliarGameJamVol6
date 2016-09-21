@@ -34,7 +34,7 @@ public class HighScoresController : MonoBehaviour
 		autotext.TypeText("\n", Utils.OrangeColor);
 		foreach(Score score in scores)
 		{
-			autotext.TypeText(string.Format(entry.text, score.GuestName, score.Value), Utils.OrangeColor);
+			autotext.TypeText(string.Format(entry.text, score.GuestName, Utils.SecondsTozzHHmmss(score.Value)), Utils.OrangeColor);
 		}
 
 		autotext.TypeText("\n", Utils.OrangeColor);

@@ -70,6 +70,8 @@ public class HUDController : MonoBehaviour
 
 	public void ActiveGameOver()
 	{
+		StopAllCoroutines();
+
 		gameOverNoise.SetActive(true);
 		gameOverEmergencia.SetActive(true);
 		sectorControlSlider.SetActive(false);
@@ -83,7 +85,7 @@ public class HUDController : MonoBehaviour
 
 		gameOverMainScreen.SetActive(true);
 		gameOverStatementAutoText.Initialize(true);
-		gameOverStatementAutoText.TypeText(gameOverText.text, Utils.OrangeColor);
+		gameOverStatementAutoText.TypeText(string.Format(gameOverText.text, PersistentData.instance.employeeId), Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}
 
@@ -118,6 +120,8 @@ public class HUDController : MonoBehaviour
 		float t = 0;
 		Color colorFrom = textDanger.color;
 		textDanger.gameObject.SetActive(true);
+		AudioManager.instance.PlayDangerAlarm();
+
 		while (t <= 1f)
 		{
 			time += Time.deltaTime;

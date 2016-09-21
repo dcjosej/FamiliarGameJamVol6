@@ -31,7 +31,7 @@ public class SecurityCameraButton : MonoBehaviour {
 		if(mainCameraInputReceiver.currentMonitorNumber.monitorNumber == myMonitorNumber.monitorNumber)
 		{
 			selectedMonitor = true;
-			Select();
+			myMonitorNumber.text.color = Color.white;
 		}
 	}
 	

@@ -284,19 +284,6 @@ public class GameLogic : MonoBehaviour
 		float threatnessLevel = HUDController.instance.sectorSliderController.GetValueThreatness();
 
 
-		if(threatnessLevel >= dangerousThreashold && !dangerousAdvertisementShowed)
-		{
-			HUDController.instance.ShowDangerAdvertisement();
-			AudioManager.instance.PlayDangerAlarm();
-			dangerousAdvertisementShowed = true;
-		}
-
-		if(threatnessLevel < dangerousThreashold)
-        {
-			dangerousAdvertisementShowed = false;
-		}
-
-
 
 
 		if (threatnessLevel >= HUDController.instance.sectorSliderController.GetMaxValue() && !isGameOver)
@@ -308,6 +295,26 @@ public class GameLogic : MonoBehaviour
 		{
 			CheckKeyBoardGameOver();
 		}
+
+
+
+
+
+		if (threatnessLevel >= dangerousThreashold && !dangerousAdvertisementShowed && !isGameOver)
+		{
+			HUDController.instance.ShowDangerAdvertisement();
+			dangerousAdvertisementShowed = true;
+		}
+
+		if(threatnessLevel < dangerousThreashold)
+        {
+			dangerousAdvertisementShowed = false;
+		}
+
+
+
+
+		
 
 		CheckKeyBoard();
 	}
@@ -341,9 +348,9 @@ public class GameLogic : MonoBehaviour
 	{
 		while (true)
 		{
+			yield return new WaitForSeconds(nextTimeToConvert);
 			AudioManager.instance.PlayThreatDetected();
 			Convert();
-			yield return new WaitForSeconds(nextTimeToConvert);
 		}
 	}
 
