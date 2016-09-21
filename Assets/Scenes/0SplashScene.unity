@@ -373,7 +373,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 408729445}
---- !u!28 &411052078
+--- !u!28 &427915672
 Texture2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -864,7 +864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoText: {fileID: 681111470}
-  mainMenuLogic: {fileID: 0}
   splashTime: 4
 --- !u!225 &1289429973
 CanvasGroup:
@@ -1246,7 +1245,7 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 5
       m_NumAlphaKeys: 5
-    m_lensFlareGradTexture: {fileID: 411052078}
+    m_lensFlareGradTexture: {fileID: 427915672}
     m_lensFlareHaloParams: {x: 0.1, y: 0.573, z: 1, w: 128}
     m_lensFlareHaloChrDistortion: 1.51
     m_lensFlareGaussianBlurAmount: 1

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MonitorNumber : MonoBehaviour
 {
 	public int monitorNumber;
-	private Text text;
+	public Text text { get; set; }
 	
 	void Awake()
 	{

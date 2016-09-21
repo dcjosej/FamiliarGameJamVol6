@@ -28,15 +28,16 @@ public class ScoreTimeController : MonoBehaviour
 		{
 			timerCount += Time.deltaTime;
 
-			float zz = Mathf.Floor((timerCount * 100) % 100);
-			float ss = Mathf.Floor(timerCount % 60);
-			float mm = Mathf.Floor(timerCount / 60);
-			float hh = Mathf.Floor(mm / 60);
+			//float zz = Mathf.Floor((timerCount * 100) % 100);
+			//float ss = Mathf.Floor(timerCount % 60);
+			//float mm = Mathf.Floor(timerCount / 60);
+			//float hh = Mathf.Floor(mm / 60);
 
 			//Debug.Log("" + ss);
 
-			guiScoreTimer.text = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", hh, mm, ss, zz);
-		}
+			//guiScoreTimer.text = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", hh, mm, ss, zz);
+			guiScoreTimer.text = Utils.SecondsTozzHHmmss(timerCount);
+        }
 	}
 
 	private void OnGameOver()
