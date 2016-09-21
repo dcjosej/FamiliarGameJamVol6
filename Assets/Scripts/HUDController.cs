@@ -85,7 +85,7 @@ public class HUDController : MonoBehaviour
 
 		gameOverMainScreen.SetActive(true);
 		gameOverStatementAutoText.Initialize(true);
-		gameOverStatementAutoText.TypeText(gameOverText.text, Utils.OrangeColor);
+		gameOverStatementAutoText.TypeText(string.Format(gameOverText.text, PersistentData.instance.employeeId), Utils.OrangeColor);
 		//TypeMessageGameOver();
 	}
 

@@ -21,23 +21,38 @@ public class PersonController : MonoBehaviour
 
 	void Start()
 	{
-		MindRestored();
+		Init();
+	}
+
+	private void Init()
+	{
+		DisableActiveElements();
+		activeElements.Clear();
+		ActiveStandardElements();
+		changePerson.ChangeOutfit(activeElements.ToArray());
+
+		converted = false;
+		GameLogic.instance.globalInfectionLevel -= infectedLevel;
+
+		infectedLevel = 0;
+		GameLogic.instance.charactersInScene--;
 	}
 
 	private void MindRestored()
 	{
 		if (GameLogic.instance != null && !GameLogic.instance.isGameOver)
 		{
-			DisableActiveElements();
-			activeElements.Clear();
-			ActiveStandardElements();
-			changePerson.ChangeOutfit(activeElements.ToArray());
+			//DisableActiveElements();
+			//activeElements.Clear();
+			//ActiveStandardElements();
+			//changePerson.ChangeOutfit(activeElements.ToArray());
 
-			converted = false;
-			GameLogic.instance.globalInfectionLevel -= infectedLevel;
+			//converted = false;
+			//GameLogic.instance.globalInfectionLevel -= infectedLevel;
 
-			infectedLevel = 0;
-			GameLogic.instance.charactersInScene--;
+			//infectedLevel = 0;
+			//GameLogic.instance.charactersInScene--;
+			Init();
 			StopAllCoroutines();
 
 			StartCoroutine(RestoringHumanIE());
