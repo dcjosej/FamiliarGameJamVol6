@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: 5f076a6e983d3c944aee7e45442ebc93
+timeCreated: 1474557617
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: B03_Carton
+    100002: B03_Column (1)
+    100004: B03_ColumnaMini (1)
+    100006: B03_Corner (1)
+    100008: B03_CornerGround (1)
+    100010: B03_Cornisa (1)
+    100012: B03_CornisaSuperior
+    100014: B03_CurverWall (1)
+    100016: B03_Pillar (1)
+    100018: B03_PillarUp (1)
+    100020: B03_WallFrontal (1)
+    100022: B03_WallLarge (1)
+    100024: B03_WallLateral (1)
+    100026: B03_WallMicro (1)
+    100028: B03_WallNabo (1)
+    100030: //RootNode
+    400000: B03_Carton
+    400002: B03_Column (1)
+    400004: B03_ColumnaMini (1)
+    400006: B03_Corner (1)
+    400008: B03_CornerGround (1)
+    400010: B03_Cornisa (1)
+    400012: B03_CornisaSuperior
+    400014: B03_CurverWall (1)
+    400016: B03_Pillar (1)
+    400018: B03_PillarUp (1)
+    400020: B03_WallFrontal (1)
+    400022: B03_WallLarge (1)
+    400024: B03_WallLateral (1)
+    400026: B03_WallMicro (1)
+    400028: B03_WallNabo (1)
+    400030: //RootNode
+    2300000: B03_Carton
+    2300002: B03_Column (1)
+    2300004: B03_ColumnaMini (1)
+    2300006: B03_Corner (1)
+    2300008: B03_CornerGround (1)
+    2300010: B03_Cornisa (1)
+    2300012: B03_CornisaSuperior
+    2300014: B03_CurverWall (1)
+    2300016: B03_Pillar (1)
+    2300018: B03_PillarUp (1)
+    2300020: B03_WallFrontal (1)
+    2300022: B03_WallLarge (1)
+    2300024: B03_WallLateral (1)
+    2300026: B03_WallMicro (1)
+    2300028: B03_WallNabo (1)
+    3300000: B03_Carton
+    3300002: B03_Column (1)
+    3300004: B03_ColumnaMini (1)
+    3300006: B03_Corner (1)
+    3300008: B03_CornerGround (1)
+    3300010: B03_Cornisa (1)
+    3300012: B03_CornisaSuperior
+    3300014: B03_CurverWall (1)
+    3300016: B03_Pillar (1)
+    3300018: B03_PillarUp (1)
+    3300020: B03_WallFrontal (1)
+    3300022: B03_WallLarge (1)
+    3300024: B03_WallLateral (1)
+    3300026: B03_WallMicro (1)
+    3300028: B03_WallNabo (1)
+    4300000: B03_WallMicro (1)
+    4300002: B03_Cornisa (1)
+    4300004: B03_Carton
+    4300006: B03_ColumnaMini (1)
+    4300008: B03_CornisaSuperior
+    4300010: B03_Column (1)
+    4300012: B03_CornerGround (1)
+    4300014: B03_CurverWall (1)
+    4300016: B03_Corner (1)
+    4300018: B03_WallFrontal (1)
+    4300020: B03_WallLarge (1)
+    4300022: B03_WallLateral (1)
+    4300024: B03_WallNabo (1)
+    4300026: B03_Pillar (1)
+    4300028: B03_PillarUp (1)
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

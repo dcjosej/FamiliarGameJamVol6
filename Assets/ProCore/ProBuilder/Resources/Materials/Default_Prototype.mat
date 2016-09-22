@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 3a6e79a67e3129f409bae52acc3ab06b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -141,7 +141,7 @@ Material:
       second: 1
     - first:
         name: _Metallic
-      second: 0.5
+      second: 0
     - first:
         name: _Mode
       second: 0
@@ -172,7 +172,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 1}
+      second: {r: 0.19852942, g: 0.19852942, b: 0.19852942, a: 1}
     - first:
         name: _Color1
       second: {r: 0.67910445, g: 0.67910445, b: 0.67910445, a: 1}
