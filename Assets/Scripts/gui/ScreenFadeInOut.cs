@@ -60,6 +60,7 @@ public class ScreenFadeInOut : MonoBehaviour
 	private IEnumerator BlackAndClearIE()
 	{
 		yield return StartCoroutine(IEFadeToBlack(-1));
+		//yield return new WaitForSeconds(0.3f);
 		yield return StartCoroutine(IEFadeToClear());
 	}
 
@@ -76,6 +77,7 @@ public class ScreenFadeInOut : MonoBehaviour
 	private IEnumerator IEFadeToClear()
 	{
 		fadeImage.gameObject.SetActive(true);
+		fadeImage.color = Color.black;
 
 
 		FadersController.instance.fading = true;
@@ -84,7 +86,7 @@ public class ScreenFadeInOut : MonoBehaviour
 
 		float time = 0f;
 		float t = 0f;
-		while (time <= fadeTime)
+		while (t <= 1)
 		{
 			time += Time.deltaTime;
 			t = time / fadeTime;

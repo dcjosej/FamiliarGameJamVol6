@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenuLogic : MonoBehaviour {
 
+	public float fadeTimeTransitionSplash = 2.5f;
 	public float fadeTimeTransition = 1.4f;
 	public float fadeOutTime;
 	public float fadeInTime;
@@ -18,7 +19,7 @@ public class MainMenuLogic : MonoBehaviour {
 	public CanvasGroup cgMainMenuScreen;
 	public CanvasGroup cgTutorialScreen;
 	public CanvasGroup cgCreditsScreen;
-	//public CanvasGroup cgSplashScreen;
+	public CanvasGroup cgSplashScreen;
     public CanvasGroup cgPressEnter;
 	public CanvasGroup cgMainMenuButtons;
 	
@@ -28,7 +29,18 @@ public class MainMenuLogic : MonoBehaviour {
 	void Start()
 	{
 		Cursor.SetCursor(normalCursor, Vector2.one * 32f, CursorMode.Auto);
-		currentCanvasGroup = cgMainMenuScreen;
+
+		if (PersistentData.instance.splashShowed)
+		{
+			cgSplashScreen.gameObject.SetActive(false);
+			currentCanvasGroup = cgMainMenuScreen;
+		}
+		else
+		{
+			currentCanvasGroup = cgSplashScreen;
+		}
+
+		currentCanvasGroup.gameObject.SetActive(true);
 	}
 
 	public void StartGame()
@@ -79,7 +91,8 @@ public class MainMenuLogic : MonoBehaviour {
 	{
 		if (!transitioning && !FadersController.instance.fading)
 		{
-			FadersController.instance.BlackAndClear(fadeTimeTransition, ShowMainMenu, true);
+			float selectedFadeTransitionTime = cgSplashScreen.gameObject.activeSelf ? fadeTimeTransitionSplash : fadeTimeTransition;
+			FadersController.instance.BlackAndClear(selectedFadeTransitionTime, ShowMainMenu, true);
 			//ScreenFadeInOut.instance.BlackAndClear(fadeTimeTransition);
 			//ScreenFadeInOut.instance.fadeToBlackFinishedCallback = ShowMainMenu;
 			currentCanvasGroup.interactable = false;
@@ -154,6 +167,8 @@ public class MainMenuLogic : MonoBehaviour {
 		cgMainMenuScreen.gameObject.SetActive(true);
 		cgMainMenuScreen.interactable = true;
 		currentCanvasGroup = cgMainMenuScreen;
+
+		PersistentData.instance.splashShowed = true;
 	}
 
 	private void ShowTutorialScreen()
