@@ -1,16 +1,14 @@
-*********************
-*** MECRONUM 3048 ***
-*********************
-*********************
 
-#####################
-#### TEAM COVEN #####
-#####################
+/MECRONUM 3048/>
 
->theteamcoven@gmail.com
 
-/Programming/> Jose Javier Delgado
+/TEAM COVEN/2016/>
 
-/Art/> Carlos Gil de Montes
+/Programming/>Jose Javier Delgado
 
-/Music/> Lost Twin
+/Art/>Carlos Gil de Montes
+
+/Music/>Lost Twin
+
+
+/Contact/>theteamcoven@gmail.com
