@@ -26,6 +26,7 @@ public class PersistentData : MonoBehaviour
 	public string currentLetter { get; set; }
 	public string employeeId { get; set; }
 	public int numberOfDigitsIdEmployee = 6;
+	public bool splashShowed { get; set; }
 
 	void Awake()
 	{

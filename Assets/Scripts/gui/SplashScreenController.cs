@@ -4,7 +4,7 @@ using System.Collections;
 public class SplashScreenController : MonoBehaviour
 {
 	public AutoText autoText;
-	//public MainMenuLogic mainMenuLogic;
+	public MainMenuLogic mainMenuLogic;
 
 	public float splashTime = 3f;
 
@@ -25,7 +25,9 @@ public class SplashScreenController : MonoBehaviour
 		autoText.Clean();
 		autoText.TypeText("TEAM COVEN", Utils.OrangeColor);
 		yield return new WaitForSeconds(splashTime / 2);
-		FadersController.instance.FadeToBlack(1);
+		//FadersController.instance.FadeToBlack(1);
+		mainMenuLogic.BackToMainMenu();
+		
 	}
 
 	//private IEnumerator WaitForSplashScreen()
