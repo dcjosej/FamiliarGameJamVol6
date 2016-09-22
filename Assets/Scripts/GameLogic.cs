@@ -16,10 +16,6 @@ public enum CursorType
 public class GameLogic : MonoBehaviour
 {
 
-
-
-
-
 	//Events
 	public delegate void OnGameOverCallback();
 	public static event OnGameOverCallback OnGameOver;
@@ -423,7 +419,7 @@ public class GameLogic : MonoBehaviour
 			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
 			//PersistentData.instance.InitRandomData();
 			//ScreenFadeInOut.instance.FadeToBlackLoadScene(2);
-			FadersController.instance.FadeToBlack(2);
+			FadersController.instance.FadeToBlack(1);
 
 			AutoText.OnInputReceived -= OnInputReceived;
 
@@ -432,7 +428,7 @@ public class GameLogic : MonoBehaviour
 		{
 			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
 			//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
-			FadersController.instance.FadeToBlack(1);
+			FadersController.instance.FadeToBlack(0);
 
 			AutoText.OnInputReceived -= OnInputReceived;
 		}

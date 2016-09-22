@@ -41,7 +41,7 @@ public class SocialManager : MonoBehaviour
 
 	public void GetScores(System.Action<Score[]> getScoresCallback)
 	{
-		GameJolt.API.Scores.Get(getScoresCallback, 169398, 3);
+        GameJolt.API.Scores.Get(getScoresCallback, 169398, 5);
 	}
 
 	private void AddScoreCallback(bool success)

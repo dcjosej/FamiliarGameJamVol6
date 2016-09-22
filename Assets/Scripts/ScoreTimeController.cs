@@ -11,6 +11,11 @@ public class ScoreTimeController : MonoBehaviour
 
 	public Text guiScoreTimer { get; set; }
 
+	private bool recordBeatenFlag = false;
+
+	[Header("Texts")]
+	public TextAsset recordBeaten;
+
 
 	void OnEnable()
 	{
@@ -28,6 +33,12 @@ public class ScoreTimeController : MonoBehaviour
 		{
 			timerCount += Time.deltaTime;
 
+			if(!recordBeatenFlag && PersistentData.instance.bestScore >= 0 && timerCount > PersistentData.instance.bestScore)
+			{
+				HUDController.instance.consoleAutoText.TypeText(recordBeaten.text, Utils.GreenColor);
+				recordBeatenFlag = true;
+            }
+
 			//float zz = Mathf.Floor((timerCount * 100) % 100);
 			//float ss = Mathf.Floor(timerCount % 60);
 			//float mm = Mathf.Floor(timerCount / 60);
@@ -44,6 +55,10 @@ public class ScoreTimeController : MonoBehaviour
 	{
 		if (SocialManager.instance != null)
 		{
+			if(timerCount > PersistentData.instance.bestScore)
+			{
+				PersistentData.instance.bestScore = timerCount;
+			}
 			SocialManager.instance.AddScore((int)timerCount, guiScoreTimer.text);
 		}
 		else

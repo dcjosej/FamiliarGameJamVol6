@@ -37,6 +37,8 @@ public class HUDController : MonoBehaviour
 	public AnimationCurve textDangerAlphaAnimationCurve;
 	public float timeAnimationDanger = 4f;
 
+
+
 	void Awake()
 	{
 		if(instance == null)
