@@ -39,11 +39,16 @@ public class AudioManager : MonoBehaviour
 	}
 
 
-	public void StopMusic()
+	public void Pause()
 	{
-		loopCPU.Stop();
+		loopCPU.Pause();
 		typeText.Stop();
     }
+
+	public void Resume()
+	{
+		loopCPU.UnPause();
+	}
 
 
 	public void PlayConversionFail()

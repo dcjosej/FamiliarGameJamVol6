@@ -11,6 +11,8 @@ public class SplashScreenController : MonoBehaviour
 	void Awake()
 	{
 		autoText.Initialize();
+		autoText.SetUpConsoleForInput("");
+		autoText.textForIntro = true;
 	}
 
 	void OnEnable()

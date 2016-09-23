@@ -320,9 +320,18 @@ public class GameLogic : MonoBehaviour
 	private void Pause()
 	{
 		Time.timeScale = 0f;
-		AudioManager.instance.StopMusic();
+		AudioManager.instance.Pause();
 		HUDController.instance.ActivePause();
 		paused = true;
+	}
+
+
+	private void Resume()
+	{
+		Time.timeScale = 1f;
+		AudioManager.instance.Resume();
+		HUDController.instance.Resume();
+		paused = false;
 	}
 
 
@@ -428,7 +437,8 @@ public class GameLogic : MonoBehaviour
 
 			if (paused)
 			{
-				HUDController.instance.ConsoleReponse(HUDController.instance.pauseConsoleYesResponseText.text, Utils.GreenColor, false);
+				HUDController.instance.ConsoleReponse(HUDController.instance.pauseConsoleYesResponseText.text, Utils.GreenColor, true);
+				//Resume();
 			}
 
 			if (isGameOver)
@@ -443,9 +453,17 @@ public class GameLogic : MonoBehaviour
 		}
 		else if(input == "n")
 		{
-			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
-			//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
-			FadersController.instance.FadeToBlack(0);
+			if (paused)
+			{
+				Resume();
+			}
+
+			if (isGameOver)
+			{
+				HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
+				//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
+				FadersController.instance.FadeToBlack(0);
+			}
 
 			AutoText.OnInputReceived -= OnInputReceived;
 		}

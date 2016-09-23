@@ -88,6 +88,12 @@ public class HUDController : MonoBehaviour
 		pauseScreen.SetActive(true);
     }
 
+	public void Resume()
+	{
+		consoleAutoText.SetUpConsoleStandard();
+		pauseScreen.SetActive(false);
+	}
+
 	public void ActiveGameOver()
 	{
 		StopAllCoroutines();

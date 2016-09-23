@@ -29,6 +29,7 @@ public class AutoText : MonoBehaviour
 
 	private bool markerToNextLine = true;
 	private bool allowKeyboardTyping = false;
+	public bool textForIntro { get; set; }
 
 
 	private Text textComp;
@@ -89,7 +90,7 @@ public class AutoText : MonoBehaviour
 	void Update()
 	{
 		//Debug.Log("ENTRADA DE TECLADO: " + Input.inputString);
-        if (allowKeyboardTyping && !writing)
+        if (allowKeyboardTyping && !writing && !textForIntro)
 		{
 			if (input.Length < maximunCharacters)
 			{
@@ -100,7 +101,9 @@ public class AutoText : MonoBehaviour
 				{
 					selectedCharacter = Input.inputString[0].ToString();
                 }
-				
+
+				selectedCharacter = selectedCharacter.ToLower();
+
 				input += selectedCharacter;
 				//if (Input.GetKeyDown(KeyCode.Y))
 				//{
@@ -165,6 +168,12 @@ public class AutoText : MonoBehaviour
 		SetUpConsoleForInput(msgRequest, Utils.OrangeColor);
 	}
 
+	public void SetUpConsoleStandard()
+	{
+		allowKeyboardTyping = false;
+		markerToNextLine = true;
+	}
+
 	public void SetUpConsoleForInput(string msgRequest, string color)
 	{
 		allowKeyboardTyping = true;
@@ -184,7 +193,7 @@ public class AutoText : MonoBehaviour
 		}
 		StartCoroutine(ConsoleError(msg, hexColor, repeatMessage));
 	}
-
+	
 	private IEnumerator ConsoleError(string msg, string htmlColor, bool repeatMessage = true)
 	{
 		allowKeyboardTyping = false;
@@ -335,8 +344,6 @@ public class AutoText : MonoBehaviour
 		writing = true;
 		lines++;
 
-
-		
 
 
 		if(textInConsoleWithoutMarker != "")
