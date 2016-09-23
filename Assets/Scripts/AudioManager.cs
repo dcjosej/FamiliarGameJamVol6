@@ -30,7 +30,6 @@ public class AudioManager : MonoBehaviour
 	[SerializeField]
 	private AudioClip mouseClick;
 
-
 	void Awake()
 	{
 		if(instance == null)
@@ -38,6 +37,14 @@ public class AudioManager : MonoBehaviour
 			instance = this;
 		}
 	}
+
+
+	public void StopMusic()
+	{
+		loopCPU.Stop();
+		typeText.Stop();
+    }
+
 
 	public void PlayConversionFail()
 	{

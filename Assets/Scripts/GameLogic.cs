@@ -24,7 +24,7 @@ public class GameLogic : MonoBehaviour
 
 	public static bool CURSOR_CHANGING = false;
 
-
+	public bool paused { get; set; }
 
 	public int charactersInScene { get; set; }
 
@@ -317,11 +317,20 @@ public class GameLogic : MonoBehaviour
 
 
 
+	private void Pause()
+	{
+		Time.timeScale = 0f;
+		AudioManager.instance.StopMusic();
+		HUDController.instance.ActivePause();
+		paused = true;
+	}
+
+
 	private void CheckKeyBoard()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			Application.Quit();
+			Pause();
 		}
 
 		if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -416,10 +425,18 @@ public class GameLogic : MonoBehaviour
 	{
 		if(input == "y")
 		{
-			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
-			//PersistentData.instance.InitRandomData();
-			//ScreenFadeInOut.instance.FadeToBlackLoadScene(2);
-			FadersController.instance.FadeToBlack(1);
+
+			if (paused)
+			{
+				HUDController.instance.ConsoleReponse(HUDController.instance.pauseConsoleYesResponseText.text, Utils.GreenColor, false);
+			}
+
+			if (isGameOver)
+			{
+				HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
+				FadersController.instance.FadeToBlack(1);
+			}
+			
 
 			AutoText.OnInputReceived -= OnInputReceived;
 
