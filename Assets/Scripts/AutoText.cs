@@ -18,6 +18,7 @@ public class AutoText : MonoBehaviour
 	public bool longText = true;
 	//public TextAsset textAsset;
 	public int maxNumLines = 10;
+	public int lettersPerTime = 1;
 
 	public bool writing { get; set; }
 	public int lines { get; set; }
@@ -342,6 +343,8 @@ public class AutoText : MonoBehaviour
 			textComp.text = textInConsole;
 		}
 
+
+		int numOfLetters = 0;
 		foreach (char letter in text.ToCharArray())
 		{
 			textComp.text = textComp.text.Insert(initIndex, ""+letter);
@@ -349,6 +352,16 @@ public class AutoText : MonoBehaviour
 			//textComp.text += letter;
 			initIndex++;
 			UpdateStringFields(false);
+
+			numOfLetters++;
+			if (numOfLetters < lettersPerTime)
+			{
+				continue;
+			}else
+			{
+				numOfLetters = 0;
+			}
+
 			yield return new WaitForSeconds(timeBetweenCharacters);
 		}
 

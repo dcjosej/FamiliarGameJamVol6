@@ -14,6 +14,9 @@ public class HighScoresController : MonoBehaviour
 	public TextAsset header;
 	public TextAsset entry;
 	public TextAsset footer;
+	public TextAsset bestService;
+	public TextAsset noScore;
+	public TextAsset citizenId;
 
 	void OnEnable()
 	{
@@ -31,14 +34,26 @@ public class HighScoresController : MonoBehaviour
 
 	private void ShowHighscores(Score[] scores)
 	{
-		autotext.TypeText("\n", Utils.OrangeColor);
-		foreach(Score score in scores)
+		autotext.TypeText("", Utils.OrangeColor);
+		for(int i = 0; i < scores.Length; i++)
 		{
-			autotext.TypeText(string.Format(entry.text, score.GuestName, Utils.SecondsTozzHHmmss(score.Value)), Utils.OrangeColor);
+			Score score = scores[i];
+			autotext.TypeText(string.Format(entry.text, i+1, score.GuestName, Utils.SecondsTozzHHmmss(score.Value)), Utils.OrangeColor);
 		}
 
-		autotext.TypeText("\n", Utils.OrangeColor);
+		autotext.TypeText("", Utils.OrangeColor);
 		autotext.TypeText(footer.text, Utils.OrangeColor);
+		autotext.TypeText("", Utils.OrangeColor);
+
+		float bestSore = PersistentData.instance.bestScore;
+		string bestScoreFormatted = noScore.text;
+		if(bestSore >= 0)
+		{
+			bestScoreFormatted = Utils.SecondsTozzHHmmss(bestSore);
+		}
+
+		autotext.TypeText(string.Format(citizenId.text, PersistentData.instance.employeeId), Utils.OrangeColor);
+		autotext.TypeText(string.Format(bestService.text, bestScoreFormatted), Utils.OrangeColor);
 	}
 
 	private void OnKeyPressed(KeyCode keyCode)
