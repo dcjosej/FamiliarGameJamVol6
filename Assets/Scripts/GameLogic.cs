@@ -24,7 +24,7 @@ public class GameLogic : MonoBehaviour
 
 	public static bool CURSOR_CHANGING = false;
 
-
+	public bool paused { get; set; }
 
 	public int charactersInScene { get; set; }
 
@@ -317,11 +317,29 @@ public class GameLogic : MonoBehaviour
 
 
 
+	private void Pause()
+	{
+		Time.timeScale = 0f;
+		AudioManager.instance.Pause();
+		HUDController.instance.ActivePause();
+		paused = true;
+	}
+
+
+	private void Resume()
+	{
+		Time.timeScale = 1f;
+		AudioManager.instance.Resume();
+		HUDController.instance.Resume();
+		paused = false;
+	}
+
+
 	private void CheckKeyBoard()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			Application.Quit();
+			Pause();
 		}
 
 		if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -416,19 +434,36 @@ public class GameLogic : MonoBehaviour
 	{
 		if(input == "y")
 		{
-			HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
-			//PersistentData.instance.InitRandomData();
-			//ScreenFadeInOut.instance.FadeToBlackLoadScene(2);
-			FadersController.instance.FadeToBlack(1);
+
+			if (paused)
+			{
+				HUDController.instance.ConsoleReponse(HUDController.instance.pauseConsoleYesResponseText.text, Utils.GreenColor, true);
+				//Resume();
+			}
+
+			if (isGameOver)
+			{
+				HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
+				FadersController.instance.FadeToBlack(1);
+			}
+			
 
 			AutoText.OnInputReceived -= OnInputReceived;
 
 		}
 		else if(input == "n")
 		{
-			HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
-			//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
-			FadersController.instance.FadeToBlack(0);
+			if (paused)
+			{
+				Resume();
+			}
+
+			if (isGameOver)
+			{
+				HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
+				//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
+				FadersController.instance.FadeToBlack(0);
+			}
 
 			AutoText.OnInputReceived -= OnInputReceived;
 		}

@@ -25,12 +25,17 @@ public class HUDController : MonoBehaviour
 	public Text textCurrentSector;
 	public Text textCurrentTime;
 
+	[Header("Texts")]
+	public TextAsset gameOverText;
+	public TextAsset pauseConsoleText;
+	public TextAsset pauseConsoleYesResponseText;
+
 	[Header("Game Over References")]
 	public GameObject gameOverMainScreen;
 	public AutoText gameOverStatementAutoText;
-	public TextAsset gameOverText;
 	public GameObject sectorControlSlider;
 	public LightCameraController lightsCamerasController;
+	public GameObject pauseScreen;
 
 	[Header("Danger")]
 	public Text textDanger;
@@ -70,6 +75,25 @@ public class HUDController : MonoBehaviour
 		//textCurrentSector.text = PersistentData.instance.currentSector.ToString("00") + PersistentData.instance.currentLetter;
     }
 
+	public void CleanConsole()
+	{
+		consoleAutoText.Clean();
+	}
+
+	public void ActivePause()
+	{
+		CleanConsole();
+		consoleAutoText.SetUpConsoleForInput(pauseConsoleText.text);
+		//consoleAutoText.TypeText(pauseConsoleText.text, Utils.OrangeColor);
+		pauseScreen.SetActive(true);
+    }
+
+	public void Resume()
+	{
+		consoleAutoText.SetUpConsoleStandard();
+		pauseScreen.SetActive(false);
+	}
+
 	public void ActiveGameOver()
 	{
 		StopAllCoroutines();
@@ -79,11 +103,11 @@ public class HUDController : MonoBehaviour
 		sectorControlSlider.SetActive(false);
 		lightsCamerasController.GameOver();
 
-		consoleAutoText.allowKeyboardTyping = true;
-		consoleAutoText.markerToNextLine = false;
-        consoleAutoText.maxNumLines = 10;
 		consoleAutoText.Clean();
-		consoleAutoText.TypeText(AutoText.PLAY_AGAIN_TEXT, Utils.OrangeColor);
+		consoleAutoText.maxNumLines = 10;
+		consoleAutoText.SetUpConsoleForInput(AutoText.PLAY_AGAIN_TEXT);
+        
+		//consoleAutoText.TypeText(AutoText.PLAY_AGAIN_TEXT, Utils.OrangeColor);
 
 		gameOverMainScreen.SetActive(true);
 		gameOverStatementAutoText.Initialize(true);
@@ -109,11 +133,6 @@ public class HUDController : MonoBehaviour
 	public void ConsoleReponse(string msg, string hexColor, bool repeatMessage)
 	{
 		consoleAutoText.ConsoleResponse(msg, hexColor, repeatMessage);
-	}
-
-	public void CleanConsole()
-	{
-		consoleAutoText.Clean();
 	}
 
 	private IEnumerator AnimateDangerText()

@@ -22,11 +22,15 @@ public class AutoText : MonoBehaviour
 
 	public bool writing { get; set; }
 	public int lines { get; set; }
-	public bool allowKeyboardTyping = false;
+
 	[Range(10f, 30f)]
 	public float markerSize = 10;
 	public float markerAnimationTime = 0.5f;
-	public bool markerToNextLine = true;
+
+	private bool markerToNextLine = true;
+	private bool allowKeyboardTyping = false;
+	public bool textForIntro { get; set; }
+
 
 	private Text textComp;
 
@@ -52,6 +56,7 @@ public class AutoText : MonoBehaviour
 	#region KEYBOARD TYPING
 
 	private string previousConsoleMessage = "";
+	private string previousColor = Utils.OrangeColor;
 
 	private int maximunCharacters = 1;
 	private string input = "";
@@ -85,7 +90,7 @@ public class AutoText : MonoBehaviour
 	void Update()
 	{
 		//Debug.Log("ENTRADA DE TECLADO: " + Input.inputString);
-        if (allowKeyboardTyping && !writing)
+        if (allowKeyboardTyping && !writing && !textForIntro)
 		{
 			if (input.Length < maximunCharacters)
 			{
@@ -96,7 +101,9 @@ public class AutoText : MonoBehaviour
 				{
 					selectedCharacter = Input.inputString[0].ToString();
                 }
-				
+
+				selectedCharacter = selectedCharacter.ToLower();
+
 				input += selectedCharacter;
 				//if (Input.GetKeyDown(KeyCode.Y))
 				//{
@@ -156,6 +163,27 @@ public class AutoText : MonoBehaviour
 		*/
 	}
 
+	public void SetUpConsoleForInput(string msgRequest)
+	{
+		SetUpConsoleForInput(msgRequest, Utils.OrangeColor);
+	}
+
+	public void SetUpConsoleStandard()
+	{
+		allowKeyboardTyping = false;
+		markerToNextLine = true;
+	}
+
+	public void SetUpConsoleForInput(string msgRequest, string color)
+	{
+		allowKeyboardTyping = true;
+		markerToNextLine = false;
+		previousConsoleMessage = msgRequest;
+		previousColor = color;
+		TypeText(previousConsoleMessage, Utils.OrangeColor);
+	}
+
+
 	public void ConsoleResponse(string msg, string hexColor, bool repeatMessage)
 	{
 		if (input.Length > 0)
@@ -165,7 +193,7 @@ public class AutoText : MonoBehaviour
 		}
 		StartCoroutine(ConsoleError(msg, hexColor, repeatMessage));
 	}
-
+	
 	private IEnumerator ConsoleError(string msg, string htmlColor, bool repeatMessage = true)
 	{
 		allowKeyboardTyping = false;
@@ -184,7 +212,7 @@ public class AutoText : MonoBehaviour
 		{
 			allowKeyboardTyping = true;
 			markerToNextLine = !allowKeyboardTyping;
-			yield return StartCoroutine(IETypeText(PLAY_AGAIN_TEXT, Utils.OrangeColor));
+			yield return StartCoroutine(IETypeText(previousConsoleMessage, previousColor));
 		}
 		//allowKeyboardTyping = true;
 	}
@@ -296,11 +324,6 @@ public class AutoText : MonoBehaviour
 		}
 	}
 
-	public void TypeTextGameOver()
-	{
-
-	}
-
 	
 	//TODO: UTILIZAR SOLO UNA FUNCION DE ESCRIBIR
 	private IEnumerator IETypeText2(string text)
@@ -321,8 +344,6 @@ public class AutoText : MonoBehaviour
 		writing = true;
 		lines++;
 
-
-		
 
 
 		if(textInConsoleWithoutMarker != "")
@@ -362,7 +383,7 @@ public class AutoText : MonoBehaviour
 				numOfLetters = 0;
 			}
 
-			yield return new WaitForSeconds(timeBetweenCharacters);
+			yield return StartCoroutine(Utils.WaitForRealSeconds(timeBetweenCharacters));
 		}
 
 		writing = false;
@@ -451,13 +472,13 @@ public class AutoText : MonoBehaviour
 			if (textInConsoleWithoutMarker != "")
 			{
 				textComp.text = textInConsoleWithoutMarker;
-				yield return new WaitForSeconds(markerAnimationTime);
+				yield return StartCoroutine(Utils.WaitForRealSeconds(markerAnimationTime));
 				textComp.text = textInConsole;
-				yield return new WaitForSeconds(markerAnimationTime);
+				yield return StartCoroutine(Utils.WaitForRealSeconds(markerAnimationTime));
 			}
 			else
 			{
-				yield return new WaitForSeconds(markerAnimationTime);
+				yield return StartCoroutine(Utils.WaitForRealSeconds(markerAnimationTime));
 			}
 		}
 	}
