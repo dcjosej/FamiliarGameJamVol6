@@ -29,6 +29,10 @@ public class AutoText : MonoBehaviour
 
 	private bool markerToNextLine = true;
 	private bool allowKeyboardTyping = false;
+	private bool paused = false;
+
+	private ConsoleState consoleStateToRestore;
+
 	public bool textForIntro { get; set; }
 
 
@@ -85,6 +89,26 @@ public class AutoText : MonoBehaviour
 		//timeBetweenCharacters = 0;
 
 		writing = false;
+	}
+
+	public void Pause()
+	{
+		//SaveState();
+		paused = true;
+
+
+		//consoleTextToRestore = textComp.text; //Save the previous text to retrieve it when resume the game
+	}
+
+	public void Resume()
+	{
+		//textComp.text = consoleTextToRestore;
+		paused = false;
+	}
+	
+	private void SaveState()
+	{
+		consoleStateToRestore = new ConsoleState(textComp.text, textInConsole, textInConsoleWithoutMarker, initIndex, lines);
 	}
 
 	void Update()
@@ -217,21 +241,21 @@ public class AutoText : MonoBehaviour
 		//allowKeyboardTyping = true;
 	}
 
-	public void StopTyping()
-	{
-		StopCoroutine(typeTextCoroutine);
-	}
+	//public void StopTyping()
+	//{
+	//	StopCoroutine(typeTextCoroutine);
+	//}
 
-	void Awake()
-	{
-		//if(typeTextCoroutine != null)
-		//{
-		//	StopCoroutine(typeTextCoroutine);
-		//}
-		//textComp = GetComponent<Text>();
-		//initIndex = textComp.text.Length - 1;
-		//StartCoroutine(AnimateText());
-	}
+	//void Awake()
+	//{
+	//	//if(typeTextCoroutine != null)
+	//	//{
+	//	//	StopCoroutine(typeTextCoroutine);
+	//	//}
+	//	//textComp = GetComponent<Text>();
+	//	//initIndex = textComp.text.Length - 1;
+	//	//StartCoroutine(AnimateText());
+	//}
 
 	public void Initialize(bool cleanConsole = true)
 	{
@@ -245,6 +269,8 @@ public class AutoText : MonoBehaviour
 
 		lines = 0;
 		queueCoroutines = new Queue<IEnumerator>();
+
+		SetUpConsoleStandard();
 
 		if (cleanConsole)
 		{
@@ -268,6 +294,7 @@ public class AutoText : MonoBehaviour
 		writing = false;
 		lines = 0;
 		processingQueue = false;
+		input = "";
 	}
 
 	void Start()
@@ -326,21 +353,25 @@ public class AutoText : MonoBehaviour
 
 	
 	//TODO: UTILIZAR SOLO UNA FUNCION DE ESCRIBIR
-	private IEnumerator IETypeText2(string text)
-	{
-		writing = true;
+	//private IEnumerator IETypeText2(string text)
+	//{
+	//	writing = true;
 
-		foreach (char letter in text.ToCharArray())
-		{
-			textComp.text += letter;
-			yield return new WaitForSeconds(timeBetweenCharacters);			
-		}
-		writing = false;
-	}
+	//	foreach (char letter in text.ToCharArray())
+	//	{
+	//		textComp.text += letter;
+	//		yield return new WaitForSeconds(timeBetweenCharacters);			
+	//	}
+	//	writing = false;
+	//}
 	
 
 	private IEnumerator IETypeText(string text, string htmlColor)
 	{
+
+		
+
+
 		writing = true;
 		lines++;
 
@@ -368,6 +399,13 @@ public class AutoText : MonoBehaviour
 		int numOfLetters = 0;
 		foreach (char letter in text.ToCharArray())
 		{
+
+			while (paused)
+			{
+				yield return null;
+				Debug.Log("ESCRITURA PARADA!!");
+			}
+
 			textComp.text = textComp.text.Insert(initIndex, ""+letter);
 			//textComp.text.Insert(initIndex++, message);
 			//textComp.text += letter;
@@ -536,4 +574,22 @@ public class AutoText : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 	}
 	*/
+}
+
+public class ConsoleState
+{
+	public string textInComponent;
+	public string textInConsole;
+	public string textInConsoleWithoutMarker;
+	public int initIndex;
+	public int lines;
+
+	public ConsoleState(string textInComponent, string textInConsole, string textInConsoleWithoutMarker, int initIndex, int lines)
+	{
+		this.textInComponent = textInComponent;
+		this.textInConsole = textInConsole;
+		this.textInConsoleWithoutMarker = textInConsoleWithoutMarker;
+		this.initIndex = initIndex;
+		this.lines = lines;
+    }
 }
