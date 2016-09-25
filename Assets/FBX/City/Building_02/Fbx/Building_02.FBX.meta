@@ -28,6 +28,7 @@ ModelImporter:
     100040: B02_WallWindowLarge (1)
     100042: B02_CornisaLAteral (1)
     100044: B02_LArgeWindow 02 (1)
+    100046: B02_Stairs
     400000: B02_Carton
     400002: B02_Column (1)
     400004: B02_ColumnCorner (1)
@@ -51,6 +52,7 @@ ModelImporter:
     400040: B02_WallWindowLarge (1)
     400042: B02_CornisaLAteral (1)
     400044: B02_LArgeWindow 02 (1)
+    400046: B02_Stairs
     2300000: B02_Carton
     2300002: B02_Column (1)
     2300004: B02_ColumnCorner (1)
@@ -73,6 +75,7 @@ ModelImporter:
     2300038: B02_WallWindowLarge (1)
     2300040: B02_CornisaLAteral (1)
     2300042: B02_LArgeWindow 02 (1)
+    2300044: B02_Stairs
     3300000: B02_Carton
     3300002: B02_Column (1)
     3300004: B02_ColumnCorner (1)
@@ -95,6 +98,7 @@ ModelImporter:
     3300038: B02_WallWindowLarge (1)
     3300040: B02_CornisaLAteral (1)
     3300042: B02_LArgeWindow 02 (1)
+    3300044: B02_Stairs
     4300000: B02_LArgeWindow (1)
     4300002: B02_FrontGlass (1)
     4300004: B02_ColumnCorner (1)
@@ -117,6 +121,7 @@ ModelImporter:
     4300038: B02_WallWindowLarge (1)
     4300040: B02_CornisaLAteral (1)
     4300042: B02_LArgeWindow 02 (1)
+    4300044: B02_Stairs
     9500000: //RootNode
   materials:
     importMaterials: 1
