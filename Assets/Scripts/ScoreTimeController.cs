@@ -38,24 +38,20 @@ public class ScoreTimeController : MonoBehaviour
 				HUDController.instance.consoleAutoText.TypeText(recordBeaten.text, Utils.GreenColor);
 				recordBeatenFlag = true;
             }
-
-			//float zz = Mathf.Floor((timerCount * 100) % 100);
-			//float ss = Mathf.Floor(timerCount % 60);
-			//float mm = Mathf.Floor(timerCount / 60);
-			//float hh = Mathf.Floor(mm / 60);
-
-			//Debug.Log("" + ss);
-
-			//guiScoreTimer.text = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", hh, mm, ss, zz);
 			guiScoreTimer.text = Utils.SecondsTozzHHmmss(timerCount);
         }
 	}
 
 	private void OnGameOver()
 	{
+		SaveScore();
+	}
+
+	public void SaveScore()
+	{
 		if (SocialManager.instance != null)
 		{
-			if(timerCount > PersistentData.instance.bestScore)
+			if (timerCount > PersistentData.instance.bestScore)
 			{
 				PersistentData.instance.bestScore = timerCount;
 			}

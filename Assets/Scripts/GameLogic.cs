@@ -24,7 +24,7 @@ public class GameLogic : MonoBehaviour
 
 	public static bool CURSOR_CHANGING = false;
 
-	public bool paused { get; set; }
+	public static bool paused { get; set; }
 
 	public int charactersInScene { get; set; }
 
@@ -307,9 +307,6 @@ public class GameLogic : MonoBehaviour
 			dangerousAdvertisementShowed = false;
 		}
 
-
-
-
 		
 
 		CheckKeyBoard();
@@ -339,7 +336,14 @@ public class GameLogic : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			Pause();
+			if (!paused)
+			{
+				Pause();
+			}
+			else
+			{
+				Resume();
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -437,18 +441,22 @@ public class GameLogic : MonoBehaviour
 
 			if (paused)
 			{
-				HUDController.instance.ConsoleReponse(HUDController.instance.pauseConsoleYesResponseText.text, Utils.GreenColor, true);
-				//Resume();
+				HUDController.instance.ConsoleReponse(HUDController.instance.pauseConsoleYesResponseText.text, Utils.GreenColor, false);
+				scoreTimeController.SaveScore();
+
+				Resume();
+				FadersController.instance.FadeToBlack(0); //Go to main menu after pause game
 			}
 
 			if (isGameOver)
 			{
 				HUDController.instance.ConsoleReponse(AutoText.GOOD_LUCK, Utils.GreenColor, false);
-				FadersController.instance.FadeToBlack(1);
+				FadersController.instance.FadeToBlack(1); //Play Again after game over
+				AutoText.OnInputReceived -= OnInputReceived;
 			}
 			
 
-			AutoText.OnInputReceived -= OnInputReceived;
+			
 
 		}
 		else if(input == "n")
@@ -463,9 +471,9 @@ public class GameLogic : MonoBehaviour
 				HUDController.instance.ConsoleReponse(AutoText.NOT_PLAY_AGAIN, Utils.RedColor, false);
 				//ScreenFadeInOut.instance.FadeToBlackLoadScene(0);
 				FadersController.instance.FadeToBlack(0);
+				AutoText.OnInputReceived -= OnInputReceived;
 			}
-
-			AutoText.OnInputReceived -= OnInputReceived;
+			
 		}
 		else
 		{

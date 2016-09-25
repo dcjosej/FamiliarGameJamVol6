@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+	private AutoText currentAutoText { get; set; }
+
+
+
 	public AutoText consoleAutoText;
 
 	public string threatDetected = "Threat!";
@@ -42,6 +46,10 @@ public class HUDController : MonoBehaviour
 	public AnimationCurve textDangerAlphaAnimationCurve;
 	public float timeAnimationDanger = 4f;
 
+	[Header("Pause References")]
+	public AutoText pauseAutoText;
+
+
 
 
 	void Awake()
@@ -50,6 +58,8 @@ public class HUDController : MonoBehaviour
 		{
 			instance = this;
 		}
+
+		currentAutoText = consoleAutoText;
 	}
 
 	void OnEnable()
@@ -77,20 +87,33 @@ public class HUDController : MonoBehaviour
 
 	public void CleanConsole()
 	{
-		consoleAutoText.Clean();
+		currentAutoText.Clean();
 	}
 
 	public void ActivePause()
 	{
-		CleanConsole();
-		consoleAutoText.SetUpConsoleForInput(pauseConsoleText.text);
-		//consoleAutoText.TypeText(pauseConsoleText.text, Utils.OrangeColor);
+		consoleAutoText.Pause();
+		//CleanConsole();
+
+		consoleAutoText.GetComponent<CanvasGroup>().alpha = 0;
+
 		pauseScreen.SetActive(true);
-    }
+		pauseAutoText.Initialize();
+		pauseAutoText.Clean();
+		pauseAutoText.SetUpConsoleForInput(pauseConsoleText.text);
+
+		currentAutoText = pauseAutoText;
+		//consoleAutoText.SetUpConsoleForInput(pauseConsoleText.text);
+		//consoleAutoText.TypeText(pauseConsoleText.text, Utils.OrangeColor);
+	}
 
 	public void Resume()
 	{
-		consoleAutoText.SetUpConsoleStandard();
+		consoleAutoText.Resume();
+		consoleAutoText.GetComponent<CanvasGroup>().alpha = 1;
+
+		currentAutoText = consoleAutoText;
+		//consoleAutoText.SetUpConsoleStandard();
 		pauseScreen.SetActive(false);
 	}
 
@@ -115,24 +138,24 @@ public class HUDController : MonoBehaviour
 		//TypeMessageGameOver();
 	}
 
-	public void TypeMessageGameOver()
-	{
-		//consoleAutoText.TypeTextGameOver(gameOverText, gameOverText2);
-	}
+	//public void TypeMessageGameOver()
+	//{
+	//	//consoleAutoText.TypeTextGameOver(gameOverText, gameOverText2);
+	//}
 
 	public void TypeThreatDetected()
 	{
-		consoleAutoText.TypeText(threatDetected + ": " + GameLogic.instance.charactersInScene, Utils.RedColor);
+		currentAutoText.TypeText(threatDetected + ": " + GameLogic.instance.charactersInScene, Utils.RedColor);
 	}
 	
 	public void TypeCleaningCompleted()
 	{
-		consoleAutoText.TypeText(cleaningCompleted, Utils.GreenColor);
+		currentAutoText.TypeText(cleaningCompleted, Utils.GreenColor);
 	}
 
 	public void ConsoleReponse(string msg, string hexColor, bool repeatMessage)
 	{
-		consoleAutoText.ConsoleResponse(msg, hexColor, repeatMessage);
+		currentAutoText.ConsoleResponse(msg, hexColor, repeatMessage);
 	}
 
 	private IEnumerator AnimateDangerText()
