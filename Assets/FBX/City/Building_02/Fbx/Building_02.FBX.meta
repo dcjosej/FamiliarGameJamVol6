@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 9879f092cc880954186e017b863c42ca
+timeCreated: 1474757832
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: B02_Carton
+    100002: B02_Column (1)
+    100004: B02_ColumnCorner (1)
+    100006: B02_ConcreteCorner (1)
+    100008: B02_ConcreteDown (1)
+    100010: B02_ConcreteHole (1)
+    100012: B02_ConcreteSide (1)
+    100014: B02_ConcreteWall (1)
+    100016: B02_Corner (1)
+    100018: B02_CornerDown (1)
+    100020: B02_Door(1)
+    100022: B02_FrontGlass (1)
+    100024: B02_FrontPane(1)
+    100026: B02_FrontPanelWindow_Left (1)
+    100028: B02_FrontPanelWindow_Right (1)
+    100030: B02_Glass (1)
+    100032: B02_LArgeWindow (1)
+    100034: B02_PanelLight (1)
+    100036: B02_Window (1)
+    100038: //RootNode
+    100040: B02_WallWindowLarge (1)
+    100042: B02_CornisaLAteral (1)
+    100044: B02_LArgeWindow 02 (1)
+    400000: B02_Carton
+    400002: B02_Column (1)
+    400004: B02_ColumnCorner (1)
+    400006: B02_ConcreteCorner (1)
+    400008: B02_ConcreteDown (1)
+    400010: B02_ConcreteHole (1)
+    400012: B02_ConcreteSide (1)
+    400014: B02_ConcreteWall (1)
+    400016: B02_Corner (1)
+    400018: B02_CornerDown (1)
+    400020: B02_Door(1)
+    400022: B02_FrontGlass (1)
+    400024: B02_FrontPane(1)
+    400026: B02_FrontPanelWindow_Left (1)
+    400028: B02_FrontPanelWindow_Right (1)
+    400030: B02_Glass (1)
+    400032: B02_LArgeWindow (1)
+    400034: B02_PanelLight (1)
+    400036: B02_Window (1)
+    400038: //RootNode
+    400040: B02_WallWindowLarge (1)
+    400042: B02_CornisaLAteral (1)
+    400044: B02_LArgeWindow 02 (1)
+    2300000: B02_Carton
+    2300002: B02_Column (1)
+    2300004: B02_ColumnCorner (1)
+    2300006: B02_ConcreteCorner (1)
+    2300008: B02_ConcreteDown (1)
+    2300010: B02_ConcreteHole (1)
+    2300012: B02_ConcreteSide (1)
+    2300014: B02_ConcreteWall (1)
+    2300016: B02_Corner (1)
+    2300018: B02_CornerDown (1)
+    2300020: B02_Door(1)
+    2300022: B02_FrontGlass (1)
+    2300024: B02_FrontPane(1)
+    2300026: B02_FrontPanelWindow_Left (1)
+    2300028: B02_FrontPanelWindow_Right (1)
+    2300030: B02_Glass (1)
+    2300032: B02_LArgeWindow (1)
+    2300034: B02_PanelLight (1)
+    2300036: B02_Window (1)
+    2300038: B02_WallWindowLarge (1)
+    2300040: B02_CornisaLAteral (1)
+    2300042: B02_LArgeWindow 02 (1)
+    3300000: B02_Carton
+    3300002: B02_Column (1)
+    3300004: B02_ColumnCorner (1)
+    3300006: B02_ConcreteCorner (1)
+    3300008: B02_ConcreteDown (1)
+    3300010: B02_ConcreteHole (1)
+    3300012: B02_ConcreteSide (1)
+    3300014: B02_ConcreteWall (1)
+    3300016: B02_Corner (1)
+    3300018: B02_CornerDown (1)
+    3300020: B02_Door(1)
+    3300022: B02_FrontGlass (1)
+    3300024: B02_FrontPane(1)
+    3300026: B02_FrontPanelWindow_Left (1)
+    3300028: B02_FrontPanelWindow_Right (1)
+    3300030: B02_Glass (1)
+    3300032: B02_LArgeWindow (1)
+    3300034: B02_PanelLight (1)
+    3300036: B02_Window (1)
+    3300038: B02_WallWindowLarge (1)
+    3300040: B02_CornisaLAteral (1)
+    3300042: B02_LArgeWindow 02 (1)
+    4300000: B02_LArgeWindow (1)
+    4300002: B02_FrontGlass (1)
+    4300004: B02_ColumnCorner (1)
+    4300006: B02_FrontPanelWindow_Right (1)
+    4300008: B02_Door(1)
+    4300010: B02_Carton
+    4300012: B02_CornerDown (1)
+    4300014: B02_Window (1)
+    4300016: B02_PanelLight (1)
+    4300018: B02_ConcreteCorner (1)
+    4300020: B02_ConcreteSide (1)
+    4300022: B02_ConcreteDown (1)
+    4300024: B02_ConcreteWall (1)
+    4300026: B02_Column (1)
+    4300028: B02_FrontPanelWindow_Left (1)
+    4300030: B02_FrontPane(1)
+    4300032: B02_Corner (1)
+    4300034: B02_Glass (1)
+    4300036: B02_ConcreteHole (1)
+    4300038: B02_WallWindowLarge (1)
+    4300040: B02_CornisaLAteral (1)
+    4300042: B02_LArgeWindow 02 (1)
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
