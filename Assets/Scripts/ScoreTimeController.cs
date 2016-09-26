@@ -13,6 +13,9 @@ public class ScoreTimeController : MonoBehaviour
 
 	private bool recordBeatenFlag = false;
 
+	public float fadeTime = 2f;
+	public float alphaDst = 0.6f;
+
 	[Header("Texts")]
 	public TextAsset recordBeaten;
 
@@ -45,6 +48,34 @@ public class ScoreTimeController : MonoBehaviour
 	private void OnGameOver()
 	{
 		SaveScore();
+		StartCoroutine(FadeAnimation());
+	}
+
+	private IEnumerator FadeAnimation()
+	{
+		float t = 0;
+		float time = 0f;
+		Color srcColor = guiScoreTimer.color;
+		Color dstColor = srcColor;
+		dstColor.a = alphaDst;
+        while (t < 1f)
+		{
+			t = time / fadeTime;
+			time += Time.deltaTime;
+			guiScoreTimer.color = Color.Lerp(srcColor, dstColor, t);
+
+			if(t >= 1f)
+			{
+				t = 0;
+				time = 0;
+				Color aux = srcColor;
+				srcColor = dstColor;
+				dstColor = aux;
+			}
+
+			yield return null;
+
+		}
 	}
 
 	public void SaveScore()
